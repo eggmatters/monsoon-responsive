@@ -1,4 +1,5 @@
 <?php 
+require_once 'helper_functions.php';
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -9,7 +10,7 @@ function wpbootstrap_scripts_with_jquery()
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
-function register_my_menus() {
+function register_theme_menus() {
 	register_nav_menus(
 		array(
 			'header-menu' => __( 'Header Menu' ),
@@ -18,5 +19,24 @@ function register_my_menus() {
 		)
 	);
 }
-add_action( 'init', 'register_my_menus' );
+add_action( 'init', 'register_theme_menus' );
 
+function get_defined_menu($slug = 'header-menu') {
+  if (( $locations = get_nav_menu_locations() ) && isset($locations[$slug])) {
+    $menu = wp_get_nav_menu_object($locations[$slug]);
+
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+    $menu_list = '';
+
+    foreach ((array) $menu_items as $key => $menu_item) {
+      $title = $menu_item->title;
+      $url = $menu_item->url;
+      $menu_list .= '<li><a href="' . $url . '">' . $title . '</a></li>';
+    }
+    $menu_list .= '</ul>';
+  } else {
+    $menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
+  }
+  echo $menu_list;
+}
