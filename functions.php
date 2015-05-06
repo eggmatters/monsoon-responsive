@@ -9,4 +9,14 @@ function wpbootstrap_scripts_with_jquery()
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
-?>
+function register_my_menus() {
+	register_nav_menus(
+		array(
+			'header-menu' => __( 'Header Menu' ),
+      'extra-menu-1' => __( 'Extra Menu1' ),
+      'extra-menu-2' => __( 'Extra Menu2' ),
+		)
+	);
+}
+add_action( 'init', 'register_my_menus' );
+
