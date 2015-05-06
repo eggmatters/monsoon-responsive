@@ -9,10 +9,9 @@
  * License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
  * License URI: http://creativecommons.org/licenses/by-sa/3.0/
  *
- * This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+ * This simple theme was built from Bootstrap 3.2.4 Based on Trehouse guide: http://blog.teamtreehouse.com/responsive-wordpress-bootstrap-theme-tutorial
  * */
-@import url('bootstrap3/css/bootstrap.css');
-@import url('bootstrap/css/bootstrap-theme.css');
+@import url('bootstrap/css/bootstrap.css');
 body { 
 	padding-top: 60px; 
 	padding-bottom: 40px; 
