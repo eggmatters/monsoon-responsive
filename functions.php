@@ -1,5 +1,6 @@
 <?php 
 require_once 'helper_functions.php';
+require_once 'classes/NavigationMenu.php';
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -39,4 +40,15 @@ function get_defined_menu($slug = 'header-menu') {
     $menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
   }
   echo $menu_list;
+}
+
+function debug_nav_menu($slug = 'header-menu') {
+  if (( $locations = get_nav_menu_locations() ) && isset($locations[$slug])) {
+    $menu = wp_get_nav_menu_object($locations[$slug]);
+    $menuItemsArray = wp_get_nav_menu_items($menu->term_id);
+    $navdebug = NavigationMenu::setNavMenuArray($menuItemsArray);
+    echo "<pre>";
+    print_r($navdebug);
+    echo "</pre>";
+  }
 }

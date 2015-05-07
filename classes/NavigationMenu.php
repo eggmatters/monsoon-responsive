@@ -6,44 +6,41 @@
  * @author Your Name <your.name at your.org>
  */
 class NavigationMenu {
-  public $menuItems;
-  public $navMenuArray;
-  public function __construct($menuItems) {
-    $this->menuItems = $menuItems;
+  public $name;
+  public $title;
+  public $url;
+  public $children;
+  
+  public function __construct($menuItem, $chilren = null) {
+    $this->name = $menuItem->name;
+    $this->title = $menuItem->title;
+    $this->url = $menuItem->url;
+    $this->children = (is_null($chilren)) ? array() : $chilren;
   }
   //Make recursive
-  public function setNavMenuArray() {
-    $returnArray = [];
-    $parentArray = $this->getParents();
-    foreach($parentArray as $parent) {
-      $returnArray[] = $parent;
-      $childArray = $this->getChildrenOf($parent);
-      if (count($childArray > 0)) {
-
+  public static function setNavMenuArray($menuItemsArray, $returnArray = null) {
+    if (is_null($returnArray)) {
+      $returnArray = [];
+    }
+    foreach ($menuItemsArray as $menuItem) {
+      $childArray = self::getChildrenOf($menuItem, $menuItemsArray);
+      if (count($childArray) > 0) {
+        $returnArray[] = new NavigationMenu($menuItem, self::setNavMenuArray($childArray, $returnArray));
+      } else {
+        $returnArray[] = new NavigationMenu($menuItem);
       }
     }
+    return $returnArray;
   }
-  private function getParents() {
-    $parentArray = [];
-    foreach($this->menuItems as $menuItem) {
-      if ($menuItem->menu_item_parent == "0") {
-        $parentArray[] = $menuItem;
-      }
-    }
-    return $parentArray;
-  }
-  private function getChildrenOf($menuItem, $menuItemsArray = null) {
-    $menuItemsArray (is_null($menuItemsArray)) ? $this->menuItems : $menuItemsArray;
+  private static function getChildrenOf($parentMenuItem, $menuItemsArray) {
     $childArray = [];
     foreach($menuItemsArray as $menuItem) {
-      if ($menuItem->menu_item_parent == $menuItem->ID) {  
+      $mp = $menuItem->menu_item_parent;
+      $mc = $parentMenuItem->ID;
+      if ($menuItem->menu_item_parent == $parentMenuItem->ID) {  
         $childArray[] = $menuItem;
       }
     }
     return $childArray;
   }
-  private function setNavMenuItem($name, $url) {
-    
-  }
 }
-

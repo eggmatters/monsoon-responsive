@@ -58,3 +58,4 @@
   </nav>
 
   <div class="container">
+    <?php debug_nav_menu(); ?>
