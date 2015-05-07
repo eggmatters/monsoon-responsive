@@ -34,21 +34,11 @@ class NavigationMenu {
   
   public static function renderBootstrapNavMenu($navMenuItems) {
     /**
-     * <li><a href="#">Link</a></li>
+     * <ul class="nav navbar-nav">
+            <li><a href="#">Link</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Header</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                </li>
-              </ul>
-            </li>
      */
     $rs = "";
     foreach($navMenuItems as $menuItem) {
@@ -58,7 +48,7 @@ class NavigationMenu {
                '" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">' . 
                $menuItem->title . ' <span class="caret"></span></a>' .
                '<ul class="dropdown-menu" role="menu">';
-        $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . ' Page</a></li>';
+        $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
         $rs .= self::renderChildrenOf($menuItem);
         $rs .= '</ul>';
                
@@ -97,22 +87,39 @@ class NavigationMenu {
   
   private static function renderChildrenOf($parent) {
     /**
-     * <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Header</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                </li>
+     * 
+     * 
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li class="dropdown">
+          <a href="#">2-level Dropdown <i class="icon-arrow-right"></i></a>
+          <ul class="dropdown-menu sub-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li class="nav-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        </li>
+      </ul>
      */
     //$rs .= '<li class="divider"></li>';
     foreach ($parent->children as $child) {
       $rs .= '<li><a href="' . $child->url . '">' . $child->title . '</a></li>';
       if (count($child->children) > 0 ) {
         $rs .= '<li class="divider"></li>';
+        $rs .= '<li class="dropdown">';
+        $rs .= '<a href="' . $child->url .'">' . $child->title . ' <i class="icon-arrow-right"></i></a>';
+        $rs .= '<ul class="dropdown-menu sub-menu">';
+        $rs .= '<li><a href="' . $child->url . '">' . $child->title . '</a></li>';
         $rs .= self::renderChildrenOf($child);
+        $rs .= '</ul></li>';
       }
     }
     return $rs;
