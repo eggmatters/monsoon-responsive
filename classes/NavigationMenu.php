@@ -25,9 +25,9 @@ class NavigationMenu {
     }
     return $returnArray;
   }
-  private static function setChildrenOf($parentMenuItem, $menuItemsArray) {
-    foreach($menuItemsArray as $menuItem) {
-      $childArray = self::getChildrenOf($menuItem, $menuItemsArray);
+  private static function setChildrenOf($parentMenuItem, $childArray) {
+    foreach($childArray as $childArray) {
+
     }
   }
   private static function getChildrenOf($parentMenuItem, $menuItemsArray) {
