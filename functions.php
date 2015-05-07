@@ -37,7 +37,7 @@ function get_defined_menu($slug = 'header-menu') {
     }
     $menu_list .= '</ul>';
   } else {
-    $menu_list = '<ul><li>Menu "' . $menu_name . '" not defined.</li></ul>';
+    $menu_list = '<ul><li>Menu "' . $slug . '" not defined.</li></ul>';
   }
   echo $menu_list;
 }
