@@ -28,21 +28,8 @@ function get_defined_menu($slug = 'header-menu') {
     $menu_items = wp_get_nav_menu_items($menu->term_id);
     $navigationItems = NavigationMenu::setNavMenuArray($menu_items);
     $menu_list = NavigationMenu::renderBootstrapNavMenu($navigationItems);
-
-    
   } else {
     $menu_list = '<ul><li>Menu "' . $slug . '" not defined.</li></ul>';
   }
   echo $menu_list;
-}
-
-function debug_nav_menu($slug = 'header-menu') {
-  if (( $locations = get_nav_menu_locations() ) && isset($locations[$slug])) {
-    $menu = wp_get_nav_menu_object($locations[$slug]);
-    $menuItemsArray = wp_get_nav_menu_items($menu->term_id);
-    $navdebug = NavigationMenu::setNavMenuArray($menuItemsArray);
-    echo "<pre>";
-    print_r($navdebug);
-    echo "</pre>";
-  }
 }

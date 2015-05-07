@@ -52,7 +52,20 @@ class NavigationMenu {
      */
     $rs = "";
     foreach($navMenuItems as $menuItem) {
-      $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
+      if (count($menuItem->children) > 0) {
+        $rs .= '<li class="dropdown">';
+        $rs .= '<a href="' . $menuItem->url . 
+               '" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">' . 
+               $menuItem->title . ' <span class="caret"></span></a>' .
+               '<ul class="dropdown-menu" role="menu">';
+        $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . ' Page</a></li>';
+        $rs .= self::renderChildrenOf($menuItem);
+        $rs .= '</ul>';
+               
+        
+      } else {
+        $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
+      }
     }
     return $rs;
   }
@@ -80,5 +93,28 @@ class NavigationMenu {
       }
     }
     return $childArray;
+  }
+  
+  private static function renderChildrenOf($parent) {
+    /**
+     * <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Header</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                </li>
+     */
+    //$rs .= '<li class="divider"></li>';
+    foreach ($parent->children as $child) {
+      $rs .= '<li><a href="' . $child->url . '">' . $child->title . '</a></li>';
+      if (count($child->children) > 0 ) {
+        $rs .= '<li class="divider"></li>';
+        $rs .= self::renderChildrenOf($child);
+      }
+    }
+    return $rs;
   }
 }
