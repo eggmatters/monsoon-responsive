@@ -1,6 +1,7 @@
 <?php 
 require_once 'helper_functions.php';
 require_once 'classes/NavigationMenu.php';
+//require_once 'classes/MR_Widgets.php';
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -34,9 +35,15 @@ function get_defined_menu($slug = 'header-menu') {
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
+    'name' => 'Main Sidebar',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
 }
+
+//function register_mr_search_widget() {
+//  register_widget('MR_Widget_Search');
+//}
+//add_action( 'widgets_init', 'register_mr_search_widget');
