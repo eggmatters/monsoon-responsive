@@ -1,9 +1,24 @@
 <?php get_header(); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="container">
+        <p class="lead">We have what you need to learn and grow and train and stay up-to-date and lorem ipsum.</p>
+      </div>
+    </div>
+  </div>
+  <?php get_banner_search(); ?>
+</div>
 
-	<?php the_content(); ?>
+<div class="container">
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php endwhile; else: ?>
-	<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
-<?php get_footer(); ?>
+      <?php the_content(); ?>
+
+    <?php endwhile;
+  else: ?>
+    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+  <?php endif; ?>
+</div>
+
+<?php get_footer(); 

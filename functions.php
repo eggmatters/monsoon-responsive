@@ -47,3 +47,7 @@ function register_mr_nav_menu_widget() {
   register_widget('MR_Nav_Menu_Widget');
 }
 add_action( 'widgets_init', 'register_mr_nav_menu_widget');
+
+function get_banner_search() {
+  require_once 'views/banner_search.php';
+}
