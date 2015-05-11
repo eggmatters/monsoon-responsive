@@ -11,7 +11,7 @@
  *
  * @since 3.0.0
  */
- class WP_Nav_Menu_Widget extends WP_Widget {
+ class MR_Nav_Menu_Widget extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array( 'description' => __('Add a custom menu to your sidebar.') );
@@ -22,20 +22,25 @@
 		// Get menu
 		$nav_menu = ! empty( $instance['nav_menu'] ) ? wp_get_nav_menu_object( $instance['nav_menu'] ) : false;
 
-		if ( !$nav_menu )
+		if ( !$nav_menu ) {
 			return;
+    }
 
 		/** This filter is documented in wp-includes/default-widgets.php */
 		$instance['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 		echo $args['before_widget'];
 
-		if ( !empty($instance['title']) )
+		if ( !empty($instance['title']) ) {
 			echo $args['before_title'] . $instance['title'] . $args['after_title'];
+    }
 
 		$nav_menu_args = array(
 			'fallback_cb' => '',
-			'menu'        => $nav_menu
+			'menu'        => $nav_menu,
+      'container-class' => 'container-fluid',
+      'items_wrap' => '<ul id="%1$s" class="nav nav-sidebar">%3$s</ul>',
+      'depth' => 1
 		);
 
 		/**

@@ -1,7 +1,7 @@
 <?php 
 require_once 'helper_functions.php';
 require_once 'classes/NavigationMenu.php';
-//require_once 'classes/MR_Widgets.php';
+require_once 'classes/MR_Widgets.php';
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -43,7 +43,7 @@ if ( function_exists('register_sidebar') ) {
 	));
 }
 
-//function register_mr_search_widget() {
-//  register_widget('MR_Widget_Search');
-//}
-//add_action( 'widgets_init', 'register_mr_search_widget');
+function register_mr_nav_menu_widget() {
+  register_widget('MR_Nav_Menu_Widget');
+}
+add_action( 'widgets_init', 'register_mr_nav_menu_widget');
