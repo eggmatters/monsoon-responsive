@@ -3,7 +3,15 @@
   <div class="row">
     <div class="jumbotron">
       <div class="container">
-        <p class="lead">We have what you need to learn and grow and train and stay up-to-date and lorem ipsum.</p>
+        <?php
+          $query = new WP_Query( 'category_name=home_header');
+          if ($query->have_posts()) {
+            while ($query->have_posts()) {
+              $query->the_post();
+              the_content();
+            }
+          }
+        ?>
       </div>
     </div>
   </div>
