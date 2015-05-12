@@ -24,7 +24,7 @@ get_header(); ?>
 			  while ( have_posts() ) : the_post(); ?>
         <div class="row">
           <div class="col-md-12">
-            <a style="font-size: 18px;" class="large-text" href="<?php get_post_permalink()?>"><?php the_title()?></a><br>
+            <a style="font-size: 18px;" class="large-text" href="<?php get_permalink(the_title()) ?>"><?php the_title()?></a><br>
             <?php the_excerpt(); ?>
           </div>
         </div>
