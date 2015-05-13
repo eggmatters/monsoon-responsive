@@ -1,5 +1,4 @@
 <?php 
-require_once 'helper_functions.php';
 require_once 'classes/NavigationMenu.php';
 require_once 'classes/MR_Widgets.php';
 
@@ -50,4 +49,23 @@ add_action( 'widgets_init', 'register_mr_nav_menu_widget');
 
 function get_banner_search() {
   require_once 'views/banner_search.php';
+}
+
+function get_category_posts($cat_slug) {
+  $args = array( 'category_name' => $cat_slug);
+  $posts = get_posts($args);
+  return split_posts_array($posts, 2);
+}
+
+function debug($args) {
+  echo "<pre>"; print_r($args); echo "</pre>";
+}
+
+function split_posts_array($posts, $columns = 1) {
+  $f = count($posts) / $columns;
+  $splitIndex = ($f >= 1.0) ? (int) $f : 1;
+  $columnOne = array_slice($posts, 0, $splitIndex);
+  $columnTwo = array_slice($posts, $splitIndex + 1);
+  return array('col1' => $columnOne, 'col2' => $columnTwo);
+  
 }

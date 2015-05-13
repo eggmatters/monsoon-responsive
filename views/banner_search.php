@@ -5,4 +5,5 @@
     </div>
     <button type="submit" id="searchsubmit" class="btn btn-lg">Go</button>
   </form>
+  <p>&nbsp;</p>
 </div>
