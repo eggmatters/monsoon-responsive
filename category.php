@@ -20,24 +20,21 @@ $categoryPosts = get_category_posts($category->slug);
 </div>
 <div class="container">
   <div class="row">
-    <?php debug($categoryPosts);
-      if (count($categoryPosts[col2]) > 0): ?>
-      <div class="col-md-6">
-        <?php foreach($categoryPosts['col1'] as $col1): ?>
-        <a href="<?php echo $col1->guid; ?>"><?php echo $col1->post_title; ?></a>
-        <?php endforeach; ?>
-      </div>
-      <div class="col-md-6">
-        <?php foreach ($categoryPosts['col2'] as $col2): ?>
-        <a href="<?php echo $col2->guid; ?>"><?php echo $col2->post_title; ?></a>
-        <?php endforeach; ?>
-      </div>
-    <?php else: ?>
-      <div class="col-md-12">
-        <?php foreach($categoryPosts['col1'] as $col1): ?>
-        <a href="<?php echo $col1->guid; ?>"><?php echo $col1->post_title; ?></a>
-        <?php endforeach; ?>
-      </div>
+    <div class="col-md-6">
+      <ul class="nav nav-stacked">
+      <?php foreach($categoryPosts['col1'] as $col1): ?>
+        <li role="presentation"><a href="<?php echo $col1->guid; ?>"><?php echo $col1->post_title; ?></a></li>
+      <?php endforeach; ?>
+      </ul>
+    </div>
+    <?php if(count($categoryPosts['col2']) > 0): ?>
+    <div class="col-md-6">
+      <ul class="nav nav-stacked">
+      <?php foreach ($categoryPosts['col2'] as $col2): ?>
+        <li role="presentation"><a href="<?php echo $col2->guid; ?>"><?php echo $col2->post_title; ?></a></li>
+      <?php endforeach; ?>
+      </ul>
+    </div>
     <?php endif; ?>
   </div>
 </div>
