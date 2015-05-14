@@ -74,3 +74,15 @@ function split_posts_array($posts, $columns = 1) {
   return array('col1' => $columnOne, 'col2' => $columnTwo);
   
 }
+
+function add_category_icons_options() {
+  add_posts_page('Category Icons', 'Category Icons', 'edit_pages', 'category_icons_edit', 'render_category_icons_admin_page');
+}
+
+function render_category_icons_admin_page() {
+  if ( !current_user_can( 'edit_pages' ) )  {
+      wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+    }
+  require_once 'views/category_icons_admin.php';
+}
+add_action('admin_menu', 'add_category_icons_options');
