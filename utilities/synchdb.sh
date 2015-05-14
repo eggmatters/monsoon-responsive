@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR=$($pwd)/schemas
+DIR=$(pwd)/schemas
 
 
 fetch() {
