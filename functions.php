@@ -64,8 +64,13 @@ function debug($args) {
 function split_posts_array($posts, $columns = 1) {
   $f = count($posts) / $columns;
   $splitIndex = ($f >= 1.0) ? (int) $f : 1;
-  $columnOne = array_slice($posts, 0, $splitIndex);
-  $columnTwo = array_slice($posts, $splitIndex + 1);
+  if ($splitIndex > 1) {
+  $columnOne = array_slice($posts, 0, $splitIndex - 1);
+  $columnTwo = array_slice($posts, $splitIndex);
+  } else {
+    $columnOne = $posts;
+    $columnTwo = array();
+  }
   return array('col1' => $columnOne, 'col2' => $columnTwo);
   
 }
