@@ -2,12 +2,11 @@
 
 DIR=$(pwd)/schemas
 
-
 fetch() {
-  local SCHEMA=$(ls -lt $DIR | awk '{print $9}')
-	echo "copying $SCHEMA to db"
+	SCHEMA=$(echo -n $(ls -lt $DIR | awk '{print $9}'))
+	echo "copying $DIR/$SCHEMA to db"
 	backup
-	$(mysql -u wordpress -pwordpress < $SCHEMA) 
+	$(mysql -u wordpress -pwordpress wordpress < $DIR/$SCHEMA) 
 }
 
 get() {
@@ -25,13 +24,9 @@ usage() {
 run() {
 	case "$1" in
 		*copy)
-			git commit -m "Scripted commit $(date +%F) synching db for fetch" -a
-			git pull origin master
 			fetch
 	    ;;
 	  *push)
-			git commit -m "Scripted commit $(date +%F) synching db for pull" -a
-			git push origin master
 	    get
 	    ;;
 		*backup)
