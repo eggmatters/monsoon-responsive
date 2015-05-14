@@ -63,7 +63,8 @@ $form_class = 'media-upload-form type-form validate html-uploader';
     </h2>
     <p>Uploading file</p>
     <?php
-      
+wp_insert_attachment($form_class, $mode, $parent);
+add_post_meta( 68, '_color', 'red', true ); 
       debug($_FILES);
     ?>
   </div>
