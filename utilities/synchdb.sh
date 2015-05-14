@@ -23,7 +23,6 @@ usage() {
 }
 
 run() {
-	echo "parsing $1"
 	case "$1" in
 		*copy)
 			git commit -m "Scripted commit $(date +%F) synching db for fetch" -a
