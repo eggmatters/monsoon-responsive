@@ -60,7 +60,7 @@ class ThemeControls {
   }
   
   private function lastPosts() {
-    $args = array( 'category_name' => 'info_exchange');
+    $args = array( 'category_name' => 'info-exchange');
     $posts = get_posts($args);
     if (count($posts) <= 0) {
       return "";
