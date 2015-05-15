@@ -1,6 +1,7 @@
 <?php 
 require_once 'classes/NavigationMenu.php';
 require_once 'classes/MR_Widgets.php';
+require_once 'classes/ThemeControls.php';
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -49,6 +50,12 @@ add_action( 'widgets_init', 'register_mr_nav_menu_widget');
 
 function get_banner_search() {
   require_once 'views/banner_search.php';
+}
+
+function parse_content($the_content) {
+  $themeControls = new ThemeControls($the_content);
+  $matches = $themeControls->getControls();
+  debug($matches);
 }
 
 function get_category_posts($cat_slug) {
