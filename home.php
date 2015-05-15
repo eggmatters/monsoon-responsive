@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page Default
+Template Name: Home Page
 */
 ?>
 
@@ -27,8 +27,7 @@ Template Name: Home Page Default
 <div class="container">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-      <?php 
-      the_content(); ?>
+      <?php parse_content(get_the_content()); ?>
 
     <?php endwhile;
   else: ?>

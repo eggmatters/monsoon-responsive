@@ -21,18 +21,15 @@ Template Name: Home Page
       </div>
     </div>
   </div>
-  <?php get_banner_search(); ?>
 </div>
 
-<div class="container">
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-      <?php parse_content(get_the_content()); ?>
+    <?php parse_content(get_the_content()); ?>
 
-    <?php endwhile;
-  else: ?>
-    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-  <?php endif; ?>
-</div>
+  <?php endwhile;
+else: ?>
+  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
 
 <?php get_footer(); 

@@ -60,6 +60,18 @@ class ThemeControls {
   }
   
   private function lastPosts() {
-    return "got here too!";
+    $args = array( 'category_name' => 'info_exchange');
+    $posts = get_posts($args);
+    if (count($posts) <= 0) {
+      return "";
+    }
+    $postsList = '<ul class="nav nav-stacked">';
+    $idx = 0;
+    while ($idx < 3) {
+      $postsList .= '<li role="presentation"><a href="' . $posts[$idx]->guid . '">' . 
+          date('F j, Y') . ': ' . $posts[$idx]->post_title . '</a></li>';
+      $idx++;
+    }
+    return $postsList;
   }
 }
