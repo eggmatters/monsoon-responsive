@@ -67,9 +67,11 @@ class ThemeControls {
     }
     $postsList = '<ul class="nav nav-stacked">';
     $idx = 0;
-    while ($idx < 3) {
-      $postsList .= '<li role="presentation"><a href="' . $posts[$idx]->guid . '">' . 
-          date('F j, Y') . ': ' . $posts[$idx]->post_title . '</a></li>';
+    while ($idx < 4) {
+      if (isset($posts[$idx])) {
+        $postsList .= '<li role="presentation"><a href="' . $posts[$idx]->guid . '">' . 
+            date('F j, Y', strtotime($posts[$idx]->post_date)) . ': ' . $posts[$idx]->post_title . '</a></li>';
+      }
       $idx++;
     }
     return $postsList;
