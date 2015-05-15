@@ -74,4 +74,17 @@ class ThemeControls {
     }
     return $postsList;
   }
+  
+  private function infoExchangePosts() {
+    $args = array( 'category_name' => 'info-exchange');
+    $posts = get_posts($args);
+    if (count($posts) <= 0) {
+      return "";
+    }
+    $postsList = '';
+    $idx = 0;
+    while ($idx < 4) {
+      
+    }
+  }
 }
