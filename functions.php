@@ -55,7 +55,8 @@ function get_banner_search() {
 function parse_content($the_content) {
   $themeControls = new ThemeControls($the_content);
   $matches = $themeControls->getControls();
-  debug($matches);
+  $themeControls->setControlContent();
+  echo $themeControls->renderControlContent();
 }
 
 function get_category_posts($cat_slug) {
