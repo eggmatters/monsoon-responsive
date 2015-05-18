@@ -18,7 +18,7 @@
   </div>
 </div> <!-- /container -->
 <p></p>
-<div class="jumbotron">
+<div class="jumbotron" style="margin-bottom: 0px;">
   <div class="container-fluid">
     <div class="row">
       <div class="container">
