@@ -80,5 +80,19 @@ function split_posts_array($posts, $columns = 1) {
     $columnTwo = array();
   }
   return array('col1' => $columnOne, 'col2' => $columnTwo);
-  
+}
+
+function get_info_exchange_posts($slug='info-exchange') {
+  $args = array( 'category_name' => $slug,
+    'posts_per_page' => 3,
+    'order_by' => 'date',);
+  $ixposts = get_posts($args);
+  foreach ($ixposts as $post) {
+    setup_postdata($post);
+?>
+  <a style="font-size: 18px;" class="large-text" href="<?php the_permalink(); ?>"><?php echo $post->post_title; ?></a><br>
+  <?php the_excerpt(); ?>
+  <hr>
+  <?php 
+  }
 }
