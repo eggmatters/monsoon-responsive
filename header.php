@@ -23,8 +23,8 @@
     <?php wp_enqueue_script("jquery"); ?>
     <?php wp_head(); ?>
   </head>
-
   <body>
+    <?php require_once 'views/feedbackModal.php'; ?>
     <nav class="navbar navbar-inverse navbar-relative-top">
       <div class="container">
         <div class="navbar-header">

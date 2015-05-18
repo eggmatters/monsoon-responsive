@@ -33,10 +33,13 @@
         </div>
       </div>
     </div>
+    <p>&nbsp;</p>
     <div class="row">
       <div class="container">
         <div class="col-md-12 text-center">
-          Modal toggle
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mr-feedback">
+              Feedback
+          </button>
         </div>
       </div>
     </div>
