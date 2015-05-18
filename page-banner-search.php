@@ -16,7 +16,9 @@ Template Name: Page with Banner Search
     </div>
   </div>
 </div>
-<?php get_banner_search(); ?>
+<div class="container-fluid">
+  <?php get_banner_search(); ?>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
