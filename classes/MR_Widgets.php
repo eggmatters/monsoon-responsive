@@ -106,3 +106,77 @@
 		<?php
 	}
 }
+
+/**
+ * Navigation Button widget class
+ *
+ * @since 3.0.0
+ */
+ class MR_Nav_Button_Widget extends WP_Widget {
+
+	public function __construct() {
+		$widget_ops = array( 'description' => __('Add a custom navigation button to your sidebar.') );
+		parent::__construct( 'nav_button', __('Custom Menu Button'), $widget_ops );
+	}
+
+	public function widget($args, $instance) {
+		// Get menu
+		$nav_button_text = ! empty( $instance['nav_button_text'] ) ? $instance['nav_button_text'] : '';
+
+		$instance['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+    
+    $permalink = ($instance['page_id'] != 0) ? get_permalink($instance['page_id']) : '#';
+
+		if ( !empty($instance['title']) ) {
+			echo $args['before_title'] . $instance['title'] . $args['after_title'];
+    }
+    ?>
+    <a href="<?php echo $permalink; ?>"><button class='btn btn-lg'><?php echo $nav_button_text; ?></button></a>
+    <?php
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		if ( ! empty( $new_instance['title'] ) ) {
+			$instance['title'] = strip_tags( stripslashes($new_instance['title']) );
+		}
+		if ( ! empty( $new_instance['nav_button_text'] ) ) {
+			$instance['nav_button_text'] = $new_instance['nav_button_text'];
+		}
+    if (! empty( $new_instance['page_id'] ) ) {
+      $instance['page_id'] = $new_instance['page_id'];
+    }
+		return $instance;
+	}
+
+	public function form( $instance ) {
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+		$text = isset( $instance['nav_button_text'] ) ? $instance['nav_button_text'] : '';
+    $pageId = isset( $instance['page_id']) ? $instance['page_id'] : 0;
+    $pages = get_pages();
+    ?>
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:') ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id('nav_button_text'); ?>"><?php _e('Enter Button Text:'); ?></label>
+      <input type='text' id="<?php echo $this->get_field_id('nav_button_text'); ?>" name="<?php echo $this->get_field_name('nav_button_text'); ?>" 
+             value='<?php echo $text ?>'>
+		</p>
+    <p>
+      <label for="<?php echo $this->get_field_id('page_id') ?>"><?php _e('Page Link'); ?></label>
+      <select id="<?php echo $this->get_field_id('page_id'); ?>" name="<?php echo $this->get_field_name('page_id'); ?>">
+				<option value="0"><?php _e( '&mdash; Select &mdash;' ) ?></option>
+		<?php
+			foreach ( $pages as $page ) {
+				echo '<option value="' . $page->ID . '"'
+					. selected( $pageId, $page->ID, false )
+					. '>'. esc_html( $page->post_title ) . '</option>';
+			}
+		?>
+      </select>
+    </p>
+		<?php
+	}
+}
