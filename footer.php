@@ -22,16 +22,36 @@
   <div class="container-fluid">
     <div class="row">
       <div class="container">
-        Pro Webhelp SEKB Solution Central
+        <div class="col-md-4 text-center">
+          Pro Webhelp
+        </div>
+        <div class="col-md-4 text-center">
+          SEKB
+        </div>
+        <div class="col-md-4 text-center">
+          Solution Central
+        </div>
       </div>
     </div>
-  </div> <!-- /container -->
-</div>
-<p></p>
-<footer>
-  <p>© MonsoonCommerce 2015</p>
-</footer>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12 text-center">
+          Modal toggle
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <p>©2015 All rights reserved</p>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </div>
+</div> <!-- /container -->
 
-<?php wp_footer(); ?>
 </body>
 </html>
