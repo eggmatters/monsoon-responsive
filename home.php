@@ -6,8 +6,8 @@ Template Name: Home Page
 
 <?php get_header(); ?>
 <div class="container-fluid">
-  <div class="row">
-    <div class="jumbotron">
+  <div class="jumbotron">
+    <div class="row">
       <div class="container">
         <?php
           $query = new WP_Query( 'category_name=home_header');
@@ -21,7 +21,6 @@ Template Name: Home Page
       </div>
     </div>
   </div>
-  <?php get_banner_search(); ?>
 </div>
 
 <div class="container">

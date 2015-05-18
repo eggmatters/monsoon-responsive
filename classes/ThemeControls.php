@@ -48,11 +48,13 @@ class ThemeControls {
   
   private function bannerSearch() {
     $action = esc_url(home_url(' / '));
-    return '<form class="form-inline col-md-12" role="search" method="get" id="searchform" action=" ' . $action . '"> ' .
-            '  <div class="form-group"> ' .
+    return '<form role="search" method="get" id="searchform" action=" ' . $action . '"> ' .
+            '  <div class="input-group"> ' .
             '    <input type="search" class="form-control input-lg" name="s" id="s" placeholder="Search" value=""> ' .
+            '    <span class="input-group-btn">' .
+            '      <button type="submit" id="searchsubmit" class="btn btn-lg">Go</button> ' .
+            '    </span>' .
             '  </div> ' .
-            '  <button type="submit" id="searchsubmit" class="btn btn-lg">Go</button> ' .
             '</form> ' .
             '<p>&nbsp;</p> ';
   }

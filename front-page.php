@@ -5,18 +5,19 @@ Template Name: Home Page
 ?>
 
 <?php get_header(); ?>
-<div class="container-fluid">
-  <div class="row">
-    <div class="jumbotron">
+<div class="jumbotron">
+  <div class="container-fluid">
+
+    <div class="row">
       <div class="container">
         <?php
-          $query = new WP_Query( 'category_name=home_header');
-          if ($query->have_posts()) {
-            while ($query->have_posts()) {
-              $query->the_post();
-              the_content();
-            }
+        $query = new WP_Query('category_name=home_header');
+        if ($query->have_posts()) {
+          while ($query->have_posts()) {
+            $query->the_post();
+            the_content();
           }
+        }
         ?>
       </div>
     </div>
