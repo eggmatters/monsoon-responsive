@@ -10,11 +10,11 @@ fetch() {
 }
 
 get() {
-	mysqldump -u wordpress -pwordpress wordpress wp_postmeta wp_posts wp_term_relationships wp_terms wp_term_taxonomy > $DIR/wp_db_$(date +%F).sql
+	mysqldump -u wordpress -pwordpress wordpress wp_postmeta wp_posts wp_term_relationships wp_terms wp_term_taxonomy > $DIR/wp_db_$(date +%F-%H-%M).sql
 }
 
 backup() {
-	mysqldump -u wordpress -pwordpress wordpress > $(pwd)/backups/$(whoami)_$(date +%F).db.sql.bak
+	mysqldump -u wordpress -pwordpress wordpress > $(pwd)/backups/$(whoami)_$(date +%F%-%H-%M).db.sql.bak
 }
 
 usage() {
