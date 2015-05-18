@@ -1,28 +1,25 @@
 <?php
 ?>
-<div class="modal fade" id="mr-feedback">
+<div class="modal fade" id="mr-ix-signup">
   <div class="modal-dialog">
     <div class="modal-content">
       <form>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Feedback</h4>
+        <h4 class="modal-title">Signup to Info Exchange</h4>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12">
               <div class="form-group">
-                <label>Was this helpful?&nbsp;</label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Yes
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
-                </label>
+                <input type="text" name="ix-firstname" id="ix-firstname" value="" placeholder="First Name">
               </div>
               <div class="form-group">
-                <textarea rows="8" cols="30" placeholder="What were you searching for? Your feedback helps us make the Support Center better for you"></textarea>
+                <input type="text" name="ix-lastname" id="ix-lastname" value="" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <input type="text" name="ix-email" id="ix-email" value="" placeholder="Email Address">
               </div>
             </div>
           </div>
@@ -36,3 +33,4 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+

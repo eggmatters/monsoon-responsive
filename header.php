@@ -21,6 +21,7 @@
   </head>
   <body>
     <?php require_once 'views/feedbackModal.php'; ?>
+    <?php require_once 'views/infoExchangeSignupModal.php'; ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <?php 
         // Fix menu overlap bug..

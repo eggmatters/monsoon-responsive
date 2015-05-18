@@ -7,9 +7,9 @@
     <div class="col-lg-8">
       <form style="padding-bottom: 2%">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
+          <input type="text" id="info-exchange-signup" name="info-exchange-signup" class="form-control" placeholder="you@email.com">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Sign up Now</button>
+            <button class="btn btn-default" type="button" data-toggle="modal" data-target="#mr-ix-signup">Sign up Now</button>
           </span>
         </div><!-- /input-group -->
       </form>
