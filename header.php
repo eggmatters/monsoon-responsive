@@ -14,18 +14,18 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
-      body {
-        padding-top: 50px;
-        padding-bottom: 20px;
-      }
+   <style>
     </style>
     <?php wp_enqueue_script("jquery"); ?>
     <?php wp_head(); ?>
   </head>
   <body>
     <?php require_once 'views/feedbackModal.php'; ?>
-    <nav class="navbar navbar-inverse navbar-relative-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <?php 
+        // Fix menu overlap bug..
+        if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 
+      ?>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
