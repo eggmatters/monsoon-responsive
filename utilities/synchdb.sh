@@ -3,7 +3,7 @@
 DIR=$(pwd)/schemas
 
 fetch() {
-	SCHEMA=$(echo -n $(ls -lt $DIR | awk '{print $9}'))
+	SCHEMA=$(echo $(ls -lt $DIR | awk '{print $9}') | cut -f 1 -d ' ')
 	echo "copying $DIR/$SCHEMA to db"
 	backup
 	$(mysql -u wordpress -pwordpress wordpress < $DIR/$SCHEMA) 
