@@ -252,7 +252,9 @@
       $(document).ready(function() {
         $('#mr-cat-filter').on( "change", function(e) {
           var url = urlBase + "/category/" + $('#' + e.target.id).val();
-          window.location = url;
+          if ($('#' + e.target.id).val() != 0) {
+            window.location = url;
+          }
         })
       });
     </script>
