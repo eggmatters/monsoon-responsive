@@ -231,7 +231,7 @@
 		return $instance;
 	}
 
-	public function form( $instanclabele ) {
+	public function form( $instance ) {
 		$title = isset( $instance['title'] ) ? $instance['title'] : '';
     ?>
 		<p>
