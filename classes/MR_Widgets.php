@@ -15,7 +15,7 @@
 
 	public function __construct() {
 		$widget_ops = array( 'description' => __('Add a custom menu to your sidebar.') );
-		parent::__construct( 'nav_menu', __('Custom Menu'), $widget_ops );
+		parent::__construct( 'nav_menu', __('MR Custom Menu'), $widget_ops );
 	}
 
 	public function widget($args, $instance) {
@@ -116,7 +116,7 @@
 
 	public function __construct() {
 		$widget_ops = array( 'description' => __('Add a custom navigation button to your sidebar.') );
-		parent::__construct( 'nav_button', __('Custom Menu Button'), $widget_ops );
+		parent::__construct( 'nav_button', __('MR Custom Menu Button'), $widget_ops );
 	}
 
 	public function widget($args, $instance) {
@@ -131,7 +131,7 @@
 			echo $args['before_title'] . $instance['title'] . $args['after_title'];
     }
     ?>
-    <a href="<?php echo $permalink; ?>"><button class='btn btn-lg'><?php echo $nav_button_text; ?></button></a>
+    <a href="<?php echo $permalink; ?>"><button class='btn btn-default btn-lg'><?php echo $nav_button_text; ?></button></a>
     <?php
 	}
 
@@ -179,4 +179,84 @@
     </p>
 		<?php
 	}
+}
+
+/**
+ * Category Filter Widget class
+ *
+ * @since 3.0.0
+ */
+ class MR_Category_Filter_Widget extends WP_Widget {
+
+	public function __construct() {
+		$widget_ops = array( 'description' => __('Add a categories dropdown filter.') );
+		parent::__construct( 'category_filter', __('MR Posts Category Filter'), $widget_ops );
+	}
+
+	public function widget($args, $instance) {
+		$categories = get_page_categories();
+    $categorySelects = array();
+    $idx = 0;
+    foreach ($categories as $categorySelection) {
+      $categorySelects[$idx]['value'] = $categorySelection->slug;
+      $categorySelects[$idx]['option'] = $categorySelection->name;
+      $idx++;
+    }
+    
+		$instance['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+    
+    $this->echoJs();
+    ?>
+    <p></p>
+    <div class="form-group">
+      <h3><?php echo $instance['title']; ?></h3>
+      <select id="mr-cat-filter" name="mr-cat-filter">
+        <option value="0" selected="true"><?php _e( '&mdash; Select Product Category&mdash;' ) ?></option>
+        <?php
+          foreach($categorySelects as $filterCategory) {
+            echo '<option value="' . $filterCategory['value'] .'">' . $filterCategory['option'] . '</option>';
+          }
+        ?>
+      </select>
+    </div>
+    <?php
+
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		if ( ! empty( $new_instance['title'] ) ) {
+			$instance['title'] = strip_tags( stripslashes($new_instance['title']) );
+		}
+		return $instance;
+	}
+
+	public function form( $instanclabele ) {
+		$title = isset( $instance['title'] ) ? $instance['title'] : '';
+    ?>
+		<p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:') ?></label>
+			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
+		</p>
+		<?php
+	}
+  
+  private function echoJs() {
+    $urlBase = get_site_url();
+    ?>
+    <script type="text/javascript">
+      var urlBase = "<?php echo $urlBase; ?>";
+      if (typeof $ === 'undefined') {
+        $ = jQuery;
+      } 
+      $(document).ready(function() {
+        $('#mr-cat-filter').on( "change", function(e) {
+          var url = urlBase + "/category/" + $('#' + e.target.id).val();
+          window.location = url;
+        })
+      });
+    </script>
+    
+    <?php
+  }
 }

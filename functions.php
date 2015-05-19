@@ -62,6 +62,11 @@ function register_mr_nav_button_widget() {
 }
 add_action( 'widgets_init', 'register_mr_nav_button_widget');
 
+function register_mr_category_filter_widget() {
+  register_widget('MR_Category_Filter_Widget');
+}
+add_action( 'widgets_init', 'register_mr_category_filter_widget' );
+
 function get_banner_search() {
   require_once 'views/banner_search.php';
 }
@@ -96,6 +101,13 @@ function split_posts_array($posts, $columns = 1) {
   return array('col1' => $columnOne, 'col2' => $columnTwo);
 }
 
+function get_page_categories() {
+  $page = get_post();
+  $parentCategory = get_term_by('slug', $page->post_name, 'category');
+  $categories = get_categories(array('child_of' => (int) $parentCategory->term_id));
+  return $categories;
+}
+
 function get_info_exchange_posts($slug='info-exchange') {
   $args = array( 'category_name' => $slug,
     'posts_per_page' => 3,
@@ -104,7 +116,7 @@ function get_info_exchange_posts($slug='info-exchange') {
   foreach ($ixposts as $post) {
     setup_postdata($post);
 ?>
-  <a style="font-size: 18px;" class="large-text" href="<?php the_permalink(); ?>"><?php echo $post->post_title; ?></a><br>
+<a style="font-size: 18px;" class="large-text" href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a><br>
   <?php the_excerpt(); ?>
   <hr>
   <?php 
