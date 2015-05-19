@@ -22,7 +22,7 @@ get_header();
       <?php get_info_exchange_posts(); ?>
     </div>
     <div class="col-md-4">
-      <?php get_sidebar(); ?>
+      <?php dynamic_sidebar('Secondary Sidebar'); ?>
     </div>
   </div>
 </div>

@@ -33,15 +33,24 @@ function get_defined_menu($slug = 'header-menu') {
   echo $menu_list;
 }
 
-if ( function_exists('register_sidebar') ) {
-	register_sidebar(array(
+function mr_register_sidebars() {
+  register_sidebar(array(
     'name' => 'Main Sidebar',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	));
+  register_sidebar(array(
+    'name' => 'Secondary Sidebar',
+    'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+  ));
 }
+
+add_action('widgets_init', 'mr_register_sidebars');
 
 function register_mr_nav_menu_widget() {
   register_widget('MR_Nav_Menu_Widget');
