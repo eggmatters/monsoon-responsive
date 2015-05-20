@@ -17,13 +17,9 @@ Template Name: Page Layout
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <?php parse_content(get_the_content()); ?>
-    </div>
-  </div>
-</div>
+<?php parse_content(get_the_content()); ?>
+
+
 <?php endwhile; else: ?>
 <div class="container">
   <div class="row">
