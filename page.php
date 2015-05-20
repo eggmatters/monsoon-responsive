@@ -20,7 +20,7 @@ Template Name: Page Layout
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <?php the_content(); ?>
+      <?php parse_content(get_the_content()); ?>
     </div>
   </div>
 </div>
