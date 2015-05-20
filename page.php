@@ -17,8 +17,9 @@ Template Name: Page Layout
   </div>
 </div>
 
-<?php parse_content(get_the_content()); ?>
-
+<div class="container">
+  <?php parse_content(get_the_content()); ?>
+</div>
 
 <?php endwhile; else: ?>
 <div class="container">
