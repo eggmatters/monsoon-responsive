@@ -3,12 +3,21 @@ require_once 'classes/NavigationMenu.php';
 require_once 'classes/MR_Widgets.php';
 require_once 'classes/ThemeControls.php';
 
-function wpbootstrap_scripts_with_jquery()
-{
-	wp_register_script( 'custom-script', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
-	wp_enqueue_script( 'custom-script' );
+function wpbootstrap_scripts_with_jquery() {
+	wp_register_script( 'bootsrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
+	wp_enqueue_script( 'bootstrap-js' );
+  
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
+
+function admin_js_helper_scripts($hook) {
+  if ('post.php' != $hook) {
+    return;
+  }
+  wp_register_script( 'editor-quicktags', get_template_directory_uri() . '/js/editorQuicktags.js', array( 'jquery' ) );
+  wp_enqueue_script( 'editor-quicktags');
+}
+add_action( 'admin_enqueue_scripts', 'admin_js_helper_scripts' );
 
 function register_theme_menus() {
 	register_nav_menus(
@@ -122,3 +131,14 @@ function get_info_exchange_posts($slug='info-exchange') {
   <?php 
   }
 }
+
+function appthemes_add_quicktags() {
+    if (wp_script_is('quicktags')){
+?>
+    <script type="text/javascript">
+    QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
+    </script>
+<?php
+    }
+}
+add_action( 'admin_print_footer_scripts', 'appthemes_add_quicktags' );
