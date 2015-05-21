@@ -11,9 +11,6 @@ function wpbootstrap_scripts_with_jquery() {
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
 function admin_js_helper_scripts($hook) {
-  if ('post.php' != $hook) {
-    return;
-  }
   wp_register_script( 'editor-quicktags', get_template_directory_uri() . '/js/editorQuicktags.js', array( 'jquery' ) );
   wp_enqueue_script( 'editor-quicktags');
 }
@@ -137,6 +134,8 @@ function appthemes_add_quicktags() {
 ?>
     <script type="text/javascript">
     QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
+    QTags.addButton( 'container', 'container', '<div class="container">', '</div>', 'Container tag');
+    QTags.addButton( 'bootstrap-grid', 'bootstrap-grid', generateGridLayout);
     </script>
 <?php
     }

@@ -33,3 +33,31 @@ function generateBannerIcon(e, c, ed) {
   // now we've defined all the tagStart, tagEnd and openTags we process it all to the active window
   QTags.TagButton.prototype.callback.call(t, e, c, ed);
 }
+
+function generateGridRow(e, c, ed) {
+  var t = this;
+  var gridColumns = getGridColumns();
+}
+
+function getGridColumns() {
+  var colPrompt = prompt("Number of columns", 3);
+  if (colPrompt === null) {
+    return;
+  }
+  var numCols = parseInt(colPrompt);
+  if (!numCols) {
+    return;
+  }
+  var columnWidths = [];
+  for (var i = 1; i <= numCols; i++) {
+    var colPromptWidth = prompt("Enter the width of the column (Between 1 & 12)");
+    if (colPromptWidth === null) { return; }
+    var colWidth = parseInt(colPromptWidth);
+    if (!colWidth) {
+      alert("You must enter a numeric value");
+      return;
+    }
+    columnWidths.push(colWidth);
+  }
+  return columnWidths;
+}
