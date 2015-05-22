@@ -22,7 +22,7 @@
   <body>
     <?php require_once 'views/feedbackModal.php'; ?>
     <?php require_once 'views/infoExchangeSignupModal.php'; ?>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <?php 
         // Fix menu overlap bug..
         if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 

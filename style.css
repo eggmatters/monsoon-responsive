@@ -12,6 +12,7 @@
  * This simple theme was built from Bootstrap 3.2.4 Based on Trehouse guide: http://blog.teamtreehouse.com/responsive-wordpress-bootstrap-theme-tutorial
  * */
 @import url('bootstrap/css/bootstrap.css');
+@import url('custom.css');
 body { 
 /*	padding-top: 60px; 
 	padding-bottom: 40px; */
