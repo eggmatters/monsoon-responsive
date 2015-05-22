@@ -1,6 +1,7 @@
 <?php 
 require_once 'classes/NavigationMenu.php';
 require_once 'classes/MR_Widgets.php';
+require_once 'classes/ThemeControls.php';
 
 
 function wpbootstrap_scripts_with_jquery() {

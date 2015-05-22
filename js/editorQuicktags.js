@@ -2,23 +2,30 @@
  * dfb252dd0d1b193584ec3d6a0b56f9e72021f216
  * 
  */
-var gridLayout;
+var gridLayout, bannerIcon;
 var argsContainer = {};
 
 function generateBannerIcon(e, c, ed) {
-  var t = this;
-  var iconUrl = prompt("Enter Icon URL:", 'https://');
-  if (iconUrl === null) {
-    return;
-  }
-  var altText = prompt("Enter alt text:");
-  if (altText === null) {
-    return;
-  }
-  var leader = prompt("Enter Banner text");
-  if (leader === null) {
-    return;
-  }
+  argsContainer = {
+    e: e,
+    c: c,
+    ed: ed,
+    t: this
+  };
+  bannerIcon.dialog("open");
+}
+
+function generateGridRow(e, c, ed) {
+  argsContainer = {
+    e: e,
+    c: c,
+    ed: ed,
+    t: this
+  };
+  gridLayout.dialog("open");
+}
+
+function renderBannerIcon() {
   t.tagStart = '\n<div class="row">\n' 
     + '  <div class="col-md-2">\n'
     + '   <img class="img-responsive" src="' + iconUrl + '" alt="' + altText +'" />\n'
@@ -34,16 +41,6 @@ function generateBannerIcon(e, c, ed) {
   
   // now we've defined all the tagStart, tagEnd and openTags we process it all to the active window
   QTags.TagButton.prototype.callback.call(t, e, c, ed);
-}
-
-function generateGridRow(e, c, ed) {
-  argsContainer = {
-    e: e,
-    c: c,
-    ed: ed,
-    t: this
-  };
-  gridLayout.dialog("open");
 }
 
 function renderGridRow() {
@@ -70,6 +67,25 @@ function renderGridRow() {
 }
 
 jQuery(document).ready(function($) {
+  
+  bannerIcon = $("#banner-icon-dialog").dialog({
+    dialogClass   : 'wp-dialog',
+    autoOpen: false,
+    resizable: true,
+    height: 600,
+    width: 400,
+    modal: true,
+    buttons: {
+      "Render": function () {
+        $(this).dialog("close");
+      },
+      Cancel: function () {
+        $(this).dialog("close");
+        return false;
+      }
+    }
+  });
+  
   gridLayout = $("#grid-row-dialog").dialog({
     dialogClass   : 'wp-dialog',
     autoOpen: false,
