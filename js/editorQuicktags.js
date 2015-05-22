@@ -2,6 +2,7 @@
  * dfb252dd0d1b193584ec3d6a0b56f9e72021f216
  * 
  */
+var gridLayout;
 
 function generateBannerIcon(e, c, ed) {
   var t = this;
@@ -18,13 +19,13 @@ function generateBannerIcon(e, c, ed) {
     return;
   }
   t.tagStart = '<div class="row">\n' 
-    +  '  <div class="col-md-2">\n'
-    +  '    <img class="img-responsive" src="' + iconUrl + '" alt="' + altText +'" />\n'
-    + '   </div>\n'
-    + '   <div class="col-md-10">\n'
-    + '     <div class="row"><p>&nbsp;</p></div>\n'
-    + '     <div class="row"> <p class="lead">' + leader + '</p> </div>\n'
-    + '     <div class="row"><p>&nbsp;</p></div>\n'
+    + '  <div class="col-md-2">\n'
+    + '   <img class="img-responsive" src="' + iconUrl + '" alt="' + altText +'" />\n'
+    + '  </div>\n'
+    + '  <div class="col-md-10">\n'
+    + '    <div class="row"><p>&nbsp;</p></div>\n'
+    + '    <div class="row"> <p class="lead">' + leader + '</p> </div>\n'
+    + '    <div class="row"><p>&nbsp;</p></div>\n'
     + '  </div>\n'
     + '</div>\n'
     + '<p>&nbsp;</p>';
@@ -35,8 +36,7 @@ function generateBannerIcon(e, c, ed) {
 }
 
 function generateGridRow(e, c, ed) {
-  var t = this;
-  var gridColumns = getGridColumns();
+  gridLayout.dialog("open");
 }
 
 function getGridColumns() {
@@ -61,3 +61,24 @@ function getGridColumns() {
   }
   return columnWidths;
 }
+
+jQuery(document).ready(function($) {
+  gridLayout = $("#confirm-dialog").dialog({
+    dialogClass   : 'wp-dialog',
+    autoOpen: false,
+    resizable: true,
+    height: 800,
+    width: 400,
+    modal: true,
+    buttons: {
+      "Render": function () {
+        $(this).dialog("close");
+      },
+      Cancel: function () {
+        $(this).dialog("close");
+        return false;
+      }
+    }
+});
+
+});
