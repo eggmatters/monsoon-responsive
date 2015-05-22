@@ -6,9 +6,24 @@
  * and open the template in the editor.
  */
 ?>
-<div id="confirm-dialog" title="Confirm Deletion">
-  <div class="" id="delete-form-errors"></div>
-  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
-    <span id="alert-text">This user will be permanently deleted and cannot be recovered. Are you sure?</span>
+<style>
+
+</style>
+<div id="grid-row-dialog" title="Add Grid Row">
+  <p>
+    Use this tool to set a grid layout for your content. 
   </p>
+  <p>
+    A grid row consists of up to 12 columns. While not necessary, 
+    you will want to compartmentalize your grid so that the column 
+    counts add up to 12. 
+  </p>
+  <hr>
+  <div id="grid-row-errors"></div>
+  <form id="layout-form">
+    <label for="num-cols">Number of columns</label>      
+    <input id="num-cols" class="" value="">
+    <button id="set-cols" class="button button-primary">Set</button>
+  </form>
+  
 </div>

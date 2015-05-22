@@ -3,6 +3,7 @@
  * 
  */
 var gridLayout;
+var argsContainer = {};
 
 function generateBannerIcon(e, c, ed) {
   var t = this;
@@ -18,7 +19,7 @@ function generateBannerIcon(e, c, ed) {
   if (leader === null) {
     return;
   }
-  t.tagStart = '<div class="row">\n' 
+  t.tagStart = '\n<div class="row">\n' 
     + '  <div class="col-md-2">\n'
     + '   <img class="img-responsive" src="' + iconUrl + '" alt="' + altText +'" />\n'
     + '  </div>\n'
@@ -36,49 +37,84 @@ function generateBannerIcon(e, c, ed) {
 }
 
 function generateGridRow(e, c, ed) {
+  argsContainer = {
+    e: e,
+    c: c,
+    ed: ed,
+    t: this
+  };
   gridLayout.dialog("open");
 }
 
-function getGridColumns() {
-  var colPrompt = prompt("Number of columns", 3);
-  if (colPrompt === null) {
-    return;
+function renderGridRow() {
+  if (typeof $ === 'undefined') {
+    $ = jQuery;
   }
-  var numCols = parseInt(colPrompt);
-  if (!numCols) {
-    return;
+  var t = argsContainer.t;
+  var numcols = parseInt($('#num-cols').val());
+  var colWidthsElements = $('.col-widths');
+  var colWidthsArray = []
+  $.each(colWidthsElements, function(idx, value) {
+    colWidthsArray.push(value.value);
+  });
+  t.tagStart = '\n<div class="row">\n';
+  for (var i = 0; i < numcols; i++) {
+    var colnum = i + 1;
+    t.tagStart += '  <div class="col-md-' + colWidthsArray[i] + '">\n';
+    t.tagStart += '    <!-- Place the contents for column ' + colnum + ' here -->\n';
+    t.tagStart += '  </div>\n'
   }
-  var columnWidths = [];
-  for (var i = 1; i <= numCols; i++) {
-    var colPromptWidth = prompt("Enter the width of the column (Between 1 & 12)");
-    if (colPromptWidth === null) { return; }
-    var colWidth = parseInt(colPromptWidth);
-    if (!colWidth) {
-      alert("You must enter a numeric value");
-      return;
-    }
-    columnWidths.push(colWidth);
-  }
-  return columnWidths;
+  t.tagStart += '</div>';
+  t.tagEnd = '';
+  QTags.TagButton.prototype.callback.call(t, argsContainer.e, argsContainer.c, argsContainer.ed);
 }
 
 jQuery(document).ready(function($) {
-  gridLayout = $("#confirm-dialog").dialog({
+  gridLayout = $("#grid-row-dialog").dialog({
     dialogClass   : 'wp-dialog',
     autoOpen: false,
     resizable: true,
-    height: 800,
+    height: 600,
     width: 400,
     modal: true,
     buttons: {
       "Render": function () {
+        renderGridRow();
+        clearGridLayout();
         $(this).dialog("close");
       },
       Cancel: function () {
+        clearGridLayout();
         $(this).dialog("close");
         return false;
       }
     }
-});
-
+  });
+  
+  $('#set-cols').on("click", function(e) {
+    e.preventDefault();
+    $('#grid-row-errors').empty();
+    setGridLayoutColumns()
+  });
+  
+  function setGridLayoutColumns() {
+    var numcols = parseInt($('#num-cols').val());
+    if (!numcols || numcols > 12) {
+      $('#grid-row-errors').html('<p style="color: red;">Invalid entry</p>');
+      return false;
+    }
+    var suggestedWidth = parseInt(12 / numcols);
+    for(var i = 1; i <= numcols; i++) {
+      var col_id = 'col-width-' + i;
+      var html='<p class="col-widths-inputs"><label for="' + col_id + '">Width for column ' + i + ':&nbsp;&nbsp;</label>'
+      html += '<input id="' + col_id + '" class="col-widths" value="' + suggestedWidth + '"></p>'
+      $('#layout-form').append(html);
+    }
+    return true;
+  }
+  
+  function clearGridLayout() {
+    $('#num-cols').val("");
+    $('.col-widths-inputs').remove();
+  }
 });
