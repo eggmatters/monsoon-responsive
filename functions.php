@@ -82,13 +82,6 @@ function get_banner_search() {
   require_once 'views/banner_search.php';
 }
 
-function parse_content($the_content) {
-  $themeControls = new ThemeControls($the_content);
-  $matches = $themeControls->getControls();
-  $themeControls->setControlContent();
-  echo $themeControls->renderControlContent();
-}
-
 function get_category_posts($cat_slug) {
   $args = array( 'category_name' => $cat_slug);
   $posts = get_posts($args);
