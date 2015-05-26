@@ -1,6 +1,8 @@
 <?php
 /*
 Template Name: Category
+
+Used for: Training Courses page
 */
 $category = get_category(get_query_var('cat'));
 $categoryPosts = get_category_posts($category->slug);
@@ -8,7 +10,7 @@ $categoryPosts = get_category_posts($category->slug);
 <?php get_header(); ?>
 <div class="container-fluid">
   <div class="row">
-    <div class="jumbotron">
+    <div class="jumbotron dkpurplebg">
       <div class="container">
         <h1><?php echo $category->name ?></h1>
       </div>

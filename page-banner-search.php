@@ -2,7 +2,7 @@
 /*
 Template Name: Page with Banner Search
 
-Used for Help Resource page
+Used for Help/Support Resources page
 */
 ?>
 
