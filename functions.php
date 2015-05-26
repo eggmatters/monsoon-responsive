@@ -5,7 +5,7 @@ require_once 'classes/ThemeControls.php';
 
 
 function wpbootstrap_scripts_with_jquery() {
-	wp_register_script( 'bootsrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
+	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
 	wp_enqueue_script( 'bootstrap-js' );
   
 }
