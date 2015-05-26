@@ -60,8 +60,9 @@ function mr_register_sidebars() {
 		'after_title' => '</h3>',
   ));
 }
-
 add_action('widgets_init', 'mr_register_sidebars');
+
+ThemeControls::init();
 
 function register_mr_nav_menu_widget() {
   register_widget('MR_Nav_Menu_Widget');
