@@ -42,7 +42,7 @@ function renderBannerIcon() {
   var t = argsContainer.t
   t.tagStart = '\n<div class="row">\n' 
     + '  <div class="col-md-2">\n'
-    + '   <img class="img-responsive" src="' + $('#iconUrl').val() + '" alt="' + $('#icon-alt-text').val() +'" />\n'
+    + '   <img class="img-responsive" src="' + $('#icon-url').val() + '" alt="' + $('#icon-alt-text').val() +'" />\n'
     + '  </div>\n'
     + '  <div class="col-md-10">\n'
     + '    <div class="row"><p>&nbsp;</p></div>\n'
