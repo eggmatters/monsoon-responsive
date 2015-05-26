@@ -25,14 +25,28 @@ function generateGridRow(e, c, ed) {
   gridLayout.dialog("open");
 }
 
+function stripShortCodes(e, c, ed) {
+  t = this;
+  theContent = c.value;
+  newContent = theContent.replace(/\[(.*?)\]/g, '');
+  c.value = newContent;
+  t.tagStart = '';
+  t.tagEnd = '';
+  QTags.TagButton.prototype.callback.call(t, e, c, ed);
+}
+
 function renderBannerIcon() {
+  if (typeof $ === 'undefined') {
+    $ = jQuery;
+  }
+  var t = argsContainer.t
   t.tagStart = '\n<div class="row">\n' 
     + '  <div class="col-md-2">\n'
-    + '   <img class="img-responsive" src="' + iconUrl + '" alt="' + altText +'" />\n'
+    + '   <img class="img-responsive" src="' + $('#iconUrl').val() + '" alt="' + $('#icon-alt-text').val() +'" />\n'
     + '  </div>\n'
     + '  <div class="col-md-10">\n'
     + '    <div class="row"><p>&nbsp;</p></div>\n'
-    + '    <div class="row"> <p class="lead">' + leader + '</p> </div>\n'
+    + '    <div class="row"> <p class="lead">' + $('#icon-banner-text').val() + '</p> </div>\n'
     + '    <div class="row"><p>&nbsp;</p></div>\n'
     + '  </div>\n'
     + '</div>\n'
@@ -40,7 +54,7 @@ function renderBannerIcon() {
   t.tagEnd = '';
   
   // now we've defined all the tagStart, tagEnd and openTags we process it all to the active window
-  QTags.TagButton.prototype.callback.call(t, e, c, ed);
+  QTags.TagButton.prototype.callback.call(t, argsContainer.e, argsContainer.c, argsContainer.ed);
 }
 
 function renderGridRow() {
@@ -77,6 +91,7 @@ jQuery(document).ready(function($) {
     modal: true,
     buttons: {
       "Render": function () {
+        renderBannerIcon()
         $(this).dialog("close");
       },
       Cancel: function () {

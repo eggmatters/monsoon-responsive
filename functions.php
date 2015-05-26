@@ -133,9 +133,11 @@ function appthemes_add_quicktags() {
   if (wp_script_is('quicktags')){
 ?>
     <script type="text/javascript">
-    QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
-    QTags.addButton( 'container', 'container', '<div class="container">', '</div>', 'Container tag');
-    QTags.addButton( 'bootstrap-grid', 'bootstrap-grid', generateGridRow);
+      QTags.addButton('banner-search', 'banner-search', '[banner-search]', '', "Banner Search")
+      QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
+      QTags.addButton( 'container', 'container', '<div class="container">', '</div>', 'Container tag');
+      QTags.addButton( 'bootstrap-grid', 'bootstrap-grid', generateGridRow);
+      QTags.addButton( 'strip-shortcodes', 'strip-shortcodes', stripShortCodes);
     </script>
 <?php
     
