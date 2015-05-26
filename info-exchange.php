@@ -25,6 +25,7 @@ get_header();
     </div>
     <div class="col-md-4">
       <?php dynamic_sidebar('Secondary Sidebar'); ?>
+      <p>&nbsp;</p>
     </div>
   </div>
 </div>

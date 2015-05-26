@@ -24,6 +24,7 @@ Template Name: Post
     </div>
     <div class="col-md-4">
       <?php get_sidebar(); ?>
+      <p>&nbsp;</p>
     </div>
   </div>
 </div>

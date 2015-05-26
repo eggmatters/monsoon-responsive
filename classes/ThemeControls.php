@@ -60,3 +60,14 @@ class ThemeControls {
     return $postsList;
   }
 }
+/*
+ * return '<form role="search" method="get" id="searchform" action=" ' . $action . '"> ' .
+            '  <div class="input-group"> ' .
+            '    <input type="search" class="form-control input-lg" name="s" id="s" placeholder="Search" value=""> ' .
+            '    <span class="input-group-btn">' .
+            '      <button type="submit" id="searchsubmit" class="btn btn-lg">Go</button> ' .
+            '    </span>' .
+            '  </div> ' .
+            '</form> ' .
+            '<p>&nbsp;</p> ';
+ */
