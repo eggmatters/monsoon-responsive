@@ -1,6 +1,8 @@
 <?php
 /*
 Template Name: Home Page
+
+5/26 - not being used
 */
 ?>
 

@@ -1,6 +1,7 @@
-<p>&nbsp;</p> 
-<div class="container-fluid">
-  <div class="row">
+
+<div class="jumbotron dkpurplebg" style="margin-bottom: 0px;">
+  <div class="container-fluid">
+   <div class="row">
     <div class="col-lg-2">
       <label class="pull-right">Subscribe to Info Exchange</label>
     </div>
@@ -16,10 +17,6 @@
     </div>
     <div class="col-lg-2"></div>
   </div>
-</div> <!-- /container -->
-<p></p>
-<div class="jumbotron dkpurplebg" style="margin-bottom: 0px;">
-  <div class="container-fluid">
     <div class="row">
       <div class="container">
         <div class="col-md-4 text-center">

@@ -8,6 +8,13 @@
 	background-color: #62557c;
 }
 
+
+ /* Jumbotron styling */
+
 .jumbotron {
 	color: #fff;
+}
+
+.noBottomMargin {
+	margin-bottom: 0px;
 }
