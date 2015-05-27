@@ -4,9 +4,11 @@
 	background-color: #3f2d47;
 }
 
-.ltpurplebg {
+.ltpurplebg, .btnTextWhite:hover {
 	background-color: #62557c;
 }
+
+
 
 
  /* Jumbotron styling */
@@ -24,7 +26,7 @@
 
 /* Buttons */
 
-.btnTextWhite {
+.btnTextWhite, .btnTextWhite:hover {
 	color: #fff;
 }
 
