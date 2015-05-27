@@ -8,7 +8,7 @@ Template Name: Home Page
 
 <?php get_header(); ?>
 <div class="container-fluid">
-  <div class="jumbotron">
+  <div class="jumbotron dkpurplebg">
     <div class="row">
       <div class="container">
         <?php
