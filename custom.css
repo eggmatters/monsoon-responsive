@@ -4,9 +4,11 @@
 	background-color: #3f2d47;
 }
 
-.ltpurplebg {
+.ltpurplebg, .btnTextWhite:hover {
 	background-color: #62557c;
 }
+
+
 
 
  /* Jumbotron styling */
@@ -15,6 +17,40 @@
 	color: #fff;
 }
 
+/* Margins and padding */
+
 .noBottomMargin {
 	margin-bottom: 0px;
+}
+
+
+/* Buttons */
+
+.btnTextWhite, .btnTextWhite:hover {
+	color: #fff;
+}
+
+/* Typography */
+
+.lgText {
+	font-size: 1.5em;
+}
+
+.medLgText {
+	font-size: 1.25em;
+}
+
+.medText {
+	font-size: 1.17em;
+}
+
+
+/* IDs */
+
+#infoExch {
+	border: 1px solid;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding-top: 1%;
 }
