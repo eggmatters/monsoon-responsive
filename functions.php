@@ -60,8 +60,9 @@ function mr_register_sidebars() {
 		'after_title' => '</h3>',
   ));
 }
-
 add_action('widgets_init', 'mr_register_sidebars');
+
+ThemeControls::init();
 
 function register_mr_nav_menu_widget() {
   register_widget('MR_Nav_Menu_Widget');
@@ -80,13 +81,6 @@ add_action( 'widgets_init', 'register_mr_category_filter_widget' );
 
 function get_banner_search() {
   require_once 'views/banner_search.php';
-}
-
-function parse_content($the_content) {
-  $themeControls = new ThemeControls($the_content);
-  $matches = $themeControls->getControls();
-  $themeControls->setControlContent();
-  echo $themeControls->renderControlContent();
 }
 
 function get_category_posts($cat_slug) {
@@ -139,9 +133,11 @@ function appthemes_add_quicktags() {
   if (wp_script_is('quicktags')){
 ?>
     <script type="text/javascript">
-    QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
-    QTags.addButton( 'container', 'container', '<div class="container">', '</div>', 'Container tag');
-    QTags.addButton( 'bootstrap-grid', 'bootstrap-grid', generateGridRow);
+      QTags.addButton('banner-search', 'banner-search', '[banner-search]', '', "Banner Search")
+      QTags.addButton( 'icon-banner', 'icon-banner', generateBannerIcon);
+      QTags.addButton( 'container', 'container', '<div class="container">', '</div>', 'Container tag');
+      QTags.addButton( 'bootstrap-grid', 'bootstrap-grid', generateGridRow);
+      QTags.addButton( 'strip-shortcodes', 'strip-shortcodes', stripShortCodes);
     </script>
 <?php
     

@@ -20,7 +20,7 @@ Used for Our Services page
 </div>
 
 <div class="container">
-  <?php parse_content(get_the_content()); ?>
+  <?php the_content(); ?>
 </div>
 
 <?php endwhile; else: ?>

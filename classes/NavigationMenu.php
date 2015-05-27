@@ -50,6 +50,11 @@ class NavigationMenu {
         $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
       }
     }
+    if (is_user_logged_in()) {
+      $rs .= '<li><a href="'. wp_logout_url() .'">Sign Out</a></li>';
+    } else {
+      $rs .= '<li><a href="'. wp_login_url(get_permalink()) .'">Sign In</a></li>';
+    }
     return $rs;
   }
   
