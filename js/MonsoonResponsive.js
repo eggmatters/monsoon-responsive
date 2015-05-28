@@ -38,7 +38,7 @@ function feedbackAjaxRequest($) {
   })
   .complete( function() { 
     $('.feedback-modal-message').append('<p style="color:blue">Thank you, your input is greatly appreciated!</p>');
-    setTimeout( "$('#mr-feedback').modal('hide')", 3000)
+    setTimeout( "jQuery('#mr-feedback').modal('hide')", 3000)
   });
 }
 
@@ -71,11 +71,11 @@ function infoExchangeSignupAjaxRequest($) {
 
   })
   .complete( function() { 
-    $('#info-exchange-signup').val("");
-    $('#info-exchange-signup').prop('placeholder', 'Thank you!');
-    $('#ix-signup').addClass('diabled');
+    $('#info-exchange-signup-email').val("");
+    $('#info-exchange-signup-email').prop('placeholder', 'Thank you!');
+    $('#ix-signup').addClass('disabled');
     $('.ix-signup-modal-message').append('<p style="color:blue">Thank you!</p>');
-    setTimeout( "$('#mr-feedback').modal('hide')", 3000);
+    setTimeout( "jQuery('#mr-ix-signup').modal('hide')", 3000);
   });
 }
 
