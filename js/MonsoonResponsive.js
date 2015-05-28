@@ -1,11 +1,17 @@
 
 jQuery(document).ready(function($) {
+  dismissFeedbackForm($);
   //global event listeners
   $('#feedback-form').on("submit", function(e) {
     e.preventDefault();
+    $('.feedback-modal-message').empty();
     feedbackAjaxRequest(e);
   });
+  $('#mr-feedback').on('hide.bs.modal', function(e) {
+    dismissFeedbackForm($);
+  })
 });
+
 
 function feedbackAjaxRequest(e) {
   if (typeof $ === 'undefined') {
@@ -18,12 +24,19 @@ function feedbackAjaxRequest(e) {
     data: $('#feedback-form').serializeArray(),
   })
   .success(function (xhrResponse) {
-    alert("success");
+    
   })
   .fail(function (jqXHR, status, errorThrown) {
-    alert("failed");
+
   })
   .complete( function() { 
-    alert("complete");
+    $('.feedback-modal-message').append('<p style="color:blue">Thank you, your input is greatly appreciated!</p>');
+    setTimeout( "$('#mr-feedback').modal('hide')", 3000)
   });
+}
+
+function dismissFeedbackForm($) {
+  $('#helpful-options-yes').prop('checked', true);
+  $('#feedback-content').val("");
+  $('.feedback-modal-message').empty();
 }

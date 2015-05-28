@@ -1,4 +1,5 @@
 <?php
+$action = get_mr_theme_root_uri() . '/ajax.php';
 ?>
 <div class="modal fade" id="mr-ix-signup">
   <div class="modal-dialog">

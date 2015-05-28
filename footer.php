@@ -1,6 +1,5 @@
 <?php
-//$fb=get_template_directory() . '/images/icon-footer-facebook.png';
-$fb = get_theme_root_uri() . '/monsoon-responsive/images/icon-footer-facebook.png';
+$fb = get_mr_theme_root_uri() . '/images/icon-footer-facebook.png';
 
 ?>
 
@@ -45,7 +44,7 @@ $fb = get_theme_root_uri() . '/monsoon-responsive/images/icon-footer-facebook.pn
 	<div class="container">
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-2"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
+<!--        <div class="col-md-2"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>-->
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
