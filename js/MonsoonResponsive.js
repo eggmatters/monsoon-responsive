@@ -88,5 +88,5 @@ function dismissFeedbackForm($) {
 function dismissIXSignupForm($) {
   $('.ix-signup-modal-message').empty();
   $('.ix-errors').remove();
-  $('#info-exchange-signup-form').clearFields();
+  $('#info-exchange-signup-form')[0].reset();
 }
