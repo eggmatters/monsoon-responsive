@@ -13,9 +13,9 @@ $fb = get_mr_theme_root_uri() . '/images/icon-footer-facebook.png';
 				<div class="form-group">
 					<label for="info-exchange-signup" class="control-label col-lg-3 medLgText">Subscribe to Info Exchange</label>
 					<div class="input-group col-lg-8">
-						<input type="text" id="info-exchange-signup" name="info-exchange-signup" class="form-control" placeholder="you@email.com">
+						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
-		            <button class="btn btn-default dkpurplebg textWhite textWhite:hover" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>				
+		            <button class="btn btn-default dkpurplebg textWhite textWhite:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>				
 					</div>
 				</div>			
 			</form>	    	

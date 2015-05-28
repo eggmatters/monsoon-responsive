@@ -9,7 +9,14 @@ jQuery(document).ready(function($) {
   });
   $('#mr-feedback').on('hide.bs.modal', function(e) {
     dismissFeedbackForm($);
-  })
+  });
+  $('#ix-signup').on('click', function() {
+    $('#ix-email').val($('#info-exchange-signup-email').val());
+  });
+  $('#ix-subscribe').on('click', function(e) {
+    
+  });
+  
 });
 
 
@@ -35,8 +42,21 @@ function feedbackAjaxRequest(e) {
   });
 }
 
+function infoExchangeSignupAjaxRequest() {
+  if (typeof $ === 'undefined') {
+    $ = jQuery;
+  }
+  
+}
+
 function dismissFeedbackForm($) {
   $('#helpful-options-yes').prop('checked', true);
   $('#feedback-content').val("");
   $('.feedback-modal-message').empty();
+}
+
+function dismissIXSignupForm($) {
+  $('#info-exchange-signup').val("");
+  $('#info-exchange-signup').prop('placeholder', 'Thank you!');
+  $('#ix-signup').addClass('diabled');
 }

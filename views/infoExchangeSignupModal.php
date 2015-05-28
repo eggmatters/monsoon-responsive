@@ -12,6 +12,7 @@ $action = get_mr_theme_root_uri() . '/ajax.php';
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
+            <div class="ix-signup-modal-message"></div>
             <div class="col-md-12">
               <div class="form-group">
                 <input type="text" name="ix-firstname" id="ix-firstname" value="" placeholder="First Name">
@@ -28,7 +29,7 @@ $action = get_mr_theme_root_uri() . '/ajax.php';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" id="ix-subscribe">Subscribe</button>
       </div>
       </form>
     </div><!-- /.modal-content -->
