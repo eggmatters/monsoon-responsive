@@ -7,7 +7,8 @@ require_once 'classes/ThemeControls.php';
 function wpbootstrap_scripts_with_jquery() {
 	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
 	wp_enqueue_script( 'bootstrap-js' );
-  
+  wp_register_script( 'monsoon-responsive', get_template_directory_uri() . '/js/MonsoonResponsive.js', array( 'jquery', 'bootstrap-js'));
+  wp_enqueue_script( 'monsoon-responsive');
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
@@ -147,4 +148,8 @@ add_action( 'admin_print_footer_scripts', 'appthemes_add_quicktags' );
 
 function getGridDialog() {
   require get_template_directory() . '/views/adminGridLayoutEditor.php';
+}
+
+function get_mr_theme_root_uri() {
+  return get_theme_root_uri() . '/monsoon-responsive';
 }
