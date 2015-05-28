@@ -4,7 +4,7 @@
 	background-color: #3f2d47;
 }
 
-.ltpurplebg, .btnTextWhite:hover {
+.ltpurplebg, .textWhite:hover {
 	background-color: #62557c;
 }
 
@@ -23,14 +23,21 @@
 	margin-bottom: 0px;
 }
 
+.topMargin60 {
+	margin-top: 60px;
+}
 
-/* Buttons */
 
-.btnTextWhite, .btnTextWhite:hover {
+
+/* Typography */
+
+.textWhite, .textWhite:hover {
 	color: #fff;
 }
 
-/* Typography */
+.textBlack {
+	color: #000;
+}
 
 .lgText {
 	font-size: 1.5em;
@@ -54,3 +61,30 @@
 	border-radius: 15px;
 	padding-top: 1%;
 }
+
+#bubble {
+	position: relative;
+	width: 135px;
+	height: 45px;
+	padding: 0px;
+	background: #FFFFFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: #62557c solid 2px;
+}
+
+#bubble:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 22px 12px 0;
+	border-color: #FFFFFF transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	margin-left: -12px;
+	bottom: -22px;
+	left: 65%;
+}
+
