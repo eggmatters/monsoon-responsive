@@ -12,7 +12,7 @@ switch($postMethod) {
 }
 
 function feedbackForm() {
-  $to = "clutz@monsooncommerce.com";
+  $to = "meggers@monsooncommerce.com, clutz@monsooncommerce.com";
   $from = "From: noreply@monsoondev.io\r\n";
   $subject = "New Feedback Submited at Support Center";
   $message = "Feedback Submission:\n"
