@@ -1,5 +1,6 @@
 <?php
-$fb=get_template_directory() . '/images/icon-footer-facebook.png';
+//$fb=get_template_directory() . '/images/icon-footer-facebook.png';
+$fb = get_theme_root_uri() . '/monsoon-responsive/images/icon-footer-facebook.png';
 
 ?>
 
