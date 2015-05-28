@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   $('#feedback-form').on("submit", function(e) {
     e.preventDefault();
     $('.feedback-modal-message').empty();
-    feedbackAjaxRequest(e);
+    feedbackAjaxRequest($);
   });
   $('#mr-feedback').on('hide.bs.modal', function(e) {
     dismissFeedbackForm($);
@@ -13,17 +13,17 @@ jQuery(document).ready(function($) {
   $('#ix-signup').on('click', function() {
     $('#ix-email').val($('#info-exchange-signup-email').val());
   });
-  $('#ix-subscribe').on('click', function(e) {
-    
+  $('#ix-subscribe').on('click', function() {
+    infoExchangeSignupAjaxRequest($);
+  });
+  $('#mr-ix-signup').on('hide.bs.modal', function(e) {
+    dismissIXSignupForm($);
   });
   
 });
 
 
-function feedbackAjaxRequest(e) {
-  if (typeof $ === 'undefined') {
-    $ = jQuery;
-  }
+function feedbackAjaxRequest($) {
   $.ajax({
     timeout: 60000,
     type: "POST",
@@ -42,11 +42,41 @@ function feedbackAjaxRequest(e) {
   });
 }
 
-function infoExchangeSignupAjaxRequest() {
-  if (typeof $ === 'undefined') {
-    $ = jQuery;
+function infoExchangeSignupAjaxRequest($) {
+  var valid = true;
+  if ($('#ix-firstname').val().length === 0) {
+    $('#ix-firstname').before('<span class="ix-errors"><p class="text-danger">You must provide a First Name</p></span>');
+    valid = false;
   }
+  if ($('#ix-lastname').val().length === 0) {
+    $('#ix-lastname').before('<span class="ix-errors"><p class="text-danger">You must provide a Last Name</p></span>');
+    valid = false;
+  }
+  if ($('#ix-email').val().length === 0) {
+    $('#ix-lastname').before('<span class="ix-errors"><p class="text-danger">You must provide an email</p></span>');
+    valid = false;
+  }
+  if (!valid) { return; }
   
+  $.ajax({
+    timeout: 60000,
+    type: "POST",
+    url: $('#info-exchange-signup-form').prop('action'),
+    data: $('#info-exchange-signup-form').serializeArray(),
+  })
+  .success(function (xhrResponse) {
+    
+  })
+  .fail(function (jqXHR, status, errorThrown) {
+
+  })
+  .complete( function() { 
+    $('#info-exchange-signup').val("");
+    $('#info-exchange-signup').prop('placeholder', 'Thank you!');
+    $('#ix-signup').addClass('diabled');
+    $('.ix-signup-modal-message').append('<p style="color:blue">Thank you!</p>');
+    setTimeout( "$('#mr-feedback').modal('hide')", 3000);
+  });
 }
 
 function dismissFeedbackForm($) {
@@ -56,7 +86,7 @@ function dismissFeedbackForm($) {
 }
 
 function dismissIXSignupForm($) {
-  $('#info-exchange-signup').val("");
-  $('#info-exchange-signup').prop('placeholder', 'Thank you!');
-  $('#ix-signup').addClass('diabled');
+  $('.ix-signup-modal-message').empty();
+  $('.ix-errors').remove();
+  $('#info-exchange-signup-form').clearFields();
 }

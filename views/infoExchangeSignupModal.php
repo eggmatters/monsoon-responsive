@@ -4,7 +4,7 @@ $action = get_mr_theme_root_uri() . '/ajax.php';
 <div class="modal fade" id="mr-ix-signup">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form>
+      <form name="info-exchange-signup-form" id="info-exchange-signup-form" action="<?php echo $action; ?>" method="post">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Signup to Info Exchange</h4>
@@ -23,6 +23,7 @@ $action = get_mr_theme_root_uri() . '/ajax.php';
               <div class="form-group">
                 <input type="text" name="ix-email" id="ix-email" value="" placeholder="Email Address">
               </div>
+              <input type="hidden" name="post_method" id="post-method" value="info-exchange-signup-form">
             </div>
           </div>
         </div>
