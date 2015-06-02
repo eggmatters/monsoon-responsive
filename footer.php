@@ -1,59 +1,58 @@
 <?php
 $fb = get_mr_theme_root_uri() . '/images/icon-footer-facebook.png';
-
+$tw = get_mr_theme_root_uri() . '/images/icon-footer-twitter.png';
+$yt = get_mr_theme_root_uri() . '/images/icon-footer-youtube.png';
+$li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 ?>
 
 
-<div class="jumbotron dkpurplebg" style="margin-bottom: 0px;">
+<div class="jumbotron dkpurplebg noBottomMargin">
   <div class="container-fluid">
   	<div class="container" id="infoExch">
 	   <div class="row">
 
 			<form class="form-horizontal">
 				<div class="form-group">
-					<label for="info-exchange-signup" class="control-label col-lg-3 medLgText">Subscribe to Info Exchange</label>
-					<div class="input-group col-lg-8">
+					<label for="info-exchange-signup" class="control-label col-xs-5 col-md-4 medLgText">Subscribe to Info Exchange</label>
+					<div class="input-group col-xs-11 col-sm-5 col-md-7">
 						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
-		            <button class="btn btn-default dkpurplebg textWhite textWhite:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>				
+		            <button class="btn btn-default dkpurplebg textWhite textWhite:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
+		            </span>				
 					</div>
 				</div>			
 			</form>	    	
 	    		   
 	  </div><!-- end .row -->
   </div><!-- end .container #infoExch -->
-
-    <div class="row topMargin60">
-      <div class="container"> 
-        <div class="col-md-3"></div>
-        <div class="col-md-2 text-right"><a href="#" class="textWhite textWhite:hover">Pro Webhelp</a></div>
-        <div class="col-md-2 text-center"><a href="#" class="textWhite textWhite:hover">SEKB</a></div>
-        <div class="col-md-2 text-left"><a href="#" class="textWhite textWhite:hover">Solution Central</a></div>
-        <div class="col-md-3"></div>
-      </div>
-    </div>
-    <p>&nbsp;</p>
-    <div class="row">
-      <div class="container">
-        <div class="col-md-12 text-center">
-          <button type="button" class="btn textBlack" id="bubble" data-toggle="modal" data-target="#mr-feedback">Feedback</button>
-        </div>
-      </div>
-    </div>
-
-	<div class="container">
+	<div class="container"> 
       <div class="row">
-        <div class="col-md-2"></div>
-<!--        <div class="col-md-2"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>-->
-        <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
+      
+        <div class="col-md-3"></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">Pro Webhelp</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">SEKB</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">Solution Central</a></div>
+        <div class="col-md-3"></div>
       </div>
+    </div>
+    <div class="container">
+	    <div class="row">
+	        <div class="col-md-12 text-center topMargin60">
+	          <button type="button" class="btn textBlack" id="bubble" data-toggle="modal" data-target="#mr-feedback">Feedback</button>
+	        </div>
+	    </div>
+	    <div class="row topMargin60">
+		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.twitter.com/monsooncommerce"><img src="<?php echo $tw; ?>" alt="twitter"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.youtube.com/user/MonsoonCommerce"><img src="<?php echo $yt; ?>" alt="youtube"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.linkedin.com/company/monsoon-commerce"><img src="<?php echo $li; ?>" alt="linkedin"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
+	    </div>
     </div>    
     
     <div class="container">
-      <div class="row">
+      <div class="row topMargin40">
         <div class="col-md-4"></div>
         <div class="col-md-4 text-center">
           ©2015 All rights reserved
@@ -61,8 +60,9 @@ $fb = get_mr_theme_root_uri() . '/images/icon-footer-facebook.png';
         <div class="col-md-4"></div>
       </div>
     </div>
-  </div>
-</div> <!-- /container -->
+    
+  </div> <!-- /container-fluid -->
+</div> <!-- /jumbotron -->
 <?php wp_footer(); ?>
 </body>
 </html>

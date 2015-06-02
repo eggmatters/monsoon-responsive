@@ -27,6 +27,14 @@
 	margin-top: 60px;
 }
 
+.topMargin40 {
+	margin-top: 40px;
+}
+
+.padTop5 {
+	padding-top: 5px;
+}
+
 
 
 /* Typography */
@@ -52,7 +60,7 @@
 }
 
 
-/* IDs */
+/* Footer */
 
 #infoExch {
 	border: 1px solid;
@@ -62,6 +70,7 @@
 	padding-top: 1%;
 }
 
+/* Feedback bubble in footer */
 #bubble {
 	position: relative;
 	width: 135px;
@@ -88,3 +97,8 @@
 	left: 65%;
 }
 
+/* media queries */
+
+
+    
+ 
