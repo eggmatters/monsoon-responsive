@@ -4,11 +4,9 @@
 	background-color: #3f2d47;
 }
 
-.ltpurplebg, .ltpurplebg:hover {
+.ltpurplebg {
 	background-color: #62557c;
 }
-
-
 
 
  /* Jumbotron styling */
@@ -35,11 +33,12 @@
 	padding-top: 5px;
 }
 
+/* Links */
 
 
 /* Typography */
 
-.textWhite, .textWhite:hover {
+.textWhite {
 	color: #fff;
 }
 
@@ -62,6 +61,7 @@
 
 /* Footer */
 
+/* Border around info exchange sign up */
 #infoExch {
 	border: 1px solid;
 	-webkit-border-radius: 15px;
@@ -69,6 +69,30 @@
 	border-radius: 15px;
 	padding-top: 1%;
 }
+
+/* Info Exch button */
+.ieBtn {
+	background-color: #3f2d47;
+	color: #fff;	
+}
+
+.ieBtn:hover {
+	background-color: #62557c;
+	color: #fff;
+}
+
+/* Links below Info Exch sign up */
+a.foot {
+	text-decoration: none;
+}
+
+a.foot:hover {
+	color: #ccc;
+}
+
+/* Feedback button */
+
+
 
 /* Feedback bubble in footer */
 #bubble {

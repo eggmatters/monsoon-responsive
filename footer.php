@@ -17,7 +17,7 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 					<div class="input-group col-xs-11 col-sm-5 col-md-7">
 						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
-		            <button class="btn btn-default dkpurplebg ltpurplebg:hover textWhite textWhite:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
+		            <button class="btn btn-default ieBtn ieBtn:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
 		            </span>				
 					</div>
 				</div>			
@@ -29,9 +29,9 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
       <div class="row">
       
         <div class="col-md-3"></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">Pro Webhelp</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">SEKB</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite textWhite:hover">Solution Central</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">Pro Webhelp</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">SEKB</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">Solution Central</a></div>
         <div class="col-md-3"></div>
       </div>
     </div>
