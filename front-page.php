@@ -9,7 +9,7 @@ Template Name: Home Page
   <div class="container-fluid">
 
     <div class="row">
-      <div class="container">
+      <div class="container text-center lgJumbotron">
         <?php
         $query = new WP_Query('category_name=home_header');
         if ($query->have_posts()) {

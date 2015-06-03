@@ -12,7 +12,7 @@ $categoryPosts = get_category_posts($category->slug);
   <div class="row">
     <div class="jumbotron dkpurplebg">
       <div class="container">
-        <h1><?php echo $category->name ?></h1>
+        <div class="text-center topMargin60 xlgText"><?php echo $category->name ?></div>
       </div>
     </div>
   </div>
