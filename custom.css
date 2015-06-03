@@ -21,6 +21,11 @@
 	margin-bottom: 0px;
 }
 
+.lgJumbotron {
+	margin-bottom: 80px;
+	margin-top: 80px;
+}
+
 .topMargin60 {
 	margin-top: 60px;
 }
@@ -38,12 +43,20 @@
 
 /* Typography */
 
+h1 {
+	font-size: 90%;
+}
+
 .textWhite {
 	color: #fff;
 }
 
 .textBlack {
 	color: #000;
+}
+
+.xlgText {
+	font-size: 300%;
 }
 
 .lgText {

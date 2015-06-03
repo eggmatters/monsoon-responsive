@@ -13,7 +13,7 @@ Used for Our Services page
   <div class="row">
     <div class="jumbotron dkpurplebg">
       <div class="container">
-        <h1><?php the_title(); ?></h1>
+        <div class="text-center topMargin60 xlgText"><?php the_title(); ?></div>
       </div>
     </div>
   </div>

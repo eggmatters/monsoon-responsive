@@ -2,7 +2,7 @@
 /*
 Template Name: Page with Banner Search
 
-Used for Help/Support Resources page
+Used for Help Library page
 */
 ?>
 
@@ -10,10 +10,10 @@ Used for Help/Support Resources page
   if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 ?>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row text-center">
     <div class="jumbotron dkpurplebg">
       <div class="container">
-        <h1><?php the_title(); ?></h1>
+        <div class="text-center topMargin60 xlgText"><?php the_title(); ?></div>
       </div>
     </div>
   </div>
