@@ -30,6 +30,13 @@ get_header();
   .map-container-3 {
     margin-top: 8%;
   }
+  .jumbofont {
+    color: #000;
+  }
+  .jumbofont > .container > lead {
+    font-size: 21px;
+    font-weight: 700;
+  }
 </style>
 <div class="container-fluid contact">
   <div class="row">
@@ -66,7 +73,7 @@ get_header();
         <address>
           1250 45th Street<br>
           Suite 100<br>
-          Emeryville, CA 94608
+          Emeryville, CA 94608<br>
           Phone: 510-594-4500
         </address>
       </div>
@@ -90,6 +97,11 @@ get_header();
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="jumbotron noBottomMargin topMargin60 jumbofont">
+  <div class="container">
+    <lead>Please tell us a it about yourself so we can connect you with the right person</lead>
   </div>
 </div>
 
