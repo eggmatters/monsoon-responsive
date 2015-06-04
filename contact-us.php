@@ -61,6 +61,21 @@ get_header();
     height: 9.375em;
     width: 97.5%;
   }
+  .btn-contact {
+    background: none repeat scroll 0 0 transparent;
+    border: 1px #3f2d47 solid;
+    margin-top: 2%;
+    box-shadow: none;
+    font-family: inherit;
+    padding: 8px 33px;
+    color: #3f2d47;
+    font-size: 18px;
+  }
+  .btn-contact:hover {
+    border: 2px #3f2d47 solid;
+    font-weight: bolder;
+    color: #3f2d47;
+  }
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen 
   and (min-device-width : 320px) 
@@ -194,9 +209,9 @@ get_header();
   </div>
 </div>
 <div class="jumbotron noBottomMargin topMargin60 jumbofont">
-  <div class="container">
+  <div class="container" id="cu-form-container">
     <lead>Please tell us a it about yourself so we can connect you with the right person</lead>
-    <form class="contact-form">
+    <form class="contact-form" id="cu-form" name="cu_form">
       <p>First Name <span class="required">*</span></p>
       <input id="cu-first-name" name="cu_first_name">
       <p>Last Name <span class="required">*</span></p>
@@ -231,7 +246,8 @@ get_header();
         <option value="Other">Other</option>
       </select>
       <p>How can we help?</p>
-      <textarea id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea>        
+      <textarea id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea> 
+      <button class="btn btn-contact" id="cu-submit">SUBMIT</button>
     </form>
   </div>
 </div>
