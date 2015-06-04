@@ -115,7 +115,7 @@ get_header();
       </select>      
       <p>How can we help?<span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-response-error"></div>
-      <textarea class="cu-controls" id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea> 
+      <textarea class="text-area cu-controls" id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea><br>
       <button class="btn btn-contact" id="cu-submit">SUBMIT</button>
     </form>
   </div>
