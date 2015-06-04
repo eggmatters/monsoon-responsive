@@ -6,156 +6,7 @@ Used for: Contacting Us
 */
 get_header();
 ?>
-<style>
-  .contact {
-    margin-top: 5%;
-  }
-  .contact-h1 {
-    font-size: 52px;
-  }
-  .contact-paragraph {
-    font-size: 22px;
-  }
-  .contact-h3 {
-    font-weight: bold;
-  }
-  .contact-address {
-    padding-top: 2%;
-    line-height: 1.9;
-    font-size: 18px;
-  }
-  .map-container-6 {
-    margin-top: 4%;
-  }
-  .map-size-6 {
-    width: 100%;
-    height: 200px;
-  }
-  .map-container-3 {
-    margin-top: 8%;
-  }
-  .jumbofont {
-    color: #000;
-  }
-  .jumbofont > .container > .lead {
-    font-size: 21px;
-    font-weight: 700;
-  }
-  .contact-form > input, select, textarea {
-    width: 47.5%;
-    color: #011924;
-    background-color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    letter-spacing: normal;
-    outline-style: none;
-    border: medium none;
-  }
-  .contact-form > p {
-    margin-top: 4%;
-  }
-  .required {
-    color: red;
-  }
-  .text-area {
-    height: 9.375em;
-    width: 97.5%;
-  }
-  .btn-contact {
-    background: none repeat scroll 0 0 transparent;
-    border: 1px #3f2d47 solid;
-    margin-top: 2%;
-    box-shadow: none;
-    font-family: inherit;
-    padding: 8px 33px;
-    color: #3f2d47;
-    font-size: 18px;
-  }
-  .btn-contact:hover {
-    background-color: #62557c;
-    color: #fff;
-  }
-  #cu-form-restore {
-    text-decoration: none;
-    color: #000;
-    text-align: center;
-    cursor: pointer;
-    
-  }
-  a#cu-form-restore :hover {
-    text-decoration: underline;
-  }
-  /* Smartphones (portrait and landscape) ----------- */
-  @media only screen 
-  and (min-device-width : 320px) 
-  and (max-device-width : 480px) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
 
-  /* Smartphones (landscape) ----------- */
-  @media only screen 
-  and (min-width : 321px) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
-
-  /* Smartphones (portrait) ----------- */
-  @media only screen 
-  and (max-width : 320px) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
-
-  /* iPads (portrait and landscape) ----------- */
-  @media only screen 
-  and (min-device-width : 768px) 
-  and (max-device-width : 1024px) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
-
-  /* iPads (landscape) ----------- */
-  @media only screen 
-  and (min-device-width : 768px) 
-  and (max-device-width : 1024px) 
-  and (orientation : landscape) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
-
-  /* iPads (portrait) ----------- */
-  @media only screen 
-  and (min-device-width : 768px) 
-  and (max-device-width : 1024px) 
-  and (orientation : portrait) {
-   .contact-form > input, select {
-      width: 100%;
-    }
-  }
-
-  /* iPhone 4 ----------- */
-  @media
-  only screen and (-webkit-min-device-pixel-ratio : 1.5),
-  only screen and (min-device-pixel-ratio : 1.5) {
-    .contact-form > input, select {
-      width: 100%;
-    }
-  }
-  @media only screen and (min-device-width: 981px) {
-    .contact-form > input, select {
-      width: 47.5%;
-    }
-  }
-
-  
-  
-</style>
 <div class="container-fluid contact">
   <div class="row">
     <p>&nbsp;</p> 
@@ -224,22 +75,22 @@ get_header();
       <input type="hidden" name="post_method" value="contact-us-form">
       <p>First Name <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-first-name-error"></div>
-      <input id="cu-first-name" name="cu_first_name">
+      <input class="cu-controls" id="cu-first-name" name="cu_first_name">
       <p>Last Name <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-last-name-error"></div>
-      <input id="cu-last-name" name="cu_last_name">
+      <input class="cu-controls" id="cu-last-name" name="cu_last_name">
       <p>Company <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-company-error"></div>
-      <input id="cu-company" name="cu_company">
+      <input class="cu-controls" id="cu-company" name="cu_company">
       <p>Email <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-email-error"></div>
-      <input id="cu-email" name="cu_email">
+      <input class="cu-controls" id="cu-email" name="cu_email">
       <p>Phone <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-phone-error"></div>
-      <input id="cu-phone" name="cu-phone">
+      <input class="cu-controls"  id="cu-phone" name="cu-phone">
       <p>Country <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-country-error"></div>
-      <select id="cu-country" name="cu-country">
+      <select class="cu-controls" id="cu-country" name="cu-country">
         <option value="0">Select One</option>
         <option value="United States">United States</option>
         <option value="Canada">Canada</option>
@@ -252,7 +103,7 @@ get_header();
       </select>
       <p>Reason you are contacting us today  <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-reason-error"></div>
-      <select id="cu-reason" name="cu_reason">
+      <select class="cu-controls" id="cu-reason" name="cu_reason">
         <option value="0">Select One</option>
         <option value="Sales">Sales</option>
         <option value="Employment Opportunity">Employment Opportunity</option>
@@ -264,7 +115,7 @@ get_header();
       </select>      
       <p>How can we help?<span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-response-error"></div>
-      <textarea id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea> 
+      <textarea class="cu-controls" id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea> 
       <button class="btn btn-contact" id="cu-submit">SUBMIT</button>
     </form>
   </div>

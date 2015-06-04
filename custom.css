@@ -1,41 +1,41 @@
 /* Background colors */
 
 .dkpurplebg {
-	background-color: #3f2d47;
+  background-color: #3f2d47;
 }
 
 .ltpurplebg {
-	background-color: #62557c;
+  background-color: #62557c;
 }
 
 
- /* Jumbotron styling */
+/* Jumbotron styling */
 
 .jumbotron {
-	color: #fff;
+  color: #fff;
 }
 
 /* Margins and padding */
 
 .noBottomMargin {
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .lgJumbotron {
-	margin-bottom: 80px;
-	margin-top: 80px;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .topMargin60 {
-	margin-top: 60px;
+  margin-top: 60px;
 }
 
 .topMargin40 {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .padTop5 {
-	padding-top: 5px;
+  padding-top: 5px;
 }
 
 /* Links */
@@ -44,31 +44,31 @@
 /* Typography */
 
 h1 {
-	font-size: 90%;
+  font-size: 90%;
 }
 
 .textWhite {
-	color: #fff;
+  color: #fff;
 }
 
 .textBlack {
-	color: #000;
+  color: #000;
 }
 
 .xlgText {
-	font-size: 300%;
+  font-size: 300%;
 }
 
 .lgText {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .medLgText {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .medText {
-	font-size: 1.17em;
+  font-size: 1.17em;
 }
 
 
@@ -76,66 +76,208 @@ h1 {
 
 /* Border around info exchange sign up */
 #infoExch {
-	border: 1px solid;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	padding-top: 1%;
+  border: 1px solid;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding-top: 1%;
 }
 
 /* Info Exch button */
 .ieBtn {
-	background-color: #3f2d47;
-	color: #fff;	
+  background-color: #3f2d47;
+  color: #fff;	
 }
 
 .ieBtn:hover {
-	background-color: #62557c;
-	color: #fff;
+  background-color: #62557c;
+  color: #fff;
 }
 
 /* Links below Info Exch sign up */
 a.foot {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a.foot:hover {
-	color: #ccc;
+  color: #ccc;
 }
 
 /* Feedback button */
 
-
-
 /* Feedback bubble in footer */
 #bubble {
-	position: relative;
-	width: 135px;
-	height: 45px;
-	padding: 0px;
-	background: #FFFFFF;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	border: #62557c solid 2px;
+  position: relative;
+  width: 135px;
+  height: 45px;
+  padding: 0px;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #62557c solid 2px;
 }
 
 #bubble:after {
-	content: '';
-	position: absolute;
-	border-style: solid;
-	border-width: 22px 12px 0;
-	border-color: #FFFFFF transparent;
-	display: block;
-	width: 0;
-	z-index: 1;
-	margin-left: -12px;
-	bottom: -22px;
-	left: 65%;
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 22px 12px 0;
+  border-color: #FFFFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-left: -12px;
+  bottom: -22px;
+  left: 65%;
 }
 
-/* media queries */
+/* Contact Us Page */
 
+.contact {
+  margin-top: 5%;
+}
+.contact-h1 {
+  font-size: 52px;
+}
+.contact-paragraph {
+  font-size: 22px;
+}
+.contact-h3 {
+  font-weight: bold;
+}
+.contact-address {
+  padding-top: 2%;
+  line-height: 1.9;
+  font-size: 18px;
+}
+.map-container-6 {
+  margin-top: 4%;
+}
+.map-size-6 {
+  width: 100%;
+  height: 200px;
+}
+.map-container-3 {
+  margin-top: 8%;
+}
+.jumbofont {
+  color: #000;
+}
+.jumbofont > .container > .lead {
+  font-size: 21px;
+  font-weight: 700;
+}
+.contact-form > .cu-controls {
+  width: 47.5%;
+  color: #011924;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  letter-spacing: normal;
+  outline-style: none;
+  border: medium none;
+}
+.contact-form > p {
+  margin-top: 4%;
+}
+.required {
+  color: red;
+}
+.text-area {
+  height: 9.375em;
+  width: 97.5%;
+}
+.btn-contact {
+  background: none repeat scroll 0 0 transparent;
+  border: 1px #3f2d47 solid;
+  margin-top: 2%;
+  box-shadow: none;
+  font-family: inherit;
+  padding: 8px 33px;
+  color: #3f2d47;
+  font-size: 18px;
+}
+.btn-contact:hover {
+  background-color: #62557c;
+  color: #fff;
+}
+#cu-form-restore {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+}
 
-    
- 
+a#cu-form-restore :hover {
+  text-decoration: underline;
+}
+
+/* media queries 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  .contact-form > input, select {
+    width: 100%;
+  }
+}
+@media only screen and (min-device-width: 981px) {
+  .contact-form > input, select {
+    width: 47.5%;
+  }
+}
