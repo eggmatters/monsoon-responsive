@@ -41,7 +41,7 @@ get_header();
     font-size: 21px;
     font-weight: 700;
   }
-  .contact-form > input, select {
+  .contact-form > input, select, textarea {
     width: 47.5%;
     color: #011924;
     background-color: #fff;
@@ -56,6 +56,10 @@ get_header();
   }
   .required {
     color: red;
+  }
+  .text-area {
+    height: 9.375em;
+    width: 97.5%;
   }
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen 
@@ -215,6 +219,19 @@ get_header();
         <option value="New Zealand">New Zealand</option>
         <option value="">Other</option>
       </select>
+      <p>Reason you are contacting us today  <span class="required">*</span></p>
+      <select id="cu-reason" name="cu_reason">
+        <option value="0">Select One</option>
+        <option value="Sales">Sales</option>
+        <option value="Employment Opportunity">Employment Opportunity</option>
+        <option value="Press, Media, and Marketing">Press, Media, and Marketing</option>
+        <option value="Partner Integrations">Partner Integrations</option>
+        <option value="Support Request">Support Request</option>
+        <option value="Professional Services">Professional Services</option>
+        <option value="Other">Other</option>
+      </select>
+      <p>How can we help?</p>
+      <textarea id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea>        
     </form>
   </div>
 </div>
