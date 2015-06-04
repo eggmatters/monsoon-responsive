@@ -269,5 +269,25 @@ get_header();
     </form>
   </div>
 </div>
+<div class="container-fluid contact">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="contact-h1">Sales, Support and General Inquiries</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="text-uppercase contact-h3">Contact a sales representative for ecommerce solutions</h3>
+      <address class="contact-address">
+        U.S toll-free: 1-800-520-2294<br>
+        U.K toll-free: 0-800-014-8424
+      </address>
+      <h3 class="text-uppercase contact-h3">Support for monsoon marketplace and monsoon oms</h3>
+      <address class="contact-address">Our support hours are from 6:00am to 6:00pm PST</address>
+   </div>
+  </div>
+</div>
 
 <?php get_footer();
