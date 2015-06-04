@@ -19,7 +19,9 @@ jQuery(document).ready(function($) {
   $('#mr-ix-signup').on('hide.bs.modal', function(e) {
     dismissIXSignupForm($);
   });
-  $('#cu-phone').inputmask('(999)-999-9999');
+  if ($('#cu-phone').length > 0) {
+    $('#cu-phone').inputmask('(999)-999-9999');
+  }
   $('#cu-submit').on('click', function(e) {
     var contactUs = new ContactUs($);
     e.preventDefault();    
