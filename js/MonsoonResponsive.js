@@ -23,7 +23,9 @@ jQuery(document).ready(function($) {
   $('#cu-submit').on('click', function(e) {
     var contactUs = new ContactUs($);
     e.preventDefault();    
-    contactUs.validateForm();
+    if (contactUs.validateForm()) {
+      contactUs.ajaxRequest($);
+    }
   });
   
 });
@@ -68,7 +70,7 @@ function infoExchangeSignupAjaxRequest($) {
     timeout: 60000,
     type: "POST",
     url: $('#info-exchange-signup-form').prop('action'),
-    data: $('#info-exchange-signup-form').serializeArray(),
+    data: $('#info-exchange-signup-form').serializeArray()
   })
   .success(function (xhrResponse) {
     
@@ -107,6 +109,7 @@ function ContactUs($) {
   this.reason  = $('#cu-reason');
   this.response = $('#cu-response');
   this.form    = $('#cu-form');
+  this.sentForm;
   this.setSelectListeners();
   this.checkJQ = function() {
     if (typeof $ === 'undefined') {
@@ -121,16 +124,54 @@ ContactUs.prototype = {
   validateForm: function() {
     $ = this.checkJQ();
     var self = this;
+    var isValid = true;
     $.each(this.form[0], function(idx, formObject) {
       switch(formObject.type) {
         case "text":
         case "select-one":
-        case "text-area":
+        case "textarea":
           if (self.falsey(formObject.value)) {
-            $('#' + formObject.id + "-error").html("<p class=required>You must enter a value</p>")
+            $('#' + formObject.id + "-error").html("<p class=required>You must enter a value</p>");
+            isValid = false;
           }
           break;
       }
+    });
+    return isValid;
+  },
+  ajaxRequest: function($) {
+    var self = this;
+    $.ajax({
+      timeout: 60000,
+      type: "POST",
+      url: $('#cu-form').prop('action'),
+      data: $('#cu-form').serializeArray()
+    })
+    .success(function (xhrResponse) {})
+    .fail(function (jqXHR, status, errorThrown) {})
+    .complete( function() {
+      self.removeForm(self);
+    });
+  },
+  removeForm: function(self) {
+    var $ = self.checkJQ();
+    this.form[0].reset();
+    this.sentForm = $('#cu-form-container').html();
+    $('#cu-form-container').html('<a id="cu-form-restore"><p class="lead">Thank you! Your response is appreciated.<br>Click to restore this form</p></a>');
+    $('#cu-form-restore').on('click', function(e) {
+      e.preventDefault();
+      self.resetForm(self);
+    })
+    
+  },
+  resetForm: function(self) {
+    $('#cu-form-container').html(self.sentForm);
+    $('#cu-submit').on('click', function(e) {
+      if (self.validateForm()) {
+        $ = self.checkJQ();
+        self.ajaxRequest($);
+      }
+      e.preventDefault();
     });
   },
   falsey: function(val, acceptZeroes) {

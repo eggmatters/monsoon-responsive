@@ -10,6 +10,9 @@ switch($postMethod) {
   case "info-exchange-signup-form":
     infoExchangeSignup();
     break;
+  case "contact-us-form":
+    header("HTTP/1.0 200 OK"); 
+    break;
   default:
     header("HTTP/1.0 404 Not Found"); 
 }

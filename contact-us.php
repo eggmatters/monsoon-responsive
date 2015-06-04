@@ -37,7 +37,7 @@ get_header();
   .jumbofont {
     color: #000;
   }
-  .jumbofont > .container > lead {
+  .jumbofont > .container > .lead {
     font-size: 21px;
     font-weight: 700;
   }
@@ -74,6 +74,16 @@ get_header();
   .btn-contact:hover {
     background-color: #62557c;
     color: #fff;
+  }
+  #cu-form-restore {
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    
+  }
+  a#cu-form-restore :hover {
+    text-decoration: underline;
   }
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen 
@@ -209,8 +219,9 @@ get_header();
 </div>
 <div class="jumbotron noBottomMargin topMargin60 jumbofont">
   <div class="container" id="cu-form-container">
-    <lead>Please tell us a it about yourself so we can connect you with the right person</lead>
-    <form class="contact-form" id="cu-form" name="cu_form">
+    <p class="lead">Please tell us a bit about yourself so we can connect you with the right person</p>
+    <form class="contact-form" id="cu-form" name="cu_form" action="<?php echo get_mr_theme_root_uri() . '/ajax.php'; ?>">
+      <input type="hidden" name="post_method" value="contact-us-form">
       <p>First Name <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-first-name-error"></div>
       <input id="cu-first-name" name="cu_first_name">
