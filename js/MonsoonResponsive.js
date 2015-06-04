@@ -19,6 +19,7 @@ jQuery(document).ready(function($) {
   $('#mr-ix-signup').on('hide.bs.modal', function(e) {
     dismissIXSignupForm($);
   });
+  $('#cu-phone').inputmask('(999)-999-9999');
   
 });
 

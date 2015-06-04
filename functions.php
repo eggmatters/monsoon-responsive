@@ -9,6 +9,12 @@ function wpbootstrap_scripts_with_jquery() {
 	wp_enqueue_script( 'bootstrap-js' );
   wp_register_script( 'monsoon-responsive', get_template_directory_uri() . '/js/MonsoonResponsive.js', array( 'jquery', 'bootstrap-js'));
   wp_enqueue_script( 'monsoon-responsive');
+  if (is_page_template( 'contact-us.php')) {
+    wp_register_script('input-mask', get_template_directory_uri() . '/js/inputmask.js', array('jquery'));
+    wp_register_script('jq-input-mask', get_template_directory_uri() . '/js/jquery.inputmask.js', array('jquery'));
+    wp_enqueue_script('input-mask');
+    wp_enqueue_script('jq-input-mask');
+  }
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
