@@ -20,6 +20,11 @@ jQuery(document).ready(function($) {
     dismissIXSignupForm($);
   });
   $('#cu-phone').inputmask('(999)-999-9999');
+  $('#cu-submit').on('click', function(e) {
+    var contactUs = new ContactUs($);
+    e.preventDefault();    
+    contactUs.validateForm();
+  });
   
 });
 
@@ -91,3 +96,102 @@ function dismissIXSignupForm($) {
   $('.ix-errors').remove();
   $('#info-exchange-signup-form')[0].reset();
 }
+
+function ContactUs($) {
+  this.fname   = $('#cu-first-name');
+  this.lname   = $('#cu-last-name');
+  this.company = $('#cu-company');
+  this.email   = $('#cu-email');
+  this.phone   = $('#cu-phone');
+  this.country = $('#cu-country');
+  this.reason  = $('#cu-reason');
+  this.response = $('#cu-response');
+  this.form    = $('#cu-form');
+  this.setSelectListeners();
+  this.checkJQ = function() {
+    if (typeof $ === 'undefined') {
+      return jQuery;
+    } else {
+      return $;
+    }
+  }
+}
+
+ContactUs.prototype = {
+  validateForm: function() {
+    $ = this.checkJQ();
+    var self = this;
+    $.each(this.form[0], function(idx, formObject) {
+      switch(formObject.type) {
+        case "text":
+        case "select-one":
+        case "text-area":
+          if (self.falsey(formObject.value)) {
+            $('#' + formObject.id + "-error").html("<p class=required>You must enter a value</p>")
+          }
+          break;
+      }
+    });
+  },
+  falsey: function(val, acceptZeroes) {
+    if (typeof acceptZeroes === 'undefined') {
+      acceptZeroes = false;
+    }
+    if (typeof val === 'undefined') {
+      return true;
+    }
+    if (val === null) {
+      return true;
+    }
+    if (val === false) {
+      return true;
+    }
+    if (val === 0 && !acceptZeroes) {
+      return true;
+    }
+    if (val === "0" && !acceptZeroes) {
+      return true;
+    }
+    if (val === "") {
+      return true;
+    }
+    if (val === " ") {
+      return true;
+    }
+  },
+  setSelectListeners: function() {
+    this.fname.unbind("focus");
+    this.lname.unbind("focus");
+    this.email.unbind("focus");
+    this.company.unbind("focus");
+    this.phone.unbind("focus");
+    this.country.unbind("focus");
+    this.reason.unbind("focus");
+    this.response.unbind("focus");
+    this.fname.on("focus", function(e) {
+      jQuery('#cu-first-name-error').empty();
+    });
+    this.lname.on("focus", function(e) {
+      jQuery('#cu-last-name-error').empty();      
+    });
+    this.company.on("focus", function(e) {
+      jQuery('#cu-company-error').empty();
+    });
+    this.email.on("focus", function(e) {
+      jQuery('#cu-email-error').empty();
+    });
+    this.phone.on("focus", function(e) {
+      jQuery('#cu-phone-error').empty();
+    });
+    this.country.on("focus", function(e) {
+      jQuery('#cu-country-error').empty();
+    });
+    this.reason.on("focus", function(e) {
+      jQuery('#cu-reason-error').empty();
+    });
+    this.response.on("focus", function(e) {
+      jQuery('#cu-response-error').empty();
+    })
+  }
+  
+};

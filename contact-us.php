@@ -10,16 +10,16 @@ get_header();
   .contact {
     margin-top: 5%;
   }
-  h1 {
+  .contact-h1 {
     font-size: 52px;
   }
   .contact-paragraph {
     font-size: 22px;
   }
-  h3 {
+  .contact-h3 {
     font-weight: bold;
   }
-  address {
+  .contact-address {
     padding-top: 2%;
     line-height: 1.9;
     font-size: 18px;
@@ -72,9 +72,8 @@ get_header();
     font-size: 18px;
   }
   .btn-contact:hover {
-    border: 2px #3f2d47 solid;
-    font-weight: bolder;
-    color: #3f2d47;
+    background-color: #62557c;
+    color: #fff;
   }
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen 
@@ -153,7 +152,7 @@ get_header();
  </div>
   <div class="row">
     <div class="col-lg-12 text-center">
-      <h1>Contact Us</h1>
+      <h1 class="contact-h1">Contact Us</h1>
       <p class="contact-paragraph">Reach out for sales, support, and more</p>
     </div>
   </div>
@@ -161,8 +160,8 @@ get_header();
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <h3>GLOBAL CORPORATE HEADQUARTERS</h3>
-        <address>
+        <h3 class="contact-h3">GLOBAL CORPORATE HEADQUARTERS</h3>
+        <address class="contact-address">
           520 NW Davis Street<br>
           Suite 300<br>
           Portland, OR 97209<br>
@@ -178,8 +177,8 @@ get_header();
     <p>&nbsp;</p>
     <div class="row">
       <div class="col-lg-3">
-        <h3>EMERYVILLE OFFICE</h3>
-        <address>
+        <h3 class="contact-h3">EMERYVILLE OFFICE</h3>
+        <address class="contact-address">
           1250 45th Street<br>
           Suite 100<br>
           Emeryville, CA 94608<br>
@@ -192,8 +191,8 @@ get_header();
         </div>
       </div>
       <div class="col-lg-3">
-        <h3>PHILADELPHIA OFFICE</h3>
-        <address>
+        <h3 class="contact-h3">PHILADELPHIA OFFICE</h3>
+        <address class="contact-address">
           399 Arcola Road<br>
           Suite 200<br>
           Collegeville, PA 19426<br>
@@ -213,16 +212,22 @@ get_header();
     <lead>Please tell us a it about yourself so we can connect you with the right person</lead>
     <form class="contact-form" id="cu-form" name="cu_form">
       <p>First Name <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-first-name-error"></div>
       <input id="cu-first-name" name="cu_first_name">
       <p>Last Name <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-last-name-error"></div>
       <input id="cu-last-name" name="cu_last_name">
       <p>Company <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-company-error"></div>
       <input id="cu-company" name="cu_company">
       <p>Email <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-email-error"></div>
       <input id="cu-email" name="cu_email">
       <p>Phone <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-phone-error"></div>
       <input id="cu-phone" name="cu-phone">
       <p>Country <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-country-error"></div>
       <select id="cu-country" name="cu-country">
         <option value="0">Select One</option>
         <option value="United States">United States</option>
@@ -235,6 +240,7 @@ get_header();
         <option value="">Other</option>
       </select>
       <p>Reason you are contacting us today  <span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-reason-error"></div>
       <select id="cu-reason" name="cu_reason">
         <option value="0">Select One</option>
         <option value="Sales">Sales</option>
@@ -244,8 +250,9 @@ get_header();
         <option value="Support Request">Support Request</option>
         <option value="Professional Services">Professional Services</option>
         <option value="Other">Other</option>
-      </select>
-      <p>How can we help?</p>
+      </select>      
+      <p>How can we help?<span class="required">*</span></p>
+      <div class="cu-form-errors" id="cu-response-error"></div>
       <textarea id="cu-response" name="cu_response" class="text-area" cols="12" rows="10"></textarea> 
       <button class="btn btn-contact" id="cu-submit">SUBMIT</button>
     </form>
