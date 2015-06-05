@@ -87,10 +87,10 @@ get_header();
       <input class="cu-controls" id="cu-email" name="cu_email">
       <p>Phone <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-phone-error"></div>
-      <input class="cu-controls"  id="cu-phone" name="cu-phone">
+      <input class="cu-controls"  id="cu-phone" name="cu_phone">
       <p>Country <span class="required">*</span></p>
       <div class="cu-form-errors" id="cu-country-error"></div>
-      <select class="cu-controls" id="cu-country" name="cu-country">
+      <select class="cu-controls" id="cu-country" name="cu_country">
         <option value="0">Select One</option>
         <option value="United States">United States</option>
         <option value="Canada">Canada</option>
