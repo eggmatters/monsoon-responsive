@@ -135,6 +135,14 @@ function get_info_exchange_posts($slug='info-exchange') {
   }
 }
 
+function disable_admin_bar_for_subscribers() {
+  $currentUser = wp_get_current_user();
+  if (!in_array('administrator', $currentUser->roles)) {
+    add_filter( 'show_admin_bar', '__return_false');
+  }
+}
+add_action( 'init', 'disable_admin_bar_for_subscribers', 9);
+
 function appthemes_add_quicktags() {
   getGridDialog();
   if (wp_script_is('quicktags')){
