@@ -41,5 +41,5 @@ $categoryPosts = get_category_posts($category->slug);
     <?php endif; ?>
   </div>
 </div>
-
+<p>&nbsp;</p>
 <?php get_footer();

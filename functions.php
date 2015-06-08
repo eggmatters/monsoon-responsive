@@ -101,11 +101,10 @@ function debug($args) {
 }
 
 function split_posts_array($posts, $columns = 1) {
-  $f = count($posts) / $columns;
-  $splitIndex = ($f >= 1.0) ? (int) $f : 1;
+  $splitIndex = ceil( count($posts) / $columns);
   if ($splitIndex > 1) {
-  $columnOne = array_slice($posts, 0, $splitIndex - 1);
-  $columnTwo = array_slice($posts, $splitIndex);
+    $columnOne = array_slice($posts, 0, $splitIndex);
+    $columnTwo = array_slice($posts, $splitIndex);
   } else {
     $columnOne = $posts;
     $columnTwo = array();
