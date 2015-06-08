@@ -91,7 +91,7 @@ function get_banner_search() {
 }
 
 function get_category_posts($cat_slug) {
-  $args = array( 'category_name' => $cat_slug);
+  $args = array( 'category_name' => $cat_slug, 'posts_per_page' => -1);
   $posts = get_posts($args);
   return split_posts_array($posts, 2);
 }
