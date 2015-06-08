@@ -18,7 +18,7 @@ get_header();
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 textGreen">
       <?php get_info_exchange_posts(); 
             get_page_categories();
       ?>      

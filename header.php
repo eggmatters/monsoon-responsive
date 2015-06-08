@@ -27,6 +27,7 @@
         // Fix menu overlap bug..
         if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 
       ?>
+    <?php $mcsc = get_mr_theme_root_uri() . '/images/monsoon-logo-pos.png'; ?>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,11 +36,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
+          <a class="navbar-brand" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center"><img src="<?php echo $mcsc; ?>" style="max-width:110px; margin-top: -9px;"><span style="color: black; font-size: 67%;">SUPPORT CENTER</span></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <?php get_defined_menu(); ?>
+            	<?php get_defined_menu(); ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
