@@ -48,7 +48,7 @@ class ThemeControls {
     if (count($posts) <= 0) {
       return "";
     }
-    $postsList = '<ul class="nav nav-stacked">';
+    $postsList = '<ul class="nav nav-stacked textGreen">';
     $idx = 0;
     while ($idx < 4) {
       if (isset($posts[$idx])) {

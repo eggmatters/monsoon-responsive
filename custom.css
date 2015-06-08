@@ -40,11 +40,42 @@
 
 /* Links */
 
+	/* Top Nav */
+
+/* Change nav bar text to black */
+.navbar .nav > li > a, .navbar .nav > li.current-menu-item >a {
+	color: #000;
+}
+
+/* Maintain hover background color */
+.navbar .nav > li > a:hover {
+	background-color: inherit;
+}
+
+/* Get rid of gray when select dropdowns */
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+	background-color: #fff;
+}
+
+
 
 /* Typography */
 
 h1 {
   font-size: 90%;
+}
+
+	/* links on Home Page, applied to home_header post */
+.textGreen li a, .textGreen a {
+	font-size: 120%;
+	color: #73AF55;
+}
+
+.textGreen li a:hover, .textGreen a:hover {
+	background-color: #fff;
+	text-decoration: none;
 }
 
 .textWhite {
