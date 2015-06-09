@@ -93,23 +93,11 @@ function get_banner_search() {
 function get_category_posts($cat_slug) {
   $args = array( 'category_name' => $cat_slug, 'posts_per_page' => -1);
   $posts = get_posts($args);
-  return split_posts_array($posts, 2);
+  setCategoryPostsJSON($posts);
 }
 
 function debug($args) {
   echo "<pre>"; print_r($args); echo "</pre>";
-}
-
-function split_posts_array($posts, $columns = 1) {
-  $splitIndex = ceil( count($posts) / $columns);
-  if ($splitIndex > 1) {
-    $columnOne = array_slice($posts, 0, $splitIndex);
-    $columnTwo = array_slice($posts, $splitIndex);
-  } else {
-    $columnOne = $posts;
-    $columnTwo = array();
-  }
-  return array('col1' => $columnOne, 'col2' => $columnTwo);
 }
 
 function get_page_categories() {
@@ -165,4 +153,23 @@ function getGridDialog() {
 
 function get_mr_theme_root_uri() {
   return get_theme_root_uri() . '/monsoon-responsive';
+}
+
+function setCategoryPostsJSON($catPosts) {
+  $categoryObjects = array();
+  foreach ($catPosts as $post) {
+    $postCategories = get_the_category($post->ID);
+    $terms = [];
+    foreach ( $postCategories as $postCategory ) {
+      $terms[] = get_term_by('id', $postCategory->cat_ID, 'category')->slug;
+    }
+    $categoryObject = (object) array(
+      'cat_id'   => $post->ID,
+      'title'    => $post->post_title,
+      'category' => $terms,
+      'href'     => get_permalink($post->ID)
+    );
+    $categoryObjects[] = $categoryObject;
+  }
+  echo '<script> var categoryPosts = ' . json_encode($categoryObjects, JSON_PRETTY_PRINT) . '</script>';
 }

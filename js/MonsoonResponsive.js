@@ -29,6 +29,9 @@ jQuery(document).ready(function($) {
       contactUs.ajaxRequest($);
     }
   });
+  if (typeof categoryPosts !== 'undefined') {
+    displayCategoriesByPage($, 1);
+  }
   
 });
 
@@ -238,3 +241,21 @@ ContactUs.prototype = {
   }
   
 };
+
+function displayCategoriesByPage($, page) {
+  var startIndex = parseInt(page - 1) * 24;
+  $('#catColOne').html(getCategoryColumn(startIndex));
+  $('#catColTwo').html(getCategoryColumn(startIndex + 12));
+}
+
+function getCategoryColumn(startIndex) {
+  var columnCount = 0;
+  var current = startIndex;
+  var html = '';
+  while (columnCount < 12) {
+    html += '<li role="presentation"><a href="' + categoryPosts[current].href + '">' + categoryPosts[current].title + '</a></li>';
+    current++;
+    columnCount++;
+  }
+  return html;
+}

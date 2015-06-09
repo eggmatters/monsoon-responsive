@@ -24,22 +24,33 @@ $categoryPosts = get_category_posts($category->slug);
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <ul class="nav nav-stacked textGreen">
-      <?php foreach($categoryPosts['col1'] as $col1): ?>
-        <li role="presentation"><a href="<?php echo get_permalink($col1->id); ?>"><?php echo $col1->post_title; ?></a></li>
-      <?php endforeach; ?>
+      <ul id="catColOne" class="nav nav-stacked textGreen">
       </ul>
     </div>
-    <?php if(count($categoryPosts['col2']) > 0): ?>
     <div class="col-md-6 textGreen">
-      <ul class="nav nav-stacked">
-      <?php foreach ($categoryPosts['col2'] as $col2): ?>
-        <li role="presentation"><a href="<?php echo get_permalink($col2->id) ?>"><?php echo $col2->post_title; ?></a></li>
-      <?php endforeach; ?>
+      <ul id="catColTwo" class="nav nav-stacked">
       </ul>
     </div>
-    <?php endif; ?>
   </div>
+  <nav>
+    <ul id="catPaginate" class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 <p>&nbsp;</p>
 <?php get_footer();
