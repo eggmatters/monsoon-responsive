@@ -33,7 +33,7 @@ $categoryPosts = get_category_posts($category->slug);
     </div>
   </div>
   <nav>
-    <ul id="catPaginate" class="pagination">
+    <ul id="catPaginate" class="pagination textGreen">
       <li>
         <a href="#" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>

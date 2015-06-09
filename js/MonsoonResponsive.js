@@ -30,7 +30,8 @@ jQuery(document).ready(function($) {
     }
   });
   if (typeof categoryPosts !== 'undefined') {
-    displayCategoriesByPage($, 1);
+    var categoriesLayout = new PaginationLayout(categoryPosts, 1);
+    categoriesLayout.displayCategoriesByPage();
   }
   
 });
@@ -242,20 +243,41 @@ ContactUs.prototype = {
   
 };
 
-function displayCategoriesByPage($, page) {
-  var startIndex = parseInt(page - 1) * 24;
-  $('#catColOne').html(getCategoryColumn(startIndex));
-  $('#catColTwo').html(getCategoryColumn(startIndex + 12));
+function PaginationLayout(currentObject, page) {
+  this.currentObject = currentObject;
+  if (typeof page !== 'undefined') {
+    this.currentPage = 1;
+  } else {
+    this.currentPage = parseInt(page);
+  }
+  this.checkJQ = function() {
+    if (typeof $ === 'undefined') {
+      return jQuery;
+    } else {
+      return $;
+    }
+  }
 }
 
-function getCategoryColumn(startIndex) {
-  var columnCount = 0;
-  var current = startIndex;
-  var html = '';
-  while (columnCount < 12) {
-    html += '<li role="presentation"><a href="' + categoryPosts[current].href + '">' + categoryPosts[current].title + '</a></li>';
-    current++;
-    columnCount++;
+PaginationLayout.prototype = {
+  setPagination: function() {
+    
+  },
+  displayCategoriesByPage: function() {
+    $ = this.checkJQ();
+    var startIndex = (this.currentPage - 1) * 24;
+    $('#catColOne').html(this.getCategoryColumns(startIndex));
+    $('#catColTwo').html(this.getCategoryColumns(startIndex + 12));
+  },
+  getCategoryColumns: function(startIndex) {
+    var columnCount = 0;
+    var current = startIndex;
+    var html = '';
+    while (columnCount < 12 && typeof this.currentObject[current] !== 'undefined') {
+      html += '<li role="presentation"><a href="' + this.currentObject[current].href + '">' + this.currentObject[current].title + '</a></li>';
+      current++;
+      columnCount++;
+    }
+    return html;
   }
-  return html;
-}
+};
