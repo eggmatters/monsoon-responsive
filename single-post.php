@@ -27,6 +27,7 @@ Template Name: Post
       <p>&nbsp;</p>
     </div>
   </div>
+  <p>&nbsp;</p>
 </div>
 
 <?php endwhile; else: ?>
