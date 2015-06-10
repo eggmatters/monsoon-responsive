@@ -40,6 +40,8 @@ jQuery(document).ready(function($) {
     var searchLayout = new PaginationLayout(searchPosts, 1, 'searchPaginate');
     var fn = searchLayout.displaySearchResultsByPage(searchLayout);
     fn();
+    searchLayout.setPagination();
+    setPaginationEvents(searchLayout.displaySearchResultsByPage, searchLayout);
     
   }
   
@@ -355,6 +357,8 @@ PaginationLayout.prototype = {
           instance.setPagination();
           setPaginationEvents(this.getCallback(), instance);
           break;
+        } else {
+          e.delegateTarget.parentNode.setAttribute('class', 'active')
         }
     }
   },
@@ -362,6 +366,9 @@ PaginationLayout.prototype = {
     switch (this.elId) {
       case "catPaginate":
         return this.displayCategoriesByPage;
+        break;
+      case "searchPaginate":
+        return this.displaySearchResultsByPage;
         break;
     }
   }

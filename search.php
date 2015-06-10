@@ -31,16 +31,21 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="row">
+  <div class="row">
+    <div class="col-md-12">
+      <ul id="searchPaginate" class="pagination textGreen">
+        <!-- rendered by javascript-->
+      </ul>
+    </div>
+  </div>
+  
+    <div class="row">      
       <div class="col-md-8">
           <div class="row">
             <div id="mrSearchResults" class="col-md-12 textGreen">              
               <!-- rendered by javascript-->
             </div>
           </div>
-        <ul id="searchPaginate" class="pagination textGreen">
-          <!-- rendered by javascript-->
-        </ul>
       </div>
 
       <div class="col-md-4">
