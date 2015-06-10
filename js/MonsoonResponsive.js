@@ -30,14 +30,14 @@ jQuery(document).ready(function($) {
     }
   });
   if (typeof categoryPosts !== 'undefined') {
-    var categoriesLayout = new PaginationLayout(categoryPosts, 1, 'catPaginate');
+    var categoriesLayout = new PaginationLayout(categoryPosts, 1, 24, 'catPaginate');
     var fn = categoriesLayout.displayCategoriesByPage(categoriesLayout);
     fn();
     categoriesLayout.setPagination();
     setPaginationEvents(categoriesLayout.displayCategoriesByPage, categoriesLayout);
   }
   if (typeof searchPosts !== 'undefined') {
-    var searchLayout = new PaginationLayout(searchPosts, 1, 'searchPaginate');
+    var searchLayout = new PaginationLayout(searchPosts, 1, 10, 'searchPaginate');
     var fn = searchLayout.displaySearchResultsByPage(searchLayout);
     fn();
     searchLayout.setPagination();
@@ -254,7 +254,7 @@ ContactUs.prototype = {
   
 };
 
-function PaginationLayout(currentObject, page, elId) {
+function PaginationLayout(currentObject, page, resultsPerPage, elId) {
   this.currentObject = currentObject;
   if (typeof page !== 'undefined') {
     this.currentPage = 1;
@@ -268,13 +268,14 @@ function PaginationLayout(currentObject, page, elId) {
       return $;
     }
   }
+  this.resultsPerPage = parseInt(resultsPerPage);
   this.elId = elId;
 }
 
 PaginationLayout.prototype = {
   setPagination: function() {
     $ = this.checkJQ();
-    var pages = Math.ceil(parseInt(this.currentObject.length) / 24);
+    var pages = Math.ceil(parseInt(this.currentObject.length) / this.resultsPerPage);
     var startPage = (this.currentPage - 3 <= 0) ? 1 : this.currentPage - 3;
     var html = '';
     if (this.currentPage !== 1) {
@@ -303,7 +304,7 @@ PaginationLayout.prototype = {
   displayCategoriesByPage: function(instance) {
     return function() {
       $ = instance.checkJQ();
-      var startIndex = (instance.currentPage - 1) * 24;
+      var startIndex = (instance.currentPage - 1) * instance.resultsPerPage;
       $('#catColOne').html(instance.getCategoryColumns(startIndex));
       $('#catColTwo').html(instance.getCategoryColumns(startIndex + 12));
     }
@@ -323,7 +324,7 @@ PaginationLayout.prototype = {
     return function() {
       $ = instance.checkJQ();
       var rowCount = 0;
-      var startIndex = (instance.currentPage - 1) * 10;
+      var startIndex = (instance.currentPage - 1) * instance.resultsPerPage;
       var current = startIndex;
       var html = '';
       while (rowCount < 10 && typeof instance.currentObject[current] !== 'undefined') {
