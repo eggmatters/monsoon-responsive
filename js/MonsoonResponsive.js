@@ -266,26 +266,26 @@ function PaginationLayout(currentObject, page, elId) {
 PaginationLayout.prototype = {
   setPagination: function() {
     $ = this.checkJQ();
-    var pages = Math.floor(parseInt(this.currentObject.length) / 24);
+    var pages = Math.ceil(parseInt(this.currentObject.length) / 24);
     var startPage = (this.currentPage - 3 <= 0) ? 1 : this.currentPage - 3;
     var html = '';
     if (this.currentPage !== 1) {
     var html = '<li>' +
-      '  <a href="#" class="pagePrevious" aria-label="Previous">' +
+      '  <a href="" class="pagePrevious" aria-label="Previous">' +
       '    <span aria-hidden="true">&laquo;</span>' +
       '  </a>' +
       '</li>';
     }
     for (var i = startPage; i <= pages; i++) {
       if (i === this.currentPage) {
-        html += '<li class="active"><a href="#" class="pageSelect">' + i + '</a></li>';
+        html += '<li class="active"><a href="" class="pageSelect">' + i + '</a></li>';
       } else {
-        html += '<li><a href="#" class="pageSelect">' + i + '</a></li>';
+        html += '<li><a href="" class="pageSelect">' + i + '</a></li>';
       }
     }
     if (this.currentPage < pages ) {
       html +=  '<li>' +
-        '  <a href="#" class="pageNext" aria-label="Next">' +
+        '  <a href="" class="pageNext" aria-label="Next">' +
         '    <span aria-hidden="true">&raquo;</span>' +
         '  </a>' +
         '</li>';
@@ -319,6 +319,28 @@ PaginationLayout.prototype = {
       case "pageNext":
         instance.currentPage++;
         instance.setPagination();
+        setPaginationEvents(this.getCallback(), instance);
+        break;
+      case "pagePrevious":
+        instance.currentPage--;
+        instance.setPagination();
+        setPaginationEvents(this.getCallback(), instance);
+        break;
+      case "pageSelect":
+        var pageSelected = parseInt(e.delegateTarget.innerHTML);
+        if (pageSelected !== instance.currentPage) {
+          instance.currentPage = pageSelected;
+          instance.setPagination();
+          setPaginationEvents(this.getCallback(), instance);
+          break;
+        }
+    }
+  },
+  getCallback: function() {
+    switch (this.elId) {
+      case "catPaginate":
+        return this.displayCategoriesByPage;
+        break;
     }
   }
 };
@@ -327,6 +349,9 @@ function setPaginationEvents(renderCallback, instance) {
   $ = (typeof $ === 'undefined') ? jQuery : $;
   $('.pagePrevious').on('click', function(e) {
     e.preventDefault();
+    instance.setActivePage(e, instance);
+    var fn = renderCallback(instance);
+    fn();
   });
   $('.pageNext').on('click', function(e) {
     e.preventDefault();
@@ -334,4 +359,10 @@ function setPaginationEvents(renderCallback, instance) {
     var fn = renderCallback(instance);
     fn();
   });
+  $('.pageSelect').on('click', function(e) {
+    e.preventDefault();
+    instance.setActivePage(e, instance);
+    var fn = renderCallback(instance);
+    fn();
+  })
 }
