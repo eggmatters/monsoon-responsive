@@ -14,8 +14,9 @@ foreach($query_args as $key => $string) {
 	$search_query[$query_split[0]] = urldecode($query_split[1]);
 } // foreach
 
-query_posts('showposts=-1');
-$searchPosts = $wp_query->get_posts();
+query_posts('showposts=200');
+$search = new WP_Query($search_query);
+$searchPosts = $search->get_posts();
 
 setSearchPostsJSON($searchPosts);
 get_header(); ?>
