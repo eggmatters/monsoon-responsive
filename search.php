@@ -2,8 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package WordPress
- * Tempate Name: Search
+ * 
  */
 global $query_string;
 
