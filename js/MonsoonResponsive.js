@@ -347,6 +347,9 @@ PaginationLayout.prototype = {
 
 function setPaginationEvents(renderCallback, instance) {
   $ = (typeof $ === 'undefined') ? jQuery : $;
+  $('.pagePrevious').unbind('click');
+  $('.pageNext').unbind('click');
+  $('.pageSelect').unbind('click');
   $('.pagePrevious').on('click', function(e) {
     e.preventDefault();
     instance.setActivePage(e, instance);
