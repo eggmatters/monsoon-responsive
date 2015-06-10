@@ -36,6 +36,12 @@ jQuery(document).ready(function($) {
     categoriesLayout.setPagination();
     setPaginationEvents(categoriesLayout.displayCategoriesByPage, categoriesLayout);
   }
+  if (typeof searchPosts !== 'undefined') {
+    var searchLayout = new PaginationLayout(searchPosts, 1, 'searchPaginate');
+    var fn = searchLayout.displaySearchResultsByPage(searchLayout);
+    fn();
+    
+  }
   
 });
 
@@ -301,15 +307,31 @@ PaginationLayout.prototype = {
     }
   },
   getCategoryColumns: function(startIndex) {
-    var columnCount = 0;
+    var rowCount = 0;
     var current = startIndex;
     var html = '';
-    while (columnCount < 12 && typeof this.currentObject[current] !== 'undefined') {
+    while (rowCount < 12 && typeof this.currentObject[current] !== 'undefined') {
       html += '<li role="presentation"><a href="' + this.currentObject[current].href + '">' + this.currentObject[current].title + '</a></li>';
       current++;
-      columnCount++;
+      rowCount++;
     }
     return html;
+  },
+  displaySearchResultsByPage: function(instance) {
+    return function() {
+      $ = instance.checkJQ();
+      var rowCount = 0;
+      var startIndex = (instance.currentPage - 1) * 10;
+      var current = startIndex;
+      var html = '';
+      while (rowCount < 10 && typeof instance.currentObject[current] !== 'undefined') {
+        html += '<a style="font-size: 18px;" class="large-text" href="' + instance.currentObject[current].href +'">' + instance.currentObject[current].title + '</a><br>';
+        html += '<p>' + instance.currentObject[current].excerpt + '</p>';
+        current++;
+        rowCount++;
+      }
+      $('#mrSearchResults').html(html);
+    }
   },
   setActivePage: function(e, instance) {
     $ = instance.checkJQ();

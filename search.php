@@ -34,11 +34,13 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-8">
           <div class="row">
-            <div class="col-md-12 textGreen">
-              <a style="font-size: 18px;" class="large-text" href="<?php echo get_permalink() ?>"><?php the_title() ?></a><br>
-              <?php setSearchPostsJSON($searchPosts) ?>
+            <div id="mrSearchResults" class="col-md-12 textGreen">              
+              <!-- rendered by javascript-->
             </div>
           </div>
+        <ul id="searchPaginate" class="pagination textGreen">
+          <!-- rendered by javascript-->
+        </ul>
       </div>
 
       <div class="col-md-4">
