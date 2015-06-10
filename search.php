@@ -13,10 +13,12 @@ foreach($query_args as $key => $string) {
 	$query_split = explode("=", $string);
 	$search_query[$query_split[0]] = urldecode($query_split[1]);
 } // foreach
+$search_query['posts_per_page'] = -1;
+$search_query['order_by'] = 'date';
 
-query_posts('showposts=200');
 $search = new WP_Query($search_query);
 $searchPosts = $search->get_posts();
+
 
 setSearchPostsJSON($searchPosts);
 get_header(); ?>
@@ -28,6 +30,7 @@ get_header(); ?>
     <div class="row" style="margin-top: 5%">
       <div class="col-md-12">
         <h3 class="page-title"><?php printf(__('Search Results for: %s', 'monsoon-responsive'), $search_query['s']); ?></h3>
+        <h4><?php echo $search->found_posts?> Results returned</h4>
         <hr>
       </div>
     </div>
