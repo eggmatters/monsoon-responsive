@@ -1,3 +1,45 @@
+/* Typography */
+
+@font-face {
+	font-family: 'Gesta-Regular';
+	src: url('fonts/Gesta-Regular.otf');
+	
+}
+
+h1 {
+  font-size: 90%;
+}
+
+.textWhite, .textWhite a {
+  color: #fff;
+}
+
+.textBlack, .textBlack a {
+  color: #000;
+}
+
+.xlgText {
+  font-size: 300%;
+}
+
+.lgText {
+  font-size: 1.5em;
+}
+
+.medLgText {
+  font-size: 1.25em;
+}
+
+.medText {
+  font-size: 1.17em;
+}
+
+
+
+body {
+	font-family: Gesta, "Helvetica Neue", sans-serif;
+}
+
 /* Background colors */
 
 .dkpurplebg {
@@ -38,6 +80,14 @@
   padding-top: 5px;
 }
 
+
+/* Images */
+
+.top > a > img {
+	margin-top: -9px;
+}
+
+
 /* Links */
 
 	/* Top Nav */
@@ -59,15 +109,9 @@
 	background-color: #fff;
 }
 
+	/* End Top Nav changes */
 
-
-/* Typography */
-
-h1 {
-  font-size: 90%;
-}
-
-	/* links on Home Page, applied to home_header post */
+/* posts on Home Page (applied to home_header post) and Info Exch */
 .textGreen li a, .textGreen a {
 	font-size: 120%;
 	color: #73AF55;
@@ -78,32 +122,9 @@ h1 {
 	text-decoration: none;
 }
 
-.textWhite {
-  color: #fff;
-}
-
-.textBlack {
-  color: #000;
-}
-
-.xlgText {
-  font-size: 300%;
-}
-
-.lgText {
-  font-size: 1.5em;
-}
-
-.medLgText {
-  font-size: 1.25em;
-}
-
-.medText {
-  font-size: 1.17em;
-}
 
 
-/* Footer */
+	/* Footer */
 
 /* Border around info exchange sign up */
 #infoExch {
@@ -125,11 +146,12 @@ h1 {
   color: #fff;
 }
 
-/* Links below Info Exch sign up */
-a.foot {
+
+a.foot, .textBlack a:hover, .textWhite a:hover {
   text-decoration: none;
 }
 
+/* Links below Info Exch sign up */
 a.foot:hover {
   color: #ccc;
 }
