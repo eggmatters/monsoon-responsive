@@ -187,5 +187,19 @@ function setCategoryPostsJSON($catPosts) {
     );
     $categoryObjects[] = $categoryObject;
   }
-  echo '<script> var categoryPosts = ' . json_encode($categoryObjects, JSON_PRETTY_PRINT) . '</script>';
+  echo '<script> var categoryPosts = ' . json_encode($categoryObjects) . '</script>';
+}
+
+function setSearchPostsJSON($searchPosts) {
+  $searchObjects = array();
+  foreach ($searchPosts as $post) {
+    $searchObject = (object) array(
+        'search_id' => $post->ID,
+        'title'     => $post->post_title,
+        'excerpt'   => $post->post_excerpt,
+        'href'      => get_permalink($post->ID)
+    );
+    $searchObjects[] = $searchObject;
+  }
+  echo '<script> var searchPosts = ' . json_encode($searchObjects) . '</script>';
 }
