@@ -30,8 +30,11 @@ jQuery(document).ready(function($) {
     }
   });
   if (typeof categoryPosts !== 'undefined') {
-    var categoriesLayout = new PaginationLayout(categoryPosts, 1);
-    categoriesLayout.displayCategoriesByPage();
+    var categoriesLayout = new PaginationLayout(categoryPosts, 1, 'catPaginate');
+    var fn = categoriesLayout.displayCategoriesByPage(categoriesLayout);
+    fn();
+    categoriesLayout.setPagination();
+    setPaginationEvents(categoriesLayout.displayCategoriesByPage, categoriesLayout);
   }
   
 });
@@ -243,7 +246,7 @@ ContactUs.prototype = {
   
 };
 
-function PaginationLayout(currentObject, page) {
+function PaginationLayout(currentObject, page, elId) {
   this.currentObject = currentObject;
   if (typeof page !== 'undefined') {
     this.currentPage = 1;
@@ -257,17 +260,45 @@ function PaginationLayout(currentObject, page) {
       return $;
     }
   }
+  this.elId = elId;
 }
 
 PaginationLayout.prototype = {
   setPagination: function() {
-    
-  },
-  displayCategoriesByPage: function() {
     $ = this.checkJQ();
-    var startIndex = (this.currentPage - 1) * 24;
-    $('#catColOne').html(this.getCategoryColumns(startIndex));
-    $('#catColTwo').html(this.getCategoryColumns(startIndex + 12));
+    var pages = Math.floor(parseInt(this.currentObject.length) / 24);
+    var startPage = (this.currentPage - 3 <= 0) ? 1 : this.currentPage - 3;
+    var html = '';
+    if (this.currentPage !== 1) {
+    var html = '<li>' +
+      '  <a href="#" class="pagePrevious" aria-label="Previous">' +
+      '    <span aria-hidden="true">&laquo;</span>' +
+      '  </a>' +
+      '</li>';
+    }
+    for (var i = startPage; i <= pages; i++) {
+      if (i === this.currentPage) {
+        html += '<li class="active"><a href="#" class="pageSelect">' + i + '</a></li>';
+      } else {
+        html += '<li><a href="#" class="pageSelect">' + i + '</a></li>';
+      }
+    }
+    if (this.currentPage < pages ) {
+      html +=  '<li>' +
+        '  <a href="#" class="pageNext" aria-label="Next">' +
+        '    <span aria-hidden="true">&raquo;</span>' +
+        '  </a>' +
+        '</li>';
+    }
+    $('#' + this.elId).html(html);
+  },
+  displayCategoriesByPage: function(instance) {
+    return function() {
+      $ = instance.checkJQ();
+      var startIndex = (instance.currentPage - 1) * 24;
+      $('#catColOne').html(instance.getCategoryColumns(startIndex));
+      $('#catColTwo').html(instance.getCategoryColumns(startIndex + 12));
+    }
   },
   getCategoryColumns: function(startIndex) {
     var columnCount = 0;
@@ -279,5 +310,28 @@ PaginationLayout.prototype = {
       columnCount++;
     }
     return html;
+  },
+  setActivePage: function(e, instance) {
+    $ = instance.checkJQ();
+    var className = e.delegateTarget.className;
+    $('#' + this.elId + ' > li').removeClass('active');
+    switch(className) {
+      case "pageNext":
+        instance.currentPage++;
+        instance.setPagination();
+    }
   }
 };
+
+function setPaginationEvents(renderCallback, instance) {
+  $ = (typeof $ === 'undefined') ? jQuery : $;
+  $('.pagePrevious').on('click', function(e) {
+    e.preventDefault();
+  });
+  $('.pageNext').on('click', function(e) {
+    e.preventDefault();
+    instance.setActivePage(e, instance);
+    var fn = renderCallback(instance);
+    fn();
+  });
+}

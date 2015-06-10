@@ -116,10 +116,26 @@ function get_info_exchange_posts($slug='info-exchange') {
     setup_postdata($post);
 ?>
 <a style="font-size: 18px;" class="large-text" href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a><br>
-  <?php the_excerpt(); ?>
+  <?php 
+    if (empty($post->post_excerpt)) {
+      echo mr_get_post_excerpt( $post );
+    }     
+  ?>
   <hr>
   <?php 
   }
+}
+
+function mr_get_post_excerpt( $post ){
+  $text = $post->post_content;
+  $text = strip_shortcodes( $text );
+  $text = apply_filters( 'the_content', $text );
+  $text = str_replace( ']]>', ']]>', $text );
+
+  $excerpt_length = apply_filters( 'excerpt_length', 55 );
+  $excerpt_more   = apply_filters( 'excerpt_more', ' ' . '[...]' );
+  $text           = wp_trim_words( $text, $excerpt_length, '' );
+  return $text;
 }
 
 function disable_admin_bar_for_subscribers() {
