@@ -4,6 +4,8 @@
  *
  * 
  */
+wp_dequeue_script('sfwd_template_js');
+
 global $query_string;
 
 $query_args = explode("&", $query_string);
