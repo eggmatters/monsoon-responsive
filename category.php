@@ -23,6 +23,11 @@ $categoryPosts = get_category_posts($category->slug);
 </div>
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <ul id="catPaginate" class="pagination textGreen">
+      
+      </ul>
+    </div>
     <div class="col-md-6">
       <ul id="catColOne" class="nav nav-stacked textGreen">
       </ul>
@@ -32,11 +37,6 @@ $categoryPosts = get_category_posts($category->slug);
       </ul>
     </div>
   </div>
-  <nav>
-    <ul id="catPaginate" class="pagination textGreen">
-      
-    </ul>
-  </nav>
 </div>
 <p>&nbsp;</p>
 <?php get_footer();
