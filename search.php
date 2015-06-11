@@ -4,7 +4,7 @@
  *
  * 
  */
-wp_dequeue_script('sfwd_template_js');
+//wp_dequeue_script('sfwd_template_js');
 
 global $query_string;
 
@@ -23,6 +23,7 @@ $searchPosts = $search->get_posts();
 
 
 setSearchPostsJSON($searchPosts);
+wp_dequeue_script('sfwd_template_js');
 get_header(); ?>
 
 <div class="container">

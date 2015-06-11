@@ -194,6 +194,7 @@ function setSearchPostsJSON($searchPosts) {
   $searchObjects = array();
   foreach ($searchPosts as $post) {
     $excerpt =  (empty($post->post_excerpt)) ? mr_get_post_excerpt($post) : $post->post_excerpt;
+    $excerpt = strip_shortcodes($excerpt);
     $searchObject = (object) array(
         'search_id' => $post->ID,
         'title'     => $post->post_title,
