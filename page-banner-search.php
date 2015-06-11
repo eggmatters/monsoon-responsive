@@ -9,7 +9,7 @@ Used for Help Library page
 <?php get_header(); 
   if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 ?>
-<div class="jumbotron dkpurplebg topMargin40">
+<div class="jumbotron dkpurplebg">
   <div class="container-fluid">
     <div class="row">
       <div class="container">

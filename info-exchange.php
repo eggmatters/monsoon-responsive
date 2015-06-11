@@ -6,7 +6,7 @@ Template Name: Info Exchange
 get_header(); 
 
 ?>
-<div class="jumbotron dkpurplebg topMargin40">
+<div class="jumbotron dkpurplebg">
   <div class="container-fluid">
     <div class="row">
       <div class="container">
