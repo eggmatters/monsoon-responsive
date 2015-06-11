@@ -4,20 +4,20 @@ Template Name: Page Layout
 
 Used for Our Services page
 */
+get_header();
 ?>
-
-<?php get_header(); 
-  if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-?>
-<div class="container-fluid">
-  <div class="row">
-    <div class="jumbotron dkpurplebg">
+<div class="jumbotron dkpurplebg topMargin40">
+  <div class="container-fluid">
+    <div class="row">
       <div class="container">
         <div class="text-center topMargin60 xlgText"><?php the_title(); ?></div>
       </div>
     </div>
   </div>
 </div>
+
+<?php  if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 
 <div class="container">
   <?php the_content(); ?>

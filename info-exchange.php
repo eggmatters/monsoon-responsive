@@ -6,9 +6,9 @@ Template Name: Info Exchange
 get_header(); 
 
 ?>
-<div class="container-fluid">
-  <div class="row">
-    <div class="jumbotron dkpurplebg">
+<div class="jumbotron dkpurplebg topMargin40">
+  <div class="container-fluid">
+    <div class="row">
       <div class="container">
         <div class="text-center topMargin60 xlgText"><?php the_title(); ?></div>
       </div>

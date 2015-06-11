@@ -8,11 +8,11 @@ $category = get_category(get_query_var('cat'));
 $categoryPosts = get_category_posts($category->slug);
 ?>
 <?php get_header(); ?>
-<div class="container-fluid">
-  <div class="row">
-    <div class="jumbotron dkpurplebg">
+<div class="jumbotron dkpurplebg topMargin40">
+  <div class="container-fluid">
+    <div class="row">
       <div class="container">
-        <div class="text-center topMargin60 xlgText"><?php echo $category->name ?></div>
+        <div class="text-center topMargin60 xlgText"><?php echo $category->name; ?></div>
       </div>
     </div>
   </div>
