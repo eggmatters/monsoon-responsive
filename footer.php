@@ -17,7 +17,7 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 					<div class="input-group col-xs-11 col-sm-6 col-md-7">
 						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
-		            <button class="btn btn-default ieBtn ieBtn:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
+		            <button class="btn btn-default ieBtn" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
 		            </span>				
 					</div>
 				</div>			
@@ -43,10 +43,10 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 	    </div>
 	    <div class="row topMargin60">
 		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.twitter.com/monsooncommerce"><img src="<?php echo $tw; ?>" alt="twitter"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.youtube.com/user/MonsoonCommerce"><img src="<?php echo $yt; ?>" alt="youtube"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.linkedin.com/company/monsoon-commerce"><img src="<?php echo $li; ?>" alt="linkedin"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.facebook.com/monsooncommerce1" target="_blank"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.twitter.com/monsooncommerce" target="_blank"><img src="<?php echo $tw; ?>" alt="twitter"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.youtube.com/user/MonsoonCommerce" target="_blank"><img src="<?php echo $yt; ?>" alt="youtube"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.linkedin.com/company/monsoon-commerce" target="_blank"><img src="<?php echo $li; ?>" alt="linkedin"></a></div>
 		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
 	    </div>
     </div>    

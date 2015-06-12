@@ -160,11 +160,6 @@ body {
 }	
 	
 	
-	
-	
-	/* Images */
-	
-	
 /* Home Page Info Exch icon */
 .top > a > img, .top {
 	margin-top: -9px;
@@ -263,6 +258,12 @@ body {
 	text-decoration: none;
 }
 
+
+a.foot, .textBlack a:hover, .textWhite a:hover {
+  text-decoration: none;
+}
+
+
 	/* Buttons */
 
 .btn-search {
@@ -285,7 +286,7 @@ body {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  padding-top: 2%;
+  padding-top: 1%;
   padding-left: 4%;
 }
 
@@ -300,10 +301,6 @@ body {
   color: #fff;
 }
 
-
-a.foot, .textBlack a:hover, .textWhite a:hover {
-  text-decoration: none;
-}
 
 /* Links below Info Exch sign up */
 a.foot:hover {
