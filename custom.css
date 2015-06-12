@@ -54,7 +54,7 @@
     font-style: normal;
 
 }
-/*  Re: Gesta - did not convert Gesta-BoldItalic or Gesta-LightItalic or Gesta-Light otf's to other formats and they are not used. See https://css-tricks.com/snippets/css/using-font-face/ for reference  6/11/15 */
+/*  Re: Gesta - did not convert Gesta-BoldItalic or Gesta-LightItalic or Gesta-Light otf's to other formats and they are not used. See https://css-tricks.com/snippets/css/using-font-face/ for reference.  6/11/15 */
 
 h1 {
   font-size: 90%;
@@ -83,12 +83,11 @@ h1 {
   font-size: 1.17em;
 }
 
-.vertCenter {
-	
+/*  .vertCenter {
 	vertical-align: middle; 
-	
+	float: none;
 }
-
+*/
 
  
 body {
@@ -106,6 +105,10 @@ body {
   background-color: #62557c;
 }
 
+.navbar-default {
+	background-color: #fff;
+}
+
 
 /* Jumbotron styling */
 
@@ -117,6 +120,10 @@ body {
 
 .noBottomMargin {
   margin-bottom: 0px;
+}
+
+.bottomMargin10 {
+	margin-bottom: 10px;
 }
 
 .lgJumbotron {
@@ -136,12 +143,15 @@ body {
   padding-top: 5px;
 }
 
-
+.vertCenter {
+	height: 150px;
+	vertical-align: middle;
+}
 	/* Images */
 	
 	
 /* Home Page Info Exch icon */
-.top > a > img {
+.top > a > img, .top {
 	margin-top: -9px;
 }
 
@@ -151,19 +161,25 @@ body {
 	/* Top Nav */
 
 /* Change nav bar text to black */
-.navbar .nav > li > a, .navbar .nav > li.current-menu-item > a {
+.navbar .nav > li > a {
 	color: #000;
 }
 
-/* Maintain hover background color */
+.navbar .nav > li > a:active {
+	color: #73AF55;
+}
+
+/* Maintain hover background color and change text to green */
 .navbar .nav > li > a:hover {
 	background-color: inherit;
+	color: #73AF55;
 }
 
 /* Get rid of gray when select dropdowns */
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
-.navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:active {
 	background-color: #fff;
 }
 
