@@ -34,10 +34,14 @@ class NavigationMenu {
   
   public static function renderBootstrapNavMenu($navMenuItems) {
     $rs = "";
-    $request = $_SERVER['REQUEST_URI'];
+    $request = preg_replace('/\//', '', $_SERVER['REQUEST_URI']);
     foreach($navMenuItems as $menuItem) {
+      $dbg = preg_replace('/\//', '@', $menuItem->url);
+      $match = preg_match('/' . $request . '/', $dbg);
+      $pmatch = ($match > 0) ? ' class="mr_active"' : '';
+      $cmatch = ($match > 0) ? ' mr_active' : '';
       if (count($menuItem->children) > 0) {
-        $rs .= '<li class="dropdown">';
+        $rs .= '<li class="dropdown' . $cmatch . '">';
         $rs .= '<a href="' . $menuItem->url . 
                '" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">' . 
                $menuItem->title . ' <span class="caret"></span></a>' .
@@ -48,8 +52,7 @@ class NavigationMenu {
                
         
       } else {
-        $match = preg_match($request, $menuItem->url);
-        $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
+        $rs .= '<li' . $pmatch . '><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
       }
     }
     if (is_user_logged_in()) {
