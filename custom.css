@@ -269,7 +269,8 @@ body {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
-  padding-top: 1%;
+  padding-top: 2%;
+  padding-left: 4%;
 }
 
 /* Info Exch button */
@@ -426,6 +427,9 @@ and (min-width : 321px) {
 and (max-width : 320px) {
   .contact-form > .cu-controls {
     width: 100%;
+  }
+  #info-exchange {
+	padding-left: 9%  
   }
 }
 

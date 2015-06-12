@@ -2,7 +2,7 @@
 /*
 Template Name: Page Layout
 
-Used for Our Services page
+Used for Help Library page
 */
 get_header();
 ?>
