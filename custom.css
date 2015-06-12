@@ -83,11 +83,7 @@ h1 {
   font-size: 1.17em;
 }
 
-/*  .vertCenter {
-	vertical-align: middle; 
-	float: none;
-}
-*/
+
 
  
 body {
@@ -191,6 +187,15 @@ body {
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:active {
 	background-color: #fff;
+}
+
+.dropdown-menu > li > a {
+	color: #000;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	color: #73AF55;
+	background-color: inherit;
 }
 
 	/* End Top Nav changes */
