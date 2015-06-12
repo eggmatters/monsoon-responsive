@@ -181,6 +181,11 @@ body {
 	color: #73AF55;
 }
 
+.mr_active  {
+  background-color: inherit;
+	color: #73AF55;
+}
+
 /* Get rid of gray when select dropdowns */
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
