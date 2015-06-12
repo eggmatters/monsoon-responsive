@@ -26,7 +26,7 @@ setSearchPostsJSON($searchPosts);
 wp_dequeue_script('sfwd_template_js');
 get_header(); ?>
 
-<div class="container">
+<div class="container textGreen">
   <?php
   if (!empty($searchPosts)) :
     ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
   <div class="row">
     <div class="col-md-12">
-      <ul id="searchPaginate" class="pagination textGreen">
+      <ul id="searchPaginate" class="pagination">
         <!-- rendered by javascript-->
       </ul>
     </div>
@@ -49,7 +49,7 @@ get_header(); ?>
     <div class="row">      
       <div class="col-md-8">
           <div class="row">
-            <div id="mrSearchResults" class="col-md-12 textGreen">              
+            <div id="mrSearchResults" class="col-md-12">              
               <!-- rendered by javascript-->
             </div>
           </div>

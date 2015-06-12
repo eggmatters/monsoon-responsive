@@ -17,7 +17,7 @@ Template Name: Learn Dash Post
   </div>
 </div>
 
-<div class="container">
+<div class="container textGreen">
   <div class="row">
     <div class="col-md-8">
       <?php the_content(); ?>
