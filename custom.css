@@ -83,9 +83,18 @@ h1 {
   font-size: 1.17em;
 }
 
+#homePg h3 {
+	font-size: 340%;
+	font-family: gestaregular, sans-serif;
+	margin-bottom: 2%;
+}
+
+#homePg p {
+	font-size: 150%;
+	font-family: gestaregular, sans-serif;
+}
 
 
- 
 body {
 	font-family: "gestamedium", sans-serif;
 	font-size: 16px; /* adjust for change to gesta, even with converter making 110% of original file */

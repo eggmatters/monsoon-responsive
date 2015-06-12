@@ -5,11 +5,11 @@ Template Name: Home Page
 ?>
 
 <?php get_header(); ?>
-<div class="jumbotron dkpurplebg">
+<div class="jumbotron dkpurplebg topMargin40">
   <div class="container-fluid">
 
     <div class="row">
-      <div class="container text-center lgJumbotron">
+      <div class="container text-center lgJumbotron" id="homePg">
         <?php
         $query = new WP_Query('category_name=home_header');
         if ($query->have_posts()) {
@@ -21,7 +21,7 @@ Template Name: Home Page
         ?>
       </div>
     </div>
-  </div>i
+  </div>
 </div>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
