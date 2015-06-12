@@ -6,5 +6,5 @@ $url = esc_url( home_url( '/' ) );
     <label class="sr-only">Search</label>
     <input type="search" class="form-control" name="s" id="s" placeholder="Search" value="">
   </div>
-  <button type="submit" id="searchsubmit" class="btn btn-default">Go</button>
+  <button type="submit" id="searchsubmit" class="btn btn-default btn-search">Go</button>
 </form>
