@@ -425,6 +425,13 @@ and (max-device-width : 480px) {
   .contact-form > .cu-controls {
     width: 100%;
   }
+  .form-group > label {
+		padding-left: 8%;  
+  }
+  
+  .form-group > .input-group {
+		padding-left: 10%;  
+  }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -452,6 +459,10 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) {
   .contact-form > .cu-controls {
     width: 100%;
+  }
+  
+  .form-group > .input-group {
+		padding-top: 1%;  
   }
 }
 
@@ -487,4 +498,11 @@ only screen and (min-device-pixel-ratio : 1.5) {
   .contact-form > .cu-controls {
     width: 47.5%;
   }
+}
+
+@media only screen 
+and (min-device-width : 1280px) {
+	.form-group {
+		padding-right: 11%;	
+	}
 }
