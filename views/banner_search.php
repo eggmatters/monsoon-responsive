@@ -8,7 +8,7 @@
     <div class="input-group">
       <input type="search" class="form-control input-lg" name="s" id="s" placeholder="Search" value="">
       <span class="input-group-btn">
-        <button type="submit" id="searchsubmit" class="btn btn-lg">Go</button>
+        <button type="submit" id="searchsubmit" class="btn btn-lg btn-search">Go</button>
       </span>
     </div>
   </form>

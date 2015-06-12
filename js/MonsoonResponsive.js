@@ -42,7 +42,6 @@ jQuery(document).ready(function($) {
     fn();
     searchLayout.setPagination();
     setPaginationEvents(searchLayout.displaySearchResultsByPage, searchLayout);
-    
   }
   
 });
