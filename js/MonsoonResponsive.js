@@ -43,6 +43,9 @@ jQuery(document).ready(function($) {
     searchLayout.setPagination();
     setPaginationEvents(searchLayout.displaySearchResultsByPage, searchLayout);
   }
+  $('#cu-reason').on('change', function() {
+    renderSupportTicketForm($);
+  });
   
 });
 
@@ -134,6 +137,22 @@ function ContactUs($) {
       return $;
     }
   }
+}
+function  renderSupportTicketForm($) {
+  $.ajax({
+    timeout: 60000,
+    type: "POST",
+    url: $('#cu-form').prop('action'),
+    data: { post_method: "support-ticket-modal" }
+  })
+  .success(function (xhrResponse) {
+    alert("got here");
+  })
+  .fail(function (jqXHR, status, errorThrown) {
+    alert("fail");
+  })
+  .complete( function() {
+  });
 }
 
 ContactUs.prototype = {
@@ -248,9 +267,8 @@ ContactUs.prototype = {
     });
     this.response.on("focus", function(e) {
       jQuery('#cu-response-error').empty();
-    })
+    });    
   }
-  
 };
 
 function PaginationLayout(currentObject, page, resultsPerPage, elId) {

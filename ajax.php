@@ -13,6 +13,9 @@ switch($postMethod) {
   case "contact-us-form":
     contactUsSubmit();
     break;
+  case "support-ticket-modal":
+    showSupportTicketModal();
+    break;
   default:
     header("HTTP/1.0 422 Unprocessable Entity"); 
 }
@@ -68,6 +71,10 @@ function contactUsSubmit() {
               . "\tCountry: $country\n\n"
               . getField('cu_response');
   wp_mail($to, $subject, $message, $from);
+}
+
+function showSupportTicketModal() {
+  echo do_shortcode('[MC_SupportCreate]');
 }
 
 function getField($fieldname) {

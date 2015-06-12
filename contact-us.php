@@ -5,6 +5,7 @@ Template Name: Contact Us
 Used for: Contacting Us
 */
 get_header();
+
 ?>
 
 <div class="container-fluid contact">
