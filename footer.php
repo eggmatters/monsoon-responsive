@@ -43,10 +43,10 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 	    </div>
 	    <div class="row topMargin60">
 		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.facebook.com/monsooncommerce1"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.twitter.com/monsooncommerce"><img src="<?php echo $tw; ?>" alt="twitter"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.youtube.com/user/MonsoonCommerce"><img src="<?php echo $yt; ?>" alt="youtube"></a></div>
-		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.linkedin.com/company/monsoon-commerce"><img src="<?php echo $li; ?>" alt="linkedin"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.facebook.com/monsooncommerce1" target="_blank"><img src="<?php echo $fb; ?>" alt="facebook"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.twitter.com/monsooncommerce" target="_blank"><img src="<?php echo $tw; ?>" alt="twitter"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.youtube.com/user/MonsoonCommerce" target="_blank"><img src="<?php echo $yt; ?>" alt="youtube"></a></div>
+		      <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1"><a href="https://www.linkedin.com/company/monsoon-commerce" target="_blank"><img src="<?php echo $li; ?>" alt="linkedin"></a></div>
 		      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
 	    </div>
     </div>    
