@@ -34,6 +34,7 @@ class NavigationMenu {
   
   public static function renderBootstrapNavMenu($navMenuItems) {
     $rs = "";
+    $request = $_SERVER['REQUEST_URI'];
     foreach($navMenuItems as $menuItem) {
       if (count($menuItem->children) > 0) {
         $rs .= '<li class="dropdown">';
@@ -47,6 +48,7 @@ class NavigationMenu {
                
         
       } else {
+        $match = preg_match($request, $menuItem->url);
         $rs .= '<li><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
       }
     }

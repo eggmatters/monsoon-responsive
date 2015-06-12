@@ -190,10 +190,6 @@ body {
 	color: #73AF55;
 }
 
-.mr_active  {
-  background-color: inherit;
-	color: #73AF55;
-}
 
 /* Get rid of gray when select dropdowns */
 .navbar-default .navbar-nav > .open > a, 
@@ -201,6 +197,12 @@ body {
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:active {
 	background-color: #fff;
+}
+
+.navbar-nav > li.mr_active > a,
+.navbar-nav > li.mr_active > a:hover,
+.navbar-nav > li.mr_active > a:focus {
+  color: #73af55;
 }
 
 .dropdown-menu > li > a {
