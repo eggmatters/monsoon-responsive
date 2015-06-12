@@ -21,7 +21,7 @@ Template Name: Home Page
         ?>
       </div>
     </div>
-  </div>
+  </div>i
 </div>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

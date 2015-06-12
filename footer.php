@@ -11,10 +11,10 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
   	<div class="container" id="infoExch">
 	   <div class="row">
 
-			<form class="form-horizontal">
-				<div class="form-group">
-					<label for="info-exchange-signup" class="control-label col-xs-5 col-md-4 medLgText">Subscribe to Info Exchange</label>
-					<div class="input-group col-xs-11 col-sm-5 col-md-7">
+			<form id="ie" class="form-horizontal">
+				<div id="ie" class="form-group">
+					<label for="info-exchange-signup" class="control-label col-xs-7 col-sm-5 col-md-4 medLgText">Subscribe to Info Exchange</label>
+					<div class="input-group col-xs-12 col-sm-6 col-md-7">
 						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
 		            <button class="btn btn-default ieBtn ieBtn:hover" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
