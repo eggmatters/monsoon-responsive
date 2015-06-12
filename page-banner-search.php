@@ -21,7 +21,7 @@ Used for Help Library page
 <div class="container-fluid">
   <?php get_banner_search(); ?>
 </div>
-<div class="container">
+<div class="container textGreen">
   <div class="row">
     <div class="col-md-12">
       <?php the_content(); ?>
