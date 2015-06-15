@@ -44,7 +44,11 @@ jQuery(document).ready(function($) {
     setPaginationEvents(searchLayout.displaySearchResultsByPage, searchLayout);
   }
   $('.support-create-request').on('click', function(e) {
-    SupportTickets.openSubmitNewDialog(e);
+    if (typeof customer !== 'undefined' && typeof SupportTickets !== 'undefined') {
+      SupportTickets.openSubmitNewDialog(e);
+    } else {
+      window.location.href = mr_base_root + '/contact/';
+    }
   });
   
 });
