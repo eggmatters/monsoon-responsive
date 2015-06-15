@@ -34,7 +34,10 @@ class NavigationMenu {
   
   public static function renderBootstrapNavMenu($navMenuItems) {
     $rs = "";
-    $request = preg_replace('/\//', '', $_SERVER['REQUEST_URI']);
+    $request = preg_replace('/[\/\?]/', '', $_SERVER['REQUEST_URI']);
+    if (strlen($request) == 0) {
+      $request = "X";
+    }
     foreach($navMenuItems as $menuItem) {
       $dbg = preg_replace('/\//', '@', $menuItem->url);
       $match = preg_match('/' . $request . '/', $dbg);
