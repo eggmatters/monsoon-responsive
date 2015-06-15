@@ -43,8 +43,8 @@ jQuery(document).ready(function($) {
     searchLayout.setPagination();
     setPaginationEvents(searchLayout.displaySearchResultsByPage, searchLayout);
   }
-  $('#cu-reason').on('change', function() {
-    renderSupportTicketForm($);
+  $('.support-create-request').on('click', function(e) {
+    SupportTickets.openSubmitNewDialog(e);
   });
   
 });

@@ -26,13 +26,24 @@ function generateGridRow(e, c, ed) {
 }
 
 function stripShortCodes(e, c, ed) {
-  t = this;
+  var t = this;
   theContent = c.value;
   newContent = theContent.replace(/\[(.*?)\]/g, '');
   c.value = newContent;
   t.tagStart = '';
   t.tagEnd = '';
   QTags.TagButton.prototype.callback.call(t, e, c, ed);
+}
+
+function supportRequest(e, c, ed) {
+  var t = this;
+  t.tagStart = '';
+  if (c.value.indexOf('[MC_SupportCreate]') === -1) {
+    t.tagStart += '[MC_SupportCreate]';
+  } 
+  t.tagStart += '<a href="#" class="support-create-request">[LINK TEXT]</a>';
+  t.tagEnd = '';
+  QTags.TagButton.prototype.callback.call(t, e, c, ed)
 }
 
 function renderBannerIcon() {
