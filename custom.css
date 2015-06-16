@@ -552,6 +552,9 @@ and (max-device-width : 981px) {
     box-shadow: none;
     display: block!important;
   }
+  .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
   .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #73AF55;
   }
