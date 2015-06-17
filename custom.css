@@ -294,6 +294,7 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
 .ieBtn {
   background-color: #3f2d47;
   color: #fff;	
+  border-color: transparent;
 }
 
 .ieBtn:hover {

@@ -52,7 +52,7 @@ class ThemeControls {
     $idx = 0;
     while ($idx < 4) {
       if (isset($posts[$idx])) {
-        $postsList .= '<li role="presentation"><a href="' . get_permalink($posts[$idx]->id) . '">' . 
+        $postsList .= '<li role="presentation"><a href="' . get_permalink($posts[$idx]->ID) . '">' . 
             date('F j, Y', strtotime($posts[$idx]->post_date)) . ': ' . $posts[$idx]->post_title . '</a></li>';
       }
       $idx++;
