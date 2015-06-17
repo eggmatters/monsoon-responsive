@@ -258,6 +258,9 @@ body {
 	text-decoration: none;
 }
 
+p.textGreen {
+  color: #73AF55;
+}
 
 a.foot, .textBlack a:hover, .textWhite a:hover {
   text-decoration: none;
@@ -284,7 +287,12 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
   border: 1px solid;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary.focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open {
   background-color: #62557c;
   color: #fff;
 }
@@ -324,9 +332,8 @@ a.foot:hover {
 /* Feedback bubble in footer */
 #bubble {
   position: relative;
-  width: 135px;
   height: 45px;
-  padding: 0px;
+  padding: 0 10px 0 10px;
   background: #FFFFFF;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -429,6 +436,9 @@ a#cu-form-restore :hover {
   text-decoration: underline;
 }
 
+#feedback-content {
+  width: 80%;
+}
 /* media queries 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
@@ -579,6 +589,9 @@ and (max-device-width : 981px) {
 }
 @media only screen
 and (max-device-width : 361px) { 
+  #bubble {
+    width: 47.5%;
+  }
   .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #73AF55;
   }

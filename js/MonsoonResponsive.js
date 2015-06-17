@@ -68,7 +68,7 @@ function feedbackAjaxRequest($) {
 
   })
   .complete( function() { 
-    $('.feedback-modal-message').append('<p style="color:blue">Thank you, your input is greatly appreciated!</p>');
+    $('.feedback-modal-message').append('<p class="textGreen">Thank you, your input is greatly appreciated!</p>');
     setTimeout( "jQuery('#mr-feedback').modal('hide')", 3000)
   });
 }

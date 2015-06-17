@@ -12,27 +12,18 @@ $action = get_mr_theme_root_uri() . '/ajax.php';
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12 text-center">
+              <div class="col-md-12">
                 <div class="feedback-modal-message"></div>
-                <div class="form-group">
-                  <label>Was this helpful?&nbsp;</label>
-                  <label class="radio-inline">
-                    <input type="radio" name="helpful-options" id="helpful-options-yes" value="yes"> Yes
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="helpful-options" id="helpful-options-no" value="no"> No
-                  </label>
-                </div>
-                <div class="form-group">
-                  <textarea rows="8" 
-                            cols="30" 
-                            placeholder="What were you searching for? Your feedback helps us make the Support Center better for you"
+                <label class="text-center">Was this helpful?&nbsp;</label>
+<!--                <div class="form-group">-->
+                  <textarea rows="8"  
+                            placeholder="What works for you? What would you like to see improved?"
                             id="feedback-content"
                             value=""
                             name="feedback-content">
                   </textarea>
                   <input type="hidden" name="post_method" id="post-method" value="feedback-form">
-                </div>
+<!--                </div>-->
               </div>
             </div>
           </div>

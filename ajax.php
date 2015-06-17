@@ -25,7 +25,6 @@ function feedbackForm() {
   $from = "From: noreply@monsoondev.io\r\n";
   $subject = "New Feedback Submited at Support Center";
   $message = "Feedback Submission:\n"
-            . "Helpful? " . getField('helpful-options') . "\n"
             . "Message: " . getField('feedback-content');
   wp_mail($to, $subject, $message, $from);
   return;
