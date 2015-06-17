@@ -275,7 +275,18 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
 
 .btn-search:hover, .btn-search:active {
 	background-color: #62557c;
-   color: #fff;
+  color: #fff;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #3f2d47;
+  border: 1px solid;
+}
+
+.btn-primary:hover {
+  background-color: #62557c;
+  color: #fff;
 }
 
 	/* Footer */

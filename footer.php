@@ -28,17 +28,16 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 	<div class="container"> 
       <div class="row">
       
-        <div class="col-md-3"></div>
-        <div class="col-md-2 text-center topMargin60"><a href="http://webhelp.monsooncommerce.com/" class="textWhite foot">Marketplace Knowledge Base</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="http://www.stoneedge.com/help/" class="textWhite foot">OMS Knowledge Base</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="https://sc.monsooncommerce.com/" class="textWhite foot">Solution Central</a></div>
-        <div class="col-md-3"></div>
+        <div class="col-md-4 text-center topMargin60"><a href="http://webhelp.monsooncommerce.com/" target="_blank" class="textWhite foot">Marketplace Knowledge Base</a></div>
+        <div class="col-md-4 text-center topMargin60"><a href="http://www.stoneedge.com/help/" target="_blank" class="textWhite foot">OMS Knowledge Base</a></div>
+        <div class="col-md-4 text-center topMargin60"><a href="https://sc.monsooncommerce.com/" target="_blank" class="textWhite foot">Solution Central</a></div>
+
       </div>
     </div>
     <div class="container">
 	    <div class="row">
 	        <div class="col-md-12 text-center topMargin60">
-	          <button type="button" class="btn textBlack" id="bubble" data-toggle="modal" data-target="#mr-feedback">Feedback</button>
+	          <button type="button" class="btn textBlack" id="bubble" data-toggle="modal" data-target="#mr-feedback">Share your feedback on the Support Center.</button>
 	        </div>
 	    </div>
 	    <div class="row topMargin60">
