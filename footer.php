@@ -29,9 +29,9 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
       <div class="row">
       
         <div class="col-md-3"></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">Pro Webhelp</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">SEKB</a></div>
-        <div class="col-md-2 text-center topMargin60"><a href="#" class="textWhite foot">Solution Central</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="http://webhelp.monsooncommerce.com/" class="textWhite foot">Marketplace Knowledge Base</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="http://www.stoneedge.com/help/" class="textWhite foot">OMS Knowledge Base</a></div>
+        <div class="col-md-2 text-center topMargin60"><a href="https://sc.monsooncommerce.com/" class="textWhite foot">Solution Central</a></div>
         <div class="col-md-3"></div>
       </div>
     </div>
