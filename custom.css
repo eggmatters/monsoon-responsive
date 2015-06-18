@@ -339,6 +339,7 @@ a.foot:hover {
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: #62557c solid 2px;
+  margin: 0 auto;
 }
 
 #bubble:after {
@@ -590,7 +591,9 @@ and (max-device-width : 981px) {
 @media only screen
 and (max-device-width : 361px) { 
   #bubble {
-    width: 47.5%;
+    white-space: normal;
+    height: auto;
+    width: 47.5%;    
   }
   .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     color: #73AF55;
