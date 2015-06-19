@@ -59,7 +59,7 @@ get_header();
         <option value="Sales">Sales</option>
         <option value="Employment Opportunity">Employment Opportunity</option>
         <option value="Press, Media, and Marketing">Press, Media, and Marketing</option>
-        <option value="Partner Integrations">Partner Integrations</option>
+        <option value="Partner Integrations">Partner Inquiries</option>
         <option value="Support Request">Support Request</option>
         <option value="Professional Services">Professional Services</option>
         <option value="Other">Other</option>

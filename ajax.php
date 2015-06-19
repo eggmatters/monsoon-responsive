@@ -44,13 +44,13 @@ function infoExchangeSignup() {
 
 function contactUsSubmit() {
   $contactUsContacts = array(
-    "Sales" => "ldunn@monsooncommerce.com",
-    "Employment Opportunity" => "kbeggs@monsooncommerce.com",
-    "Press, Media, and Marketing" => "professionalservices@monsooncommerce.com",
-    "Partner Integrations" => "professionalservices@monsooncommerce.com",
+    "Sales" => "sales@monsooncommerce.com",
+    "Employment Opportunity" => "hr@monsooncommerce.com",
+    "Press, Media, and Marketing" => "outreach@monsooncommerce.com",
+    "Partner Inquiries" => "partners@monsooncommerce.com",
     "Support Request" => "support@monsooncommerce.com", 
     "Professional Services" => "professionalservices@monsooncommerce.com",
-    "Other" => "professionalservices@monsooncommerce.com"
+    "Other" => "outreach@monsooncommerce.com"
   );
   $name       = getField('cu_first_name') . " " . getField('cu_last_name');
   $company    = getField('cu_company');
@@ -58,7 +58,7 @@ function contactUsSubmit() {
   $phone      = getField('cu_phone');
   $country    = getField('cu_country');
   $department = getField('cu_reason');
-  $to         = array_key_exists($department, $contactUsContacts) ? $contactUsContacts[$department] : "professionalservices@monsooncommerce.com";
+  $to         = array_key_exists($department, $contactUsContacts) ? $contactUsContacts[$department] : "outreach@monsooncommerce.com@monsooncommerce.com";
   $body       = getField('cu_response');
   $from       = "From: noreply@monsoondev.io\r\n";
   $subject    = "Contact Us Request for $department from support.monsooncommerce.com";
