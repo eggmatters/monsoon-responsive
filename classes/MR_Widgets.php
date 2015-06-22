@@ -131,7 +131,7 @@
 			echo $args['before_title'] . $instance['title'] . $args['after_title'];
     }
     ?>
-    <a href="<?php echo $permalink; ?>"><button class='btn btn-default btn-lg btn-search'><?php echo $nav_button_text; ?></button></a>
+    <a href="<?php echo $permalink; ?>"><button class='btn btn-default btn-lg btn-search support-create-request'><?php echo $nav_button_text; ?></button></a>
     <?php
 	}
 

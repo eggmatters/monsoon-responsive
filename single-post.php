@@ -2,6 +2,7 @@
 /*
 Template Name: Post
 */
+
 ?>
 
 <?php get_header(); 
@@ -20,7 +21,8 @@ Template Name: Post
 <div class="container textGreen">
   <div class="row">
     <div class="col-md-8">
-      <?php the_content(); ?>
+      <?php 
+      the_content(); ?>
     </div>
     <div class="col-md-4">
       <?php get_sidebar(); ?>
@@ -40,4 +42,7 @@ Template Name: Post
 </div>
 <?php endif; ?>
 
-<?php get_footer();
+<?php 
+add_filter( 'the_content', 'do_shortcode', 11 );
+echo do_shortcode('[MC_SupportCreate]');
+get_footer();
