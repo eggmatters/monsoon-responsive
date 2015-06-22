@@ -17,8 +17,8 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 					<div class="input-group col-xs-11 col-sm-6 col-md-8" >
 						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
 						<span class="input-group-btn">
-		            <button class="btn btn-default ieBtn" id="ix-signup" type="button" data-toggle="modal" data-target="#mr-ix-signup"><b>SIGN UP NOW!</b></button>
-		            </span>				
+              <a class="btn btn-default ieBtn" href="http://eepurl.com/xpdf9" target="_blank"><b>SIGN UP NOW!</b></a>
+            </span>
 					</div>
 				</div>			
 			</form>    	
