@@ -45,7 +45,6 @@
 			</span><br>
 		<?php
 	}
-  echo "<br>GOT HERE<br>";
 	echo $content;
 
 	if ( !$has_access ) {
