@@ -440,6 +440,29 @@ a#cu-form-restore :hover {
 #feedback-content {
   width: 80%;
 }
+
+/* Content Boxes
+------------------------------------------------------------ */
+.content-box-gray,
+.content-box-green,
+.content-box-purple {
+    margin: 0 0 25px;
+    overflow: hidden;
+    padding: 20px;
+}
+.content-box-gray {
+    background-color: #e2e5e8;
+    border: 1px solid #9ea0a2;
+}
+.content-box-green {
+    background-color: #bac7c3;
+    border: 1px solid #a7b3af;
+}
+.content-box-purple {
+    background-color: #d6d0de;
+    border: 1px solid #c9c1d3;
+}
+
 /* media queries 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
