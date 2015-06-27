@@ -2,7 +2,7 @@
 /*
 Template Name: Category
 
-Used for: Training Courses page
+Used for: IE and Help Library OMS and Marketplace pages
 */
 $category = get_category(get_query_var('cat'));
 $categoryPosts = get_category_posts($category->slug);
@@ -12,7 +12,7 @@ $categoryPosts = get_category_posts($category->slug);
   <div class="container-fluid">
     <div class="row">
       <div class="container">
-        <div class="text-center topMargin60 xlgText"><?php echo $category->name; ?></div>
+        <div class="text-center topMargin90 xlgText"><?php echo $category->name; ?></div>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ $categoryPosts = get_category_posts($category->slug);
   <?php get_banner_search(); ?>
   <p>&nbsp;</p>
 </div>
-<div class="container textGreen">
+<div class="container textBlack">
   <div class="row">
     <div class="col-md-12">
       <ul id="catPaginate" class="pagination">

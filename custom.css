@@ -277,9 +277,20 @@ p.textGreen {
   color: #73AF55;
 }
 
-a.foot, .textBlack a:hover, .textWhite a:hover {
+a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
   text-decoration: none;
 }
+
+.textBlack li a:hover, .textBlack a:hover {
+	color: #73AF55;
+	background-color: #fff;
+}
+
+.textBlack li:visited, .textBlack li a:visited {
+	color: #3f2d47;
+	background-color: #fff;
+}
+
 
 
 	/* Buttons */
