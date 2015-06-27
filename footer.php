@@ -15,7 +15,7 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
 				<div id="ie" class="form-group">
 					<label for="info-exchange-signup" class="control-label col-xs-12 col-sm-5 col-md-4 medLgText">Subscribe to Info Exchange</label>
 					<div class="input-group col-xs-11 col-sm-6 col-md-8" >
-						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control" placeholder="you@email.com">
+						<input type="text" id="info-exchange-signup-email" name="info-exchange-signup-email" class="form-control ie" placeholder="you@email.com">
 						<span class="input-group-btn">
               <a class="btn btn-default ieBtn" href="http://eepurl.com/xpdf9" target="_blank"><b>SIGN UP NOW!</b></a>
             </span>

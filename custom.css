@@ -158,6 +158,13 @@ body {
 	margin-left: 0;
 	margin-right: 0;
 }	
+/* (SUP-6800) */
+.form-control:focus {
+	border-color: #A626AA;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(166, 38, 170, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(166, 38, 170, .6);
+}
+
 	
 	
 /* Home Page Info Exch icon */
@@ -319,6 +326,13 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
 .ieBtn:hover {
   background-color: #62557c;
   color: #fff;
+}
+
+/* remove Monsoon pink glow from email input (form-control class) */
+.ie:focus {
+	border-color: #fff;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 
 

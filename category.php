@@ -17,7 +17,7 @@ $categoryPosts = get_category_posts($category->slug);
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container">
   <?php get_banner_search(); ?>
   <p>&nbsp;</p>
 </div>
