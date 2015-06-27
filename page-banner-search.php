@@ -2,7 +2,6 @@
 /*
 Template Name: Page with Banner Search
 
-Used for Help Library page
 */
 ?>
 
