@@ -284,8 +284,13 @@ a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
 }
 
 .textBlack li:visited, .textBlack li a:visited {
-	color: #3f2d47;
+	color: #A626AA;
 	background-color: #fff;
+}
+
+a:focus {
+	outline-offset: -1px;
+	color: inherit;
 }
 
 
