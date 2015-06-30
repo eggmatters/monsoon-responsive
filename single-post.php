@@ -12,8 +12,7 @@ Template Name: Post
   <div class="container-fluid">
     <div class="row">
       <div class="container">
-        <div class="text-center topMargin90 xlgText col-md-11"><?php the_title(); ?></div>
-        <div class="col-md-1"></div>
+        <div class="text-center topMargin90 xlgText rightMargin15"><?php the_title(); ?></div>
       </div>
     </div>
   </div>
