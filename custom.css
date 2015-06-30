@@ -323,6 +323,36 @@ a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
   color: #fff;
 }
 
+
+	/* Pagination  */
+	
+.pagination > .active > a,
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus 
+
+{
+	background-color: #73AF55;
+	border-color: #3F2D47;
+}
+
+.pagination > li > a, .pagination > li > span {
+	border: 1px solid #3F2D47;
+	color: #73AF55;
+	
+}	
+
+.pagination > li > a:hover, .pagination > li > span {
+	background-color: #73AF55;
+	color: #fff;
+	border-color: #3F2D47;
+	
+	
+}
+
+
 	/* Footer */
 
 /* Border around info exchange sign up */
@@ -358,6 +388,10 @@ a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
 /* Links below Info Exch sign up */
 a.foot:hover {
   color: #ccc;
+}
+
+a.foot:visited {
+	color: #fff;
 }
 
 	/* Feedback button */

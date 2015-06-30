@@ -21,18 +21,18 @@ $categoryPosts = get_category_posts($category->slug);
   <?php get_banner_search(); ?>
   <p>&nbsp;</p>
 </div>
-<div class="container textBlack">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       <ul id="catPaginate" class="pagination">
       
       </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 textBlack">
       <ul id="catColOne" class="nav nav-stacked">
       </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 textBlack">
       <ul id="catColTwo" class="nav nav-stacked">
       </ul>
     </div>
