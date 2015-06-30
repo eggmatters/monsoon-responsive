@@ -115,7 +115,7 @@ function get_info_exchange_posts($slug='info-exchange') {
   foreach ($ixposts as $post) {
     setup_postdata($post);
 ?>
-<a style="font-size: 18px;" class="large-text" href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a><br>
+<a style="font-size: 20px;" class="large-text" href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a><br>
   <?php 
     if (empty($post->post_excerpt)) {
       echo mr_get_post_excerpt( $post );

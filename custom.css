@@ -75,7 +75,7 @@ h1 {
   font-size: 1.5em;
 }
 
-.medLgText {
+.medlgText {
   font-size: 1.25em;
 }
 
@@ -263,18 +263,15 @@ body {
 	/* End Top Nav changes */
 
 /* posts on Home Page (applied to home_header post) and Info Exch */
-.textGreen li a, .textGreen a {
-	font-size: 120%;
-	color: #73AF55;
-}
+
 
 .textGreen li a:hover, .textGreen a:hover {
 	background-color: #fff;
 	text-decoration: none;
 }
 
-p.textGreen {
-  color: #73AF55;
+.textGreen li a, .textGreen a, p.textGreen {
+	color: #73AF33;
 }
 
 a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
@@ -391,7 +388,7 @@ a.foot:hover {
 }
 
 a.foot:visited {
-	color: #fff;
+	color: #ccc;
 }
 
 	/* Feedback button */
