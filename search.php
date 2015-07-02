@@ -30,7 +30,7 @@ get_header(); ?>
   <?php
   if (!empty($searchPosts)) :
     ?>
-    <div class="row" style="margin-top: 5%">
+    <div class="row" style="margin-top: 10%">
       <div class="col-md-12">
         <h3 class="page-title"><?php printf(__('Search Results for: %s', 'monsoon-responsive'), $search_query['s']); ?></h3>
         <h4><?php echo $search->found_posts?> Results returned</h4>
@@ -61,7 +61,7 @@ get_header(); ?>
     </div>
     
     <?php else : ?>
-      <div class="row" style="margin-top: 5%">
+      <div class="row" style="margin-top: 10%">
         <div class="col-md-8">
           <h4><?php printf(__('Sorry, no results for for: %s', 'monsoon-responsive'), get_search_query()); ?></h4>
         </div>
