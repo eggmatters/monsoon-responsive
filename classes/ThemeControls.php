@@ -48,7 +48,7 @@ class ThemeControls {
     if (count($posts) <= 0) {
       return "";
     }
-    $postsList = '<ul class="nav nav-stacked textGreen">';
+    $postsList = '<ul class="nav nav-stacked textGreen medlgText">';
     $idx = 0;
     while ($idx < 4) {
       if (isset($posts[$idx])) {
@@ -57,7 +57,7 @@ class ThemeControls {
       }
       $idx++;
     }
-    return $postsList;
+    return $postsList . '</ul>';
   }
 }
 /*

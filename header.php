@@ -38,9 +38,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center"><img src="<?php echo $mcsc; ?>" style="max-width:110px; margin-top: -9px;"><span style="color: black; font-size: 77%">SUPPORT CENTER</span></a>
+          <a class="navbar-brand" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center"><img src="<?php echo $mcsc; ?>" style="max-width:140px; margin-top: 0px;"><span style="color: black; margin-left: -1%; font-size:96%;">SUPPORT CENTER</span></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse" style="margin-top: 12px;">
           <ul class="nav navbar-nav">
             	<?php get_defined_menu(); ?>
           </ul>

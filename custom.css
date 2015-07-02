@@ -75,7 +75,7 @@ h1 {
   font-size: 1.5em;
 }
 
-.medLgText {
+.medlgText {
   font-size: 1.25em;
 }
 
@@ -121,6 +121,11 @@ body {
   color: #fff;
 }
 
+.lgJumbotron {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
 /* Margins and padding */
 
 .noBottomMargin {
@@ -131,13 +136,12 @@ body {
 	margin-bottom: 10px;
 }
 
-.lgJumbotron {
-  margin-bottom: 80px;
-  margin-top: 80px;
+.topMargin60 {
+	margin-top: 60px;
 }
 
-.topMargin60 {
-  margin-top: 60px;
+.topMargin90 {
+  margin-top: 90px;
 }
 
 .topMargin40 {
@@ -153,11 +157,22 @@ body {
 	vertical-align: middle;
 }
 
+.rightMargin15  {
+	margin-right: 15px;
+}
+
 	/* Forms */
 #ie.form-horizontal, #ie.form-group {
 	margin-left: 0;
 	margin-right: 0;
 }	
+/* (SUP-6800) */
+.form-control:focus {
+	border-color: #A626AA;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(166, 38, 170, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(166, 38, 170, .6);
+}
+
 	
 	
 /* Home Page Info Exch icon */
@@ -169,6 +184,10 @@ body {
 	/* Links */
 
 	/* Top Nav */
+
+.navbar {
+	min-height: 85px;
+}
 
 /* Change nav bar text to black */
 .navbar .nav > li > a {
@@ -248,23 +267,36 @@ body {
 	/* End Top Nav changes */
 
 /* posts on Home Page (applied to home_header post) and Info Exch */
-.textGreen li a, .textGreen a {
-	font-size: 120%;
-	color: #73AF55;
-}
+
 
 .textGreen li a:hover, .textGreen a:hover {
 	background-color: #fff;
 	text-decoration: none;
 }
 
-p.textGreen {
-  color: #73AF55;
+.textGreen li a, .textGreen a, p.textGreen {
+	color: #73AF33;
 }
 
-a.foot, .textBlack a:hover, .textWhite a:hover {
+a.foot, .textBlack a:hover, .textBlack li a:hover, .textWhite a:hover {
   text-decoration: none;
 }
+
+.textBlack li a:hover, .textBlack a:hover {
+	color: #73AF55;
+	background-color: #fff;
+}
+
+.textBlack li:visited, .textBlack li a:visited {
+	color: #A626AA;
+	background-color: #fff;
+}
+
+a:focus {
+	outline-offset: -1px;
+	color: inherit;
+}
+
 
 
 	/* Buttons */
@@ -297,6 +329,36 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
   color: #fff;
 }
 
+
+	/* Pagination  */
+	
+.pagination > .active > a,
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus 
+
+{
+	background-color: #73AF55;
+	border-color: #3F2D47;
+}
+
+.pagination > li > a, .pagination > li > span {
+	border: 1px solid #3F2D47;
+	color: #73AF55;
+	
+}	
+
+.pagination > li > a:hover, .pagination > li > span {
+	background-color: #73AF55;
+	color: #fff;
+	border-color: #3F2D47;
+	
+	
+}
+
+
 	/* Footer */
 
 /* Border around info exchange sign up */
@@ -321,10 +383,21 @@ a.foot, .textBlack a:hover, .textWhite a:hover {
   color: #fff;
 }
 
+/* remove Monsoon pink glow from email input (form-control class) */
+.ie:focus {
+	border-color: #fff;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
 
 /* Links below Info Exch sign up */
 a.foot:hover {
   color: #ccc;
+}
+
+a.foot:visited {
+	color: #ccc;
 }
 
 	/* Feedback button */
@@ -463,7 +536,9 @@ a#cu-form-restore :hover {
     border: 1px solid #c9c1d3;
 }
 
-/* media queries 
+/* media queries */
+
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 320px) 
@@ -510,6 +585,8 @@ and (max-device-width : 1024px) {
   .form-group > .input-group {
 		padding-top: 1%;  
   }
+  
+  
 }
 
 /* iPads (landscape) ----------- */
@@ -554,7 +631,7 @@ and (min-device-width : 1280px) {
 }
 
 @media only screen
-and (max-device-width : 981px) {    
+and (max-device-width : 981px) {   
   .navbar-header {
     float: none;
   }
@@ -566,7 +643,7 @@ and (max-device-width : 981px) {
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
   }
   .navbar-collapse.collapse {
-    display: none!important;
+     display: none!important;
   }
   .navbar-nav {
     margin: 7.5px -15px;
@@ -575,7 +652,7 @@ and (max-device-width : 981px) {
     float: none;
   }
   .navbar-nav>li>a {
-    padding-top: 10px;
+   /padding-top: 10px;
     padding-bottom: 10px;
   }
   .navbar-text {
