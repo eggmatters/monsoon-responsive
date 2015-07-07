@@ -44,5 +44,8 @@ Template Name: Post
 
 <?php 
 add_filter( 'the_content', 'do_shortcode', 11 );
-echo do_shortcode('[MC_SupportCreate]');
+$shortcode = do_shortcode('[MC_SupportCreate]');
+if ($shortcode != '[MC_SupportCreate]') {
+  echo $shortcode;
+}
 get_footer();
