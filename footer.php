@@ -33,6 +33,21 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
         <div class="col-md-4 text-center topMargin60"><a href="https://sc.monsooncommerce.com/" target="_blank" class="textWhite foot">Solution Central</a></div>
 
       </div>
+    
+      <div class="row">
+      
+        <div class="col-md-4 text-center topMargin10">&nbsp;</div>
+        <div class="col-md-4 text-center topMargin10"><a href="http://forum.stoneedge.com/" target="_blank" class="textWhite foot">OMS User Forums</a></div>
+        <div class="col-md-4 text-center topMargin10">&nbsp;</div>
+
+      </div>
+      <div class="row">
+      
+        <div class="col-md-4 text-center topMargin10">&nbsp;</div>
+        <div class="col-md-4 text-center topMargin10"><a href="http://209.235.247.148/dlgateway/Login.aspx?ReturnUrl=%2Fdlgateway%2Fdefault.aspx" target="_blank" class="textWhite foot">OMS Downloads</a></div>
+        <div class="col-md-4 text-center topMargin10">&nbsp;</div>
+
+      </div>
     </div>
     <div class="container">
 	    <div class="row">
