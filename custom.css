@@ -584,6 +584,16 @@ and (min-device-width : 1280px) {
 	}
 }
 
+@media only screen 
+and (max-device-width : 1071px) {
+  .navbar-nav > li > a {
+    font-size: 85%;
+  }
+  .navbar-brand {
+    padding-bottom: 55px;
+  }
+}
+
 @media only screen
 and (max-device-width : 981px) {   
   .navbar-header {
