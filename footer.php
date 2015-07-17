@@ -27,9 +27,9 @@ $li = get_mr_theme_root_uri() . '/images/icon-footer-linkedin.png';
     </div><!-- end .container #infoExch -->
     <div class="container"> 
       <div class="row">
-        <div class="col-md-4 text-center footer-text-bold topMargin60"><a href="https://sc.monsooncommerce.com/" target="_blank" class="textWhite foot">SOLUTION CENTRAL</a></div>
-        <div class="col-md-4 text-center footer-text-bold topMargin60"><a href="https://www.monsooncommerce.com/" target="_blank" class="textWhite foot">MONSOON COMMERCE</a></div>
-        <div class="col-md-4 text-center footer-text-bold topMargin60"><a href="https://www.monsooncommerce.com/monsoon-commerce-app-store/" target="_blank" class="textWhite foot">APP STORE</a></div>
+        <div class="col-md-4 text-center topMargin60"><a href="https://sc.monsooncommerce.com/" target="_blank" class="textWhite foot">SOLUTION CENTRAL</a></div>
+        <div class="col-md-4 text-center topMargin60"><a href="https://www.monsooncommerce.com/" target="_blank" class="textWhite foot">MONSOON COMMERCE</a></div>
+        <div class="col-md-4 text-center topMargin60"><a href="https://www.monsooncommerce.com/monsoon-commerce-app-store/" target="_blank" class="textWhite foot">APP STORE</a></div>
       </div>
     </div>
     <div class="container">
