@@ -116,7 +116,9 @@ function get_info_exchange_posts($slug='info-exchange') {
     setup_postdata($post);
 ?>
 <a style="font-size: 20px;" class="large-text" href="<?php echo get_permalink($post->ID); ?>"><?php echo $post->post_title; ?></a><br>
+
   <?php 
+    formatTagline($post);
     if (empty($post->post_excerpt)) {
       echo mr_get_post_excerpt( $post );
     }     
@@ -132,9 +134,8 @@ function mr_get_post_excerpt( $post ){
   $text = preg_replace('/<p class="lead">?.*<\/p>/', '',$text);
   $text = apply_filters( 'the_content', $text );
   $text = str_replace( ']]>', ']]>', $text );
-
+  
   $excerpt_length = apply_filters( 'excerpt_length', 55 );
-  $excerpt_more   = apply_filters( 'excerpt_more', ' ' . '[...]' );
   $text           = wp_trim_words( $text, $excerpt_length, '' );
   return $text;
 }
@@ -206,4 +207,14 @@ function setSearchPostsJSON($searchPosts) {
     $searchObjects[] = $searchObject;
   }
   echo '<script> var searchPosts = ' . json_encode($searchObjects) . '</script>';
+}
+
+function formatTagline($post) {
+  if (get_class($post) !== 'WP_Post') {
+    return "";
+  }
+  $date = apply_filters('the_date', $post->post_date);
+  $dateString = date('M j, Y', strtotime($date));
+  $author = get_the_author();
+  echo $author . "<br>";
 }
