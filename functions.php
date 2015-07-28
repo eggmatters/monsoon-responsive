@@ -129,6 +129,7 @@ function get_info_exchange_posts($slug='info-exchange') {
 function mr_get_post_excerpt( $post ){
   $text = $post->post_content;
   $text = strip_shortcodes( $text );
+  $text = preg_replace('/<p class="lead">?.*<\/p>/', '',$text);
   $text = apply_filters( 'the_content', $text );
   $text = str_replace( ']]>', ']]>', $text );
 
