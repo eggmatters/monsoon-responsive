@@ -69,11 +69,12 @@ class ThemeControls {
       foreach ($tags as $tag) {
         $tag = get_tag($tag->term_id);
         $l = get_tag_link($tag->term_id);
-        $taglink = '<a href=" '. $l . '">' . $tag->name . '<a>';
+        $taglink = '<a href=" '. $l . '">' . $tag->name . '</a>';
         $taglist .= $taglink . " ";
       }
     }
-    return "<h6>by $author | $dateString $taglist</h6>";
+    $val = "<h6>by $author | $dateString $taglist</h6>";
+    return $val;
     }
 }
 /*
