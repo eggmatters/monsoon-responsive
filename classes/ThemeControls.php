@@ -1,15 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of ThemeControls
  *
- * @author Your Name <your.name at your.org>
+ * @author Your Name <Matthew.Eggers at MonsoonCommerce>
  */
 class ThemeControls {
   private $content;
@@ -59,6 +53,28 @@ class ThemeControls {
     }
     return $postsList . '</ul>';
   }
+  
+  public function postTagline() {
+    $post = get_post();
+    if (get_class($post) !== 'WP_Post') {
+      return "";
+    }
+    $date = apply_filters('the_date', $post->post_date);
+    $dateString = date('M j, Y', strtotime($date));
+    $author = get_the_author();
+    $tags = wp_get_post_tags($post->ID);
+    $taglist = "";
+    if (count($tags) > 0) {
+      $taglist = "| ";
+      foreach ($tags as $tag) {
+        $tag = get_tag($tag->term_id);
+        $l = get_tag_link($tag->term_id);
+        $taglink = '<a href=" '. $l . '">' . $tag->name . '<a>';
+        $taglist .= $taglink . " ";
+      }
+    }
+    echo "<h6>by $author | $dateString $taglist</h6>";
+    }
 }
 /*
  * return '<form role="search" method="get" id="searchform" action=" ' . $action . '"> ' .

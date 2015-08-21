@@ -215,16 +215,3 @@ function setSearchPostsJSON($searchPosts) {
   }
   echo '<script> var searchPosts = ' . json_encode($searchObjects) . '</script>';
 }
-
-function formatTagline($post = null) {
-  if (is_null($post)) {
-    $post = get_post();
-  }
-  if (get_class($post) !== 'WP_Post') {
-    return "";
-  }
-  $date = apply_filters('the_date', $post->post_date);
-  $dateString = date('M j, Y', strtotime($date));
-  $author = get_the_author();
-  echo "<h6>$author | $dateString | list 'o tags</h6>";
-}
