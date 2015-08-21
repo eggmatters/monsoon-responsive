@@ -73,7 +73,7 @@ class ThemeControls {
         $taglist .= $taglink . " ";
       }
     }
-    echo "<h6>by $author | $dateString $taglist</h6>";
+    return "<h6>by $author | $dateString $taglist</h6>";
     }
 }
 /*
