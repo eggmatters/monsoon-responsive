@@ -211,7 +211,7 @@
     <div class="form-group">
       <h3><?php echo $instance['title']; ?></h3>
       <select id="mr-cat-filter" name="mr-cat-filter">
-        <option value="0" selected="true"><?php _e( '&mdash; Select Product Category&mdash;' ) ?></option>
+        <option value="0" selected="true"><?php _e( '&mdash; Select Product &mdash;' ) ?></option>
         <?php
           foreach($categorySelects as $filterCategory) {
             echo '<option value="' . $filterCategory['value'] .'">' . $filterCategory['option'] . '</option>';
