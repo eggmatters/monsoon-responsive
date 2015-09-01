@@ -323,6 +323,7 @@ a:focus {
   border-radius: 15px;
   padding-top: 1%;
   padding-left: 4%;
+  width: 33%;
 }
 
 /* Info Exch button */
@@ -676,5 +677,8 @@ and (max-device-width : 361px) {
   .dropdown-menu > li > a:active {
     color: #73AF55;
     background-color: inherit;
+  }
+  #infoExch {
+    width: 50%;
   }
 }
