@@ -116,7 +116,7 @@ function get_page_categories() {
 
 function get_info_exchange_posts($slug='info-exchange') {
   $args = array( 'category_name' => $slug,
-    'posts_per_page' => 3,
+    'posts_per_page' => 10,
     'order_by' => 'date');
   $ixposts = get_posts($args);
   foreach ($ixposts as $post) {
