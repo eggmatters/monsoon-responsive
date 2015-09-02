@@ -38,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center">
+          <a class="navbar-brand-oxcom" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center">
             <img src="<?php echo $mcsc; ?>" style="max-width:140px; margin-top: 0px;">
 <!--            <span style="color: black; font-size:96%;">SUPPORT CENTER</span>-->
           </a>
