@@ -358,6 +358,10 @@ a.foot {
   font-weight: bold;
 }
 
+.pushdown-abit {
+  margin-top: 5px;
+}
+
 	/* Feedback button */
 
 /* Feedback bubble in footer */
