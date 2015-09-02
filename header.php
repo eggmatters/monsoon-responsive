@@ -29,7 +29,7 @@
         // Fix menu overlap bug..
         if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 
       ?>
-    <?php $mcsc = get_mr_theme_root_uri() . '/images/monsoon-logo-pos.png'; ?>
+    <?php $mcsc = get_mr_theme_root_uri() . '/images/monsoon-logo-pos2.png'; ?>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -40,7 +40,7 @@
           </button>
           <a class="navbar-brand" href="<?php echo site_url(); ?>" title="Monsoon Commerce Support Center">
             <img src="<?php echo $mcsc; ?>" style="max-width:140px; margin-top: 0px;">
-            <span style="color: black; font-size:96%;">SUPPORT CENTER</span>
+<!--            <span style="color: black; font-size:96%;">SUPPORT CENTER</span>-->
           </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse" style="margin-top: 12px;">
