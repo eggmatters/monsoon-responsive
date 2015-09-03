@@ -1,4 +1,5 @@
 <?php
+$message = isset($message) ? $message : "";
 get_header();
 ?>
 <style>
@@ -22,9 +23,9 @@ get_header();
 <div class="container textGreen">
   <div class="row">
     <div class="col-md-12">
-      <p>It is with great sadness that we now inform you that this page no longer exists.</p>
-      <p>There are plenty of great pages to choose from however. I'm sure you'll find just what you're looking for.</p>
-      <p>Please feel free to <a href="<?php echo get_site_url() . '/contact'; ?>">Contact Us</a> if you still can't find what you're looking for.</p>
+      <p>Looks like we're having trouble you logging in:</p>
+      <p><?php echo $message; ?></p>
+      <p>Please feel free to <a href="<?php echo get_site_url() . '/contact'; ?>">Contact Us</a> if you need urgent help.</p>
     </div>
   </div>
 </div>
